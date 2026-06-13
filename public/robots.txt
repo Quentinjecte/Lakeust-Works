@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+C:\Users\Askeladd\AppData\Local\Programs\cursor
