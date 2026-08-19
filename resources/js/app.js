@@ -1,4 +1,15 @@
 import './bootstrap';
+import './animation.js';
+import './carousel.js';
+
+/* .page-in reste sur <main> tant que l'animation d'entrée tourne. Une fois
+   finie, on retire la classe : sinon la valeur "translate" qu'elle maintient
+   (même égale à "none" en fin de keyframe) continue d'établir un containing
+   block pour les descendants position:fixed, ce qui casse les sections
+   épinglées de Scroll Lab imbriquées dans <main> (corridor, entrelacs...). */
+document.querySelectorAll('.page-in').forEach(el => {
+    el.addEventListener('animationend', () => el.classList.remove('page-in'), { once: true });
+});
 
 const cubes = document.querySelectorAll('.cube');
 const triangles = document.querySelectorAll('.triangle');
@@ -35,10 +46,12 @@ triangles.forEach((triangle) => {
 });
 
 const cursor = document.querySelector('.cursor');
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-});
+if (cursor) {
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+    });
+}
 
 //document.body.style.backgroundColor = getRandomColor();
 

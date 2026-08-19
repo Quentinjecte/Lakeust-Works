@@ -1,0 +1,42 @@
+/* lab.css — /laboratoire est une page autonome (pas de layout partagé, pas
+   d'app.css) : ce fichier porte donc aussi le socle visuel (reset, police,
+   Lenis, sélection), pas seulement la mise en page du labo. Le détail de
+   chaque scène est en style inline dans lab.blade.php — cf. motion.js pour
+   tout ce qui est piloté par le scroll. */
+
+* { box-sizing: border-box; }
+
+html { background: #05050a; }
+
+body {
+  margin: 0;
+  background: #05050a;
+  color: #e2ddd1;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+  overflow-x: hidden;
+}
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+::selection { background: rgba(145, 132, 217, .28); color: #e9e9ed; }
+
+a { color: #b3a9e6; text-decoration: none; }
+a:hover { color: #e2ddd1; }
+
+:focus-visible { outline: 2px solid #9184d9; outline-offset: 3px; }
+
+@keyframes drift { from { background-position: 0 0; } to { background-position: 0 -240px; } }
+@keyframes breathe { 0%, 100% { opacity: .5; transform: scale(1); } 50% { opacity: .85; transform: scale(1.06); } }
+
+/* Une seule mécanique visible à la fois : lab.js bascule .is-active. */
+.lab-sec { display: none; }
+.lab-sec.is-active { display: block; }
+
+/* style-hover de la maquette, converti en vraies règles :hover. */
+.lab-rail-btn:hover { color: #e2ddd1 !important; }
+.lab-cta:hover { background: rgba(145, 132, 217, .14) !important; color: #e2ddd1 !important; }
