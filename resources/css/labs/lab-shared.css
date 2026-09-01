@@ -1,0 +1,154 @@
+/* lab-shared.css — socle + styles communs à toutes les pages du laboratoire
+   (barba-lab, three-lab, animation-lab, carousel-lab, scroll-lab, le
+   catalogue /lab). Le style propre à l'écran Orbite d'Animation Lab vit à
+   part dans animation-lab.css. Toutes ces pages @extend layouts.site, donc
+   core/reset.css est déjà chargé avant ce fichier : le reset de base
+   (box-sizing, html/body, :focus-visible) n'est pas répété ici — seules les
+   règles qui DIFFÈRENT de celles du core (::selection, a, liens de marque
+   du labo) sont redéfinies, volontairement, pour prendre le dessus dans la
+   cascade.
+
+   Les classes génériques que plusieurs pages réutilisaient sous le même nom
+   avec la même valeur (.lab-cta, le duo .btn/.btn-primary de Barba Lab et
+   Animation Lab) sont fusionnées ici en une seule règle. Celles qui portaient
+   le même nom pour un rendu différent (le .btn simple de Three Lab) sont
+   scopées sous le conteneur racine de leur page ([data-tl-root] …) pour ne
+   pas se marcher dessus au sein d'un même fichier partagé. */
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+::selection { background: rgba(145, 132, 217, .28); color: #e9e9ed; }
+
+a { color: #b3a9e6; text-decoration: none; }
+a:hover { color: #e2ddd1; }
+
+button { font-family: inherit; }
+code { font-family: ui-monospace, monospace; }
+
+@keyframes drift { from { background-position: 0 0; } to { background-position: 0 -240px; } }
+@keyframes breathe { 0%, 100% { opacity: .5; transform: scale(1); } 50% { opacity: .85; transform: scale(1.06); } }
+
+/* Une seule mécanique visible à la fois : .lab-sec / .is-active (Scroll Lab),
+   et son équivalent par page (.lab-sec, .lab-sec, .lab-sec, [data-cl-section]). */
+.lab-sec { display: none; }
+.lab-sec.is-active { display: grid; }
+.lab-sec.tl-catalogue.is-active { display: block; }
+.lab-rail-btn:hover { color: #e2ddd1 !important; }
+
+/* CTA des fiches Catalogue — identique sur les cinq labs. */
+.lab-cta {
+    appearance: none; margin-top: 6px; align-self: flex-start; background: none;
+    border: 1px solid rgba(145, 132, 217, .5); color: #b3a9e6; cursor: pointer;
+    font-family: inherit; font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+    padding: 9px 16px; border-radius: 8px; transition: background .3s, color .3s;
+}
+.lab-cta:hover { background: rgba(145, 132, 217, .14); color: #e2ddd1; }
+
+/* Bouton à deux variantes, identique entre Barba Lab et Animation Lab. */
+[data-blab-root] .btn, [data-sa-root] .btn {
+    appearance: none; cursor: pointer; border-radius: 8px; font-family: inherit;
+    font-size: 10px; letter-spacing: .22em; text-transform: uppercase; padding: 11px 22px;
+    transition: background .2s, border-color .2s, color .2s;
+}
+[data-blab-root] .btn:focus-visible, [data-sa-root] .btn:focus-visible { outline: 2px solid #9184d9; outline-offset: 2px; }
+[data-blab-root] .btn-secondary { border: 1px solid rgba(233, 233, 237, .16); background: transparent; color: rgba(226, 221, 209, .72); }
+[data-blab-root] .btn-secondary:hover { background: rgba(233, 233, 237, .06); border-color: rgba(233, 233, 237, .3); }
+[data-blab-root] .btn-primary, [data-sa-root] .btn-primary { border: 1px solid rgba(145, 132, 217, .5); background: transparent; color: #e9e9ed; }
+[data-blab-root] .btn-primary:hover, [data-sa-root] .btn-primary:hover { background: rgba(145, 132, 217, .14); border-color: rgba(145, 132, 217, .8); }
+[data-blab-root] .btn-primary:active, [data-sa-root] .btn-primary:active { background: rgba(145, 132, 217, .24); }
+
+/* ============================================================ Barba Lab ==== */
+
+@keyframes lab-drift { from { background-position: 0 0; } to { background-position: -320px -200px; } }
+@keyframes lab-spin { to { transform: rotate(360deg); } }
+
+
+/* ============================================================ Three Lab ==== */
+/* Bouton simple, propre à Three Lab (différent du duo .btn/.btn-primary ci-dessus). */
+[data-tl-root] .btn {
+    appearance: none; cursor: pointer; border-radius: 8px; font-family: inherit;
+    font-size: 10px; letter-spacing: .2em; text-transform: uppercase; padding: 8px 14px;
+    transition: background .2s, border-color .2s, color .2s;
+    border: 1px solid rgba(233, 233, 237, .16); background: transparent; color: rgba(226, 221, 209, .68);
+}
+[data-tl-root] .btn:hover { background: rgba(233, 233, 237, .06); border-color: rgba(233, 233, 237, .3); }
+
+[data-tl-card] { display: flex; flex-direction: column; gap: 12px; }
+[data-tl-plate] { position: relative; aspect-ratio: 16 / 10; border: 1px solid rgba(233, 233, 237, .10); border-radius: 10px; overflow: hidden; background: linear-gradient(150deg, #12131d, #05050a 60%, #191a33); cursor: pointer; transition: border-color .3s; }
+[data-tl-plate] black-hole-stage, [data-tl-plate] forest-stage, [data-tl-plate] orbital-stage { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+[data-tl-idle] { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; padding: 0 24px; pointer-events: none; transition: opacity .35s; }
+[data-tl-plate][data-tl-state="live"] [data-tl-idle] { opacity: 0; }
+[data-tl-plate][data-tl-state="loading"] [data-tl-idle] { opacity: .4; }
+[data-tl-plate].is-pinned { border-color: rgba(145, 132, 217, .6); }
+[data-tl-state-label] { font-size: 9px; letter-spacing: .24em; text-transform: uppercase; color: rgba(226, 221, 209, .34); }
+[data-tl-plate][data-tl-state="loading"] [data-tl-state-label]::after { content: ' — chargement…'; }
+[data-tl-plate][data-tl-state="error"] [data-tl-state-label]::after { content: ' — échec du chargement'; }
+
+[data-tl-hud] { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: rgba(226, 221, 209, .5); font-variant-numeric: tabular-nums; }
+[data-tl-hud] button { appearance: none; cursor: pointer; background: transparent; border: 1px solid rgba(233, 233, 237, .16); color: rgba(226, 221, 209, .6); border-radius: 6px; padding: 4px 9px; font-size: 9px; letter-spacing: .16em; }
+[data-tl-hud] button:hover { border-color: rgba(145, 132, 217, .6); color: #e2ddd1; }
+[data-tl-scrub] { flex: 1 1 100px; min-width: 80px; accent-color: #9184d9; }
+[data-tl-phase-jump] { color: rgba(226, 221, 209, .4); }
+
+/* ======================================================= Carousel Lab ==== */
+/* Cette page charge déjà app.css (via layouts.site) : ses règles utilisent
+   donc directement les tokens (--bg, --text, --line, --accent, --accent-2)
+   plutôt que de les répéter en dur. */
+
+.cl-ghost {
+    position: absolute; right: clamp(20px, 6vw, 120px); top: 14vh;
+    font-size: clamp(110px, 18vw, 260px); font-weight: 200; line-height: 1;
+    letter-spacing: -.05em; color: rgba(233, 233, 237, .04); pointer-events: none;
+}
+.cl-intro {
+    position: relative; min-height: 54vh; display: flex; flex-direction: column;
+    justify-content: flex-end; gap: 18px;
+    padding: clamp(96px, 14vh, 150px) clamp(56px, 9vw, 180px) clamp(40px, 6vw, 80px);
+}
+.cl-hint {
+    position: absolute; right: clamp(16px, 4vw, 40px); bottom: 26px; z-index: 3;
+    display: flex; flex-wrap: wrap; justify-content: flex-end; max-width: 46vw; align-items: center; gap: 14px;
+    font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+    color: rgba(226, 221, 209, .30); pointer-events: none;
+}
+.cl-hint span.sep { display: block; width: 14px; height: 1px; background: rgba(226, 221, 209, .18); }
+
+[data-cl-root] [data-card] {
+    position: absolute; left: 50%; top: 46%; width: clamp(184px, 23vw, 306px); aspect-ratio: 3 / 4;
+    transform-style: preserve-3d; will-change: transform, opacity;
+    background: linear-gradient(168deg, #0d0e18, #080910); border: 1px solid var(--line); border-radius: 8px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .55); overflow: hidden; display: flex; flex-direction: column;
+}
+[data-cl-root] [data-card] .cl-shot { position: relative; flex: 1; min-height: 0; overflow: hidden; background: #0a0b12; }
+[data-cl-root] [data-card] .cl-body { display: flex; flex-direction: column; gap: 7px; padding: 14px 15px 16px; }
+[data-cl-root] [data-card] .cl-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+[data-cl-root] [data-card] .cl-rule {
+    display: block; height: 1px; background: linear-gradient(90deg, var(--accent), transparent);
+    transform: scaleX(var(--cl-a, 0)); transform-origin: 0 50%; transition: transform .1s linear;
+}
+[data-cl-root] [data-card] .cl-disc {
+    margin: 0; font-size: 11px; line-height: 1.55; letter-spacing: .02em; color: rgba(226, 221, 209, .46);
+    opacity: var(--cl-a, 0); transform: translateY(calc((1 - var(--cl-a, 0)) * 8px));
+}
+
+[data-cl-root] [data-fx-card] {
+    grid-area: 1 / 1; position: relative; width: min(62vw, 760px); aspect-ratio: 16 / 10;
+    opacity: 0; visibility: hidden;
+    background: linear-gradient(168deg, #0d0e18, #080910); border: 1px solid var(--line); border-radius: 8px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .6); overflow: hidden; display: flex; flex-direction: column;
+}
+[data-cl-root] [data-fx-card] .cl-shot { position: relative; flex: 1; min-height: 0; overflow: hidden; background: #0a0b12; }
+[data-cl-root] [data-fx-card] .cl-foot {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 18px;
+    padding: 16px 20px 18px; border-top: 1px solid rgba(233, 233, 237, .08);
+}
+
+[data-cl-root] [data-rail] { appearance: none; background: none; border: 0; cursor: pointer; display: flex; align-items: center; height: 26px; padding: 0; font-family: inherit; font-size: 10px; letter-spacing: .20em; text-transform: uppercase; transition: color .3s; }
+[data-cl-root] [data-rail]:hover { color: var(--text) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+    [data-cl-root] [data-card], [data-cl-root] [data-fx-card] { transition: none !important; }
+}
+

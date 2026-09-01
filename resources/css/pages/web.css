@@ -1,0 +1,297 @@
+/* web.css — pages "Lakeust Web" autonomes (pas de layout partagé) : le
+   carrefour (welcome.blade.php), la page d'accueil (home.blade.php) et les
+   cinématiques Three.js/Theatre.js. Ce fichier rassemble ce qui vivait en
+   <style> inline dans le <head> de chacune.
+
+   Plusieurs de ces pages définissent des sélecteurs génériques (body, a,
+   .btn, .card…) qui se contrediraient si elles étaient toutes chargées telles
+   quelles dans le même fichier partagé : chaque page porte donc une classe
+   sur <body> (page-welcome, page-home, page-wc, page-bh) qui scope ses
+   propres règles. Les classes déjà préfixées (.wl-*, .lw-*, .wc-*, .ob-*)
+   n'ont pas besoin de ce scope — leur nom seul les distingue déjà. */
+
+/* La bascule FR/EN (.i18n-fr/.i18n-en + [data-lang]) vit maintenant dans
+   core/i18n.css, partagée par tout le site (sauf home.blade.php qui garde
+   son propre mécanisme indépendant) — plus la peine de la redéfinir ici,
+   web.css charge toujours après app.css qui l'importe déjà. */
+
+/* ============================================== carrefour (welcome) ==== */
+
+html:has(body.page-welcome) { background: var(--bg-1); }
+body.page-welcome { margin: 0; padding: 0; background: var(--bg-1); }
+
+@keyframes wl-cue { 0%, 100% { transform: translateY(0); opacity: .35 } 50% { transform: translateY(7px); opacity: .9 } }
+@keyframes wl-ring { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
+
+.wl-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 80;
+    display: flex; align-items: center; gap: var(--s-5);
+    padding: var(--s-4) var(--gutter);
+    backdrop-filter: blur(14px);
+    background: color-mix(in srgb, var(--bg-1) 66%, transparent);
+    border-bottom: 1px solid var(--line);
+}
+.wl-lang { display: flex; align-items: center; gap: var(--s-1); font-size: 11px; letter-spacing: .1em; }
+.wl-lang-btn {
+    background: none; border: 0; padding: 4px 7px; cursor: pointer; font: inherit;
+    letter-spacing: .1em; border-radius: 4px; color: var(--text-3);
+}
+.wl-lang-btn.is-active { color: var(--text); background-color: var(--accent-ghost); }
+
+.wl-hero {
+    position: relative; min-height: 100vh; overflow: hidden;
+    display: flex; flex-direction: column;
+    background: radial-gradient(78% 62% at 66% 50%, color-mix(in srgb, var(--accent) 9%, transparent) 0%, transparent 68%), var(--bg-1);
+}
+.wl-hero-grid {
+    position: relative; flex: 1; display: grid;
+    grid-template-columns: minmax(340px, 37%) 1fr;
+    align-items: center; gap: var(--s-8);
+    padding: calc(var(--s-8) * 2.4) var(--gutter) calc(var(--s-8) * 2.2);
+}
+
+.wl-panels { position: relative; min-height: 452px; }
+.wl-panel {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: center; gap: var(--s-6);
+}
+.wl-panel[data-panel="branch"] { opacity: 0; visibility: hidden; pointer-events: none; }
+.wl-panel-kicker { display: flex; align-items: baseline; gap: var(--s-4); font-size: 11px; letter-spacing: .28em; text-transform: uppercase; }
+.wl-panel-divider { display: flex; align-items: center; gap: var(--s-4); }
+.wl-panel-divider .mark { width: clamp(28px, 5vw, 64px); }
+.wl-shot { max-width: 420px; }
+
+.wl-orbit { position: relative; min-height: 520px; height: 100%; }
+.wl-orbit-ring {
+    position: absolute; left: 50%; top: 50%; aspect-ratio: 1 / 0.30;
+    transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none;
+}
+.wl-orbit-ring-outer { width: min(76%, 700px); border: 1px solid var(--line-2); }
+.wl-orbit-ring-inner { width: min(52%, 470px); border: 1px solid var(--line); }
+
+.wl-orbit-hub {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    z-index: 5; pointer-events: none; width: 104px; height: 104px;
+}
+.wl-orbit-glow {
+    position: absolute; inset: -58px; border-radius: 50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent) 0%, transparent 66%);
+}
+.wl-orbit-dashed {
+    position: absolute; inset: -16px; border-radius: 50%;
+    border: 1px dashed color-mix(in srgb, var(--accent) 26%, transparent);
+    animation: wl-ring 46s linear infinite;
+}
+.wl-orbit-core {
+    position: absolute; inset: 0; border-radius: 50%;
+    background: radial-gradient(circle at 38% 32%, #23263a, #0a0b11 72%);
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    box-shadow: var(--shadow);
+}
+.wl-orbit-count {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 11px; letter-spacing: .22em; color: var(--text-3); font-variant-numeric: tabular-nums;
+}
+
+.wl-node {
+    position: absolute; left: 0; top: 0;
+    display: flex; flex-direction: column; align-items: center; gap: 11px;
+    padding: 16px 20px; color: inherit; text-decoration: none; cursor: pointer;
+    transition: opacity .34s ease; will-change: transform, opacity;
+}
+.wl-node-dot {
+    display: block; width: 13px; height: 13px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-ghost), 0 0 20px var(--accent-dim);
+}
+.wl-node-label {
+    font-size: 11px; font-weight: 500; letter-spacing: .26em; text-transform: uppercase;
+    white-space: nowrap; color: var(--text-2);
+}
+
+.wl-cue {
+    position: absolute; bottom: var(--s-6); left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 10px; pointer-events: none;
+}
+.wl-cue-line {
+    display: block; width: 1px; height: 26px;
+    background: linear-gradient(180deg, var(--line-2), transparent);
+    animation: wl-cue 2.6s ease-in-out infinite;
+}
+
+.wl-exit {
+    position: absolute; inset: 0; background: var(--bg-1);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--s-6);
+    opacity: 0; visibility: hidden; pointer-events: none;
+}
+
+@media (max-width: 980px) {
+    .wl-hero-grid { grid-template-columns: 1fr !important; }
+    .wl-orbit { min-height: 340px !important; }
+    .wl-panels { min-height: 460px !important; }
+}
+
+/* ============================================ accueil (home.blade.php) ==== */
+/* Jeton propre à cette page — noms différents de ceux d'app.css
+   (--space-* au lieu de --s-*, etc.) : non unifié pour ne pas casser les
+   var() déjà écrites dans home.blade.php / home.js. Les valeurs qui
+   recoupent app.css (--bg, --bg-1, --text-2…) sont volontairement
+   identiques ; les redéfinir ici est sans effet sur les autres pages
+   (custom properties sur :root, jamais en conflit qu'en cas de même nom
+   ET de valeur différente — ce n'est pas le cas). */
+:root {
+    --bg: #05050a; --bg-1: #0b0c14; --bg-2: #12131d;
+    --surface: rgba(233,233,237,.05);
+    --text: #e2ddd1; --text-hi: #f2efe6;
+    --text-2: rgba(226,221,209,.62); --text-3: rgba(226,221,209,.42); --text-4: rgba(226,221,209,.28);
+    --accent: #9184d9; --accent-200: #d2cefd; --accent-300: #b3a9e6; --accent-600: rgba(145,132,217,.55); --accent-700: rgba(145,132,217,.35);
+    --divider: rgba(233,233,237,.10);
+    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --space-1: 3px; --space-2: 6px; --space-3: 9px; --space-4: 12px; --space-6: 18px; --space-8: 24px;
+    --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+    --shadow-sm: 0 0 0 1px rgba(233,233,237,.10);
+    --shadow-md: 0 0 0 1px rgba(233,233,237,.18), 0 10px 30px rgba(0,0,0,.5);
+}
+
+body.page-home { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-weight: 300; -webkit-font-smoothing: antialiased; }
+body.page-home h1, body.page-home h2, body.page-home h3 { font-family: var(--font-heading); font-weight: 500; margin: 0; }
+body.page-home a { color: var(--accent-300); text-decoration: none; }
+body.page-home a:hover { color: var(--accent-200); }
+body.page-home code { font-family: ui-monospace, monospace; }
+.nocursor,
+.nocursor a,
+.nocursor button,
+.nocursor input {
+    cursor: none !important;
+}
+
+
+@keyframes lw-marquee { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+@keyframes lw-cue { 0%,100% { transform: translateY(0); opacity: .5; } 50% { transform: translateY(7px); opacity: 1; } }
+@media (hover: none) { body.page-home [data-cursor] { display: none !important; } }
+@media (max-width: 1180px) { body.page-home [data-navlinks] { display: none !important; } }
+
+@font-face {
+    font-family: 'Lakeust';
+    src: url('/public/police/Lakeust-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body.page-home .gradient { background: linear-gradient(180deg, #ffd700 0%, #ffb347 100%); }
+body.page-home .gradient2 { background: linear-gradient(180deg, #fffb00 0%, #bc8e56 100%); }
+body.page-home .gradient3 { background: linear-gradient(180deg, #e0dc0b 0%, #bc8e56 100%); }
+
+.textured {
+    font-family: 'Lakeust', sans-serif;
+    background: url("/public/textures/texture_police.png");
+    /*background-color: transparent;*/
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.border {
+    color: var(--accent-300);
+    border-color: var(--accent-300);
+}
+
+body.page-home .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; text-decoration: none; font-family: var(--font-heading); font-weight: 500; font-size: 14px; line-height: 1.2; color: var(--text); background: transparent; border: 1px solid transparent; padding: var(--space-2) calc(var(--space-3) * 1.2); border-radius: var(--radius-md);}
+body.page-home .btn-primary { color: var(--accent-300); border-color: var(--accent-300); }
+body.page-home .btn-primary:hover { background: rgba(145,132,217,.12); color: var(--accent-200); }
+body.page-home .btn-block { width: 100%; margin-top: var(--space-2); }
+body.page-home .card { display: flex; flex-direction: column; gap: var(--space-2); border-radius: var(--radius-md); }
+body.page-home .card-title { font-family: var(--font-heading); font-weight: 500; font-size: 17px; line-height: 1.2; color: var(--text); }
+body.page-home .card-meta { font-size: 11px; }
+body.page-home .tag { display: inline-flex; align-items: center; font-size: 11px; letter-spacing: .02em; padding: 3px 10px; border-radius: calc(var(--radius-md) * .75); }
+body.page-home .tag-outline { border: 1px solid var(--accent); color: var(--accent-300); }
+body.page-home .field > label { display: block; font-size: 12px; margin-bottom: 5px; color: var(--text-2); }
+.input {
+    width: 100%;
+    min-height: 36px;
+    padding: 6px 10px;
+    font: inherit;
+    font-size: 14px;
+    color: var(--text);
+    caret-color: var(--accent);
+    background: var(--surface);
+    border: 1px solid var(--divider);
+    border-radius: var(--radius-md);
+    border-color: var(--accent-300)
+}
+body.page-home .input:hover { border-color: rgba(226,221,209,.3); }
+body.page-home .input:focus-visible { border-color: var(--accent); outline: none; }
+body.page-home textarea.input { min-height: 90px; }
+
+/* remplace les <image-slot> de la maquette — pas de photo réelle disponible */
+body.page-home .lw-ph { position: absolute; inset: 0; display: flex; align-items: flex-end; background: radial-gradient(140% 90% at 20% 0%, rgba(145,132,217,.16), transparent 60%), repeating-linear-gradient(135deg, rgba(233,233,237,.045) 0 10px, transparent 10px 20px), var(--bg-2); }
+body.page-home .lw-ph span { padding: var(--space-4); font-size: 10px; letter-spacing: .1em; line-height: 1.5; color: var(--text-4); }
+
+/* =============================================== cinématiques (wc) ==== */
+/* Socle partagé par blackhole-cinematic / forest-cinematic / orbital-cinematic
+   — Three.js (rendu) + Theatre.js (timeline), plein écran, un bouton "wc-btn". */
+
+html:has(body.page-wc) { background: #05050a; }
+body.page-wc { margin: 0; padding: 0; background: #05050a; overflow: hidden; }
+body.page-wc a, body.page-bh a { color: #d8d2c4; text-decoration: none; }
+body.page-wc a:hover, body.page-bh a:hover { color: #ffffff; }
+
+@keyframes wc-pulse { 0%, 100% { opacity: .35 } 50% { opacity: .9 } }
+@keyframes wc-scan { 0% { transform: translateY(-100%) } 100% { transform: translateY(400%) } }
+
+.wc-btn { border: 1px solid rgba(145,132,217,0.5); border-radius: 8px; background: transparent;
+          color: #e9e9ed; font-family: inherit; font-size: 10px; letter-spacing: .26em;
+          text-transform: uppercase; padding: 11px 22px; cursor: pointer; transition: background .2s, border-color .2s; }
+.wc-btn:hover { background: rgba(145,132,217,0.14); border-color: rgba(145,132,217,0.8); }
+.wc-btn:active { background: rgba(145,132,217,0.24); }
+.wc-btn:focus-visible { outline: 2px solid #9184d9; outline-offset: 2px; }
+.wc-btn-ghost { border-color: rgba(216,210,196,0.22); color: rgba(216,210,196,0.72); }
+.wc-btn-ghost:hover { background: rgba(216,210,196,0.08); border-color: rgba(216,210,196,0.44); }
+
+/* forest-cinematic — calques passifs qui finissent l'image côté DOM */
+.wc-vignette { position: absolute; inset: 0; pointer-events: none;
+               background: radial-gradient(126% 104% at 50% 46%, rgba(8,10,14,0) 44%, rgba(8,10,14,0.16) 80%, rgba(8,10,14,0.36) 100%); }
+.wc-grain { position: absolute; inset: 0; pointer-events: none; opacity: .05; mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* orbital-cinematic — points d'intérêt, positionnés par le stage (projection 3D → transform) */
+.ob-spot { position: absolute; left: 0; top: 0; opacity: 0; display: flex; align-items: center;
+           gap: 12px; text-decoration: none; transition: opacity .5s ease; }
+.ob-spot .ring { width: 13px; height: 13px; border: 1px solid rgba(145,132,217,0.85);
+                 border-radius: 50%; position: absolute; top: 50px; left: 50%; flex: none; transition: background .25s, box-shadow .25s; }
+.ob-spot .ring::after { content: ''; position: absolute; inset: 4px; border-radius: 50%;
+                        background: #9184d9; opacity: .65; }
+.ob-spot .name { font-size: 10px; letter-spacing: .28em; text-transform: uppercase;
+                 color: rgba(233,233,237,0.86); white-space: nowrap; padding: 6px 11px 7px;
+                 border: 1px solid rgba(145,132,217,0.34); border-radius: 8px;
+                 background: rgba(9,9,16,0.55); backdrop-filter: blur(8px);
+                 transition: border-color .25s, color .25s; }
+.ob-spot:hover .ring { background: rgba(145,132,217,0.35); box-shadow: 0 0 18px rgba(145,132,217,0.55); }
+.ob-spot:hover .name { color: #fff; border-color: rgba(145,132,217,0.8); }
+.ob-spot:focus-visible { outline: 2px solid #9184d9; outline-offset: 6px; border-radius: 8px; }
+
+/* ==================================================== /blackhole (bh) ==== */
+/* Démo seule du trou noir, sans Theatre.js ni bouton wc-btn. */
+
+html:has(body.page-bh) { background: #05050a; }
+body.page-bh {
+    margin: 0; padding: 0; height: 100%; background: #05050a; overflow: hidden;
+    font-family: Inter, system-ui, sans-serif; color: #d8d2c4; user-select: none; -webkit-font-smoothing: antialiased;
+}
+body.page-bh button:focus-visible, body.page-bh [data-bh="again"]:focus-visible { outline: 2px solid #9184d9; outline-offset: 2px; }
+
+@keyframes bh-drift { 0% { transform: translateY(0); opacity: .25 } 45% { opacity: .85 } 100% { transform: translateY(18px); opacity: 0 } }
+@keyframes bh-breathe { 0%, 100% { opacity: .34 } 50% { opacity: .68 } }
+
+.multi {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    columns: 3; /* nombre de colonnes */
+    column-gap: var(--space-4); /* espace entre colonnes */
+}
+
+.multi li {
+    break-inside: avoid; /* évite les coupures moches */
+    margin-bottom: var(--space-4);
+}

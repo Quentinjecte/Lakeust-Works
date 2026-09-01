@@ -1,0 +1,102 @@
+/* ================================================== Animation Lab ==== */
+/* Écran « Orbite » (10e scène, data-sa-scr="10") : le carrefour du site
+   (welcome.blade.php) porté tel quel — mêmes classes .wl-*, mêmes jetons
+   app.css (déjà chargé via layouts.site), donc reprises de web.css sans
+   changement de valeur, seulement scopées sous [data-sa-root] puisque
+   cette page est la seule du labo à les utiliser. Pas de bascule FR/EN
+   isolée avec le reste (voir orbit-lab.js) : l'anglais reste masqué. */
+
+[data-sa-root] .i18n-en { display: none; }
+
+@keyframes sa-wl-cue { 0%, 100% { transform: translateY(0); opacity: .35 } 50% { transform: translateY(7px); opacity: .9 } }
+@keyframes sa-wl-ring { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
+
+[data-sa-root] .wl-hero {
+    background: radial-gradient(78% 62% at 66% 50%, color-mix(in srgb, var(--accent) 9%, transparent) 0%, transparent 68%), var(--bg-1);
+    color: var(--text); font-family: var(--font);
+}
+[data-sa-root] .wl-hero-grid {
+    position: relative; flex: 1; display: grid;
+    grid-template-columns: minmax(340px, 37%) 1fr;
+    align-items: center; gap: var(--s-8);
+    padding: calc(var(--s-8) * 1.6) var(--gutter) calc(var(--s-8) * 2.2);
+}
+[data-sa-root] .wl-panels { position: relative; min-height: 452px; }
+[data-sa-root] .wl-panel {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: center; gap: var(--s-6);
+}
+[data-sa-root] .wl-panel[data-panel="branch"] { opacity: 0; visibility: hidden; pointer-events: none; }
+[data-sa-root] .wl-panel-kicker { display: flex; align-items: baseline; gap: var(--s-4); font-size: 11px; letter-spacing: .28em; text-transform: uppercase; }
+[data-sa-root] .wl-panel-divider { display: flex; align-items: center; gap: var(--s-4); }
+[data-sa-root] .wl-panel-divider .mark { width: clamp(28px, 5vw, 64px); }
+[data-sa-root] .wl-shot { max-width: 420px; }
+
+[data-sa-root] .wl-orbit { position: relative; min-height: 420px; height: 100%; }
+[data-sa-root] .wl-orbit-ring {
+    position: absolute; left: 50%; top: 50%; aspect-ratio: 1 / 0.30;
+    transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none;
+}
+[data-sa-root] .wl-orbit-ring-outer { width: min(76%, 700px); border: 1px solid var(--line-2); }
+[data-sa-root] .wl-orbit-ring-inner { width: min(52%, 470px); border: 1px solid var(--line); }
+
+[data-sa-root] .wl-orbit-hub {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    z-index: 5; pointer-events: none; width: 104px; height: 104px;
+}
+[data-sa-root] .wl-orbit-glow {
+    position: absolute; inset: -58px; border-radius: 50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent) 0%, transparent 66%);
+}
+[data-sa-root] .wl-orbit-dashed {
+    position: absolute; inset: -16px; border-radius: 50%;
+    border: 1px dashed color-mix(in srgb, var(--accent) 26%, transparent);
+    animation: sa-wl-ring 46s linear infinite;
+}
+[data-sa-root] .wl-orbit-core {
+    position: absolute; inset: 0; border-radius: 50%;
+    background: radial-gradient(circle at 38% 32%, #23263a, #0a0b11 72%);
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    box-shadow: var(--shadow);
+}
+[data-sa-root] .wl-orbit-count {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 11px; letter-spacing: .22em; color: var(--text-3); font-variant-numeric: tabular-nums;
+}
+
+[data-sa-root] .wl-node {
+    position: absolute; left: 0; top: 0;
+    display: flex; flex-direction: column; align-items: center; gap: 11px;
+    padding: 16px 20px; color: inherit; text-decoration: none; cursor: pointer;
+    transition: opacity .34s ease; will-change: transform, opacity;
+}
+[data-sa-root] .wl-node-dot {
+    display: block; width: 13px; height: 13px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-ghost), 0 0 20px var(--accent-dim);
+}
+[data-sa-root] .wl-node-label {
+    font-size: 11px; font-weight: 500; letter-spacing: .26em; text-transform: uppercase;
+    white-space: nowrap; color: var(--text-2);
+}
+
+[data-sa-root] .wl-cue {
+    position: absolute; bottom: var(--s-6); left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 10px; pointer-events: none;
+}
+[data-sa-root] .wl-cue-line {
+    display: block; width: 1px; height: 26px;
+    background: linear-gradient(180deg, var(--line-2), transparent);
+    animation: sa-wl-cue 2.6s ease-in-out infinite;
+}
+
+[data-sa-root] .wl-exit {
+    position: absolute; inset: 0; background: var(--bg-1);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--s-6);
+    opacity: 0; visibility: hidden; pointer-events: none;
+}
+
+@media (max-width: 980px) {
+    [data-sa-root] .wl-hero-grid { grid-template-columns: 1fr !important; }
+    [data-sa-root] .wl-orbit { min-height: 320px !important; }
+    [data-sa-root] .wl-panels { min-height: 460px !important; }
+}

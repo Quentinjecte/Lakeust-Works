@@ -1,0 +1,71 @@
+name: Deploy static export to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, pdo_sqlite, sqlite3
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install PHP dependencies
+        run: composer install --no-dev --optimize-autoloader --prefer-dist
+
+      - name: Install JS dependencies
+        run: npm ci
+
+      # .env jetable pour ce run : aucune donnée réelle, tout est régénéré à
+      # chaque déploiement (base SQLite vierge, clé fraîche). APP_URL pointe
+      # le domaine final pour que route()/asset() écrivent les bonnes URLs
+      # absolues dans le HTML figé — voir la note dans export:static.
+      - name: Configure environment
+        run: |
+          cp .env.example .env
+          sed -i 's|^APP_ENV=.*|APP_ENV=production|' .env
+          sed -i 's|^APP_DEBUG=.*|APP_DEBUG=false|' .env
+          sed -i 's|^APP_URL=.*|APP_URL=https://lakeust.works|' .env
+          php artisan key:generate --force
+          touch database/database.sqlite
+          php artisan migrate --force
+
+      - name: Build front-end assets
+        run: npm run build
+
+      - name: Export static site
+        run: php artisan export:static
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

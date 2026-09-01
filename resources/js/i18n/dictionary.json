@@ -1,0 +1,1810 @@
+{
+  "nav.about": {
+    "fr": "À propos",
+    "en": "About"
+  },
+  "nav.works": {
+    "fr": "Travaux",
+    "en": "Work"
+  },
+  "nav.project": {
+    "fr": "Projet",
+    "en": "Project"
+  },
+  "nav.lab": {
+    "fr": "Laboratoire",
+    "en": "Lab"
+  },
+  "nav.contact": {
+    "fr": "Contact",
+    "en": "Contact"
+  },
+  "footer.brand": {
+    "fr": "Lakeust Works",
+    "en": "Lakeust Works"
+  },
+  "footer.tagline": {
+    "fr": "Placeholder — mentions, année, localisation.",
+    "en": "Placeholder — legal notice, year, location."
+  },
+  "lang.aria": {
+    "fr": "Langue",
+    "en": "Language"
+  },
+  "works.index": {
+    "fr": "Index — 2020 / 2026",
+    "en": "Index — 2020 / 2026"
+  },
+  "works.title": {
+    "fr": "Travaux",
+    "en": "Work"
+  },
+  "works.lead": {
+    "fr": "Texte de remplacement. La bande ci-dessous se déplace horizontalement au fil du scroll vertical.",
+    "en": "Placeholder text. The row below moves horizontally as you scroll down."
+  },
+  "works.selection": {
+    "fr": "Sélection",
+    "en": "Selection"
+  },
+  "works.games": {
+    "fr": "Nos Jeux",
+    "en": "Our Games"
+  },
+  "nav.games": {
+    "fr": "Nos Jeux",
+    "en": "Our Games"
+  },
+  "works.games.index": {
+    "fr": "Jeux — 2020 / 2026",
+    "en": "Games — 2020 / 2026"
+  },
+  "works.games.lead": {
+    "fr": "Le pôle Studio construit des jeux Unity, du prototype à la sortie. Un titre est actuellement en production active, les autres avancent en parallèle.",
+    "en": "The Studio side builds Unity games, from prototype to release. One title is currently in active production, the others move forward alongside it."
+  },
+  "works.development": {
+    "fr": "En développement",
+    "en": "In development"
+  },
+  "works.archive": {
+    "fr": "Archive",
+    "en": "Archive"
+  },
+  "works.project": {
+    "fr": "Projet",
+    "en": "Project"
+  },
+  "works.project.archived": {
+    "fr": "Projet archivé",
+    "en": "Archived project"
+  },
+  "works.placeholder.desc": {
+    "fr": "Placeholder — une ligne de description.",
+    "en": "Placeholder — one line of description."
+  },
+  "works.placeholder.card": {
+    "fr": "Placeholder.",
+    "en": "Placeholder."
+  },
+  "works.open": {
+    "fr": "Ouvrir",
+    "en": "Open"
+  },
+  "project.hero.kicker": {
+    "fr": "En développement — PC",
+    "en": "In development — PC"
+  },
+  "project.hero.lead": {
+    "fr": "Un jeu de chasse coopératif en première personne, où chaque mission vous confronte à des créatures préhistoriques imprévisibles.",
+    "en": "A first-person co-op hunting game, where every mission pits you against unpredictable prehistoric creatures."
+  },
+  "project.hero.cta.discover": {
+    "fr": "Découvrir le projet",
+    "en": "Discover the project"
+  },
+  "project.hero.cta.showcase": {
+    "fr": "Voir le showcase",
+    "en": "See the showcase"
+  },
+  "project.meta.role": {
+    "fr": "Rôle",
+    "en": "Role"
+  },
+  "project.meta.role.value": {
+    "fr": "Conception & développement",
+    "en": "Design & development"
+  },
+  "project.meta.status": {
+    "fr": "Statut",
+    "en": "Status"
+  },
+  "project.meta.status.value": {
+    "fr": "En développement",
+    "en": "In development"
+  },
+  "project.meta.captures": {
+    "fr": "Voir les captures",
+    "en": "See the screenshots"
+  },
+  "project.hunt.title": {
+    "fr": "Traquer. Observer. Préparer. Contenir.",
+    "en": "Track. Observe. Prepare. Contain."
+  },
+  "project.hunt.p1": {
+    "fr": "Jurassic Containment est un jeu coopératif de chasse en première personne. Rejoignez une équipe de contractants envoyés sur des zones isolées pour localiser, traquer et contenir des spécimens dangereux.",
+    "en": "Jurassic Containment is a first-person co-op hunting game. Join a team of contractors sent to isolated zones to locate, track and contain dangerous specimens."
+  },
+  "project.hunt.p2": {
+    "fr": "Chaque mission vous demande de vous adapter au terrain, à votre équipement et surtout à votre cible.",
+    "en": "Every mission asks you to adapt to the terrain, your equipment and above all your target."
+  },
+  "project.stat.env": {
+    "fr": "États environnement",
+    "en": "Environment states"
+  },
+  "project.stat.coop": {
+    "fr": "Contractants co-op",
+    "en": "Co-op contractors"
+  },
+  "project.stat.attrs": {
+    "fr": "Attributs par mission",
+    "en": "Attributes per mission"
+  },
+  "project.gameplay.lead": {
+    "fr": "Votre objectif principal est simple : retrouver et neutraliser ou capturer le spécimen ciblé. Mais une mission ne se résume jamais à une simple chasse.",
+    "en": "Your main objective is simple: find and neutralise or capture the targeted specimen. But a mission is never just a simple hunt."
+  },
+  "project.relay.label": {
+    "fr": "Relais coupé",
+    "en": "Relay down"
+  },
+  "project.relay.desc": {
+    "fr": "Un relais détruit peut couper vos communications.",
+    "en": "A destroyed relay can cut your communications."
+  },
+  "project.zone.compromised": {
+    "fr": "Zone compromise",
+    "en": "Zone compromised"
+  },
+  "project.extraction.label": {
+    "fr": "Extraction dangereuse",
+    "en": "Dangerous extraction"
+  },
+  "project.extraction.desc": {
+    "fr": "Un spécimen agressif peut transformer une opération contrôlée en véritable situation de survie.",
+    "en": "An aggressive specimen can turn a controlled operation into a genuine survival situation."
+  },
+  "project.env.label": {
+    "fr": "Environnement",
+    "en": "Environment"
+  },
+  "project.env.lead": {
+    "fr": "Les opérations prennent place dans des environnements sauvages où les conditions peuvent radicalement changer l'expérience de jeu.",
+    "en": "Operations take place in wild environments where conditions can radically change the gameplay experience."
+  },
+  "project.atmo.p1": {
+    "fr": "La forêt est silencieuse. Trop silencieuse.",
+    "en": "The forest is silent. Too silent."
+  },
+  "project.atmo.p2": {
+    "fr": "Entre les arbres, quelque chose bouge. Vous ne savez pas encore quoi. Vous savez seulement que vous n'avez pas beaucoup de temps. Jurassic Containment cherche à construire une tension constante autour de la chasse, de l'exploration et de l'inconnu.",
+    "en": "Between the trees, something moves. You don't know what yet. You only know you don't have much time. Jurassic Containment aims to build a constant tension around the hunt, the exploration and the unknown."
+  },
+  "project.prep.label": {
+    "fr": "Préparation",
+    "en": "Preparation"
+  },
+  "project.prep.p1": {
+    "fr": "Avant chaque mission, les joueurs retrouvent leur quartier général. C'est ici que vous préparez votre prochaine opération, sélectionnez votre équipement, consultez les informations disponibles et choisissez votre prochaine destination.",
+    "en": "Before each mission, players return to their headquarters. This is where you prepare your next operation, select your equipment, review available intel and choose your next destination."
+  },
+  "project.prep.p2": {
+    "fr": "Armes, munitions, gadgets et consommables peuvent être sélectionnés en fonction de la mission et de votre rôle au sein de l'équipe. Le QG n'est pas simplement un menu — c'est votre point de départ.",
+    "en": "Weapons, ammo, gadgets and consumables can be selected based on the mission and your role within the team. HQ isn't just a menu — it's your starting point."
+  },
+  "project.arsenal.lead": {
+    "fr": "Chaque contractant compose son propre chargement avant le déploiement : arme principale, munitions adaptées à la cible, gadgets de reconnaissance et consommables de survie.",
+    "en": "Each contractor builds their own loadout before deployment: primary weapon, ammo suited to the target, recon gadgets and survival consumables."
+  },
+  "project.arsenal.weapons": {
+    "fr": "Armes",
+    "en": "Weapons"
+  },
+  "project.arsenal.ammo": {
+    "fr": "Munitions",
+    "en": "Ammunition"
+  },
+  "project.arsenal.gadgets": {
+    "fr": "Gadgets",
+    "en": "Gadgets"
+  },
+  "project.arsenal.consumables": {
+    "fr": "Consommables",
+    "en": "Consumables"
+  },
+  "project.mission.lead": {
+    "fr": "Les missions sont sélectionnées depuis le centre des opérations. Explorez les différentes régions disponibles, identifiez les zones actives et consultez les informations de chaque opération avant de vous déployer.",
+    "en": "Missions are selected from the operations centre. Explore the available regions, identify active zones and review each operation's intel before deploying."
+  },
+  "project.mission.each": {
+    "fr": "Chaque mission présente ses propres :",
+    "en": "Each mission has its own:"
+  },
+  "project.mission.specimens": {
+    "fr": "Spécimens",
+    "en": "Specimens"
+  },
+  "project.mission.objectives": {
+    "fr": "Objectifs",
+    "en": "Objectives"
+  },
+  "project.mission.danger": {
+    "fr": "Niveaux de danger",
+    "en": "Danger levels"
+  },
+  "project.mission.rewards": {
+    "fr": "Récompenses",
+    "en": "Rewards"
+  },
+  "project.mission.conditions": {
+    "fr": "Conditions d'opération",
+    "en": "Operating conditions"
+  },
+  "project.dinos.lead": {
+    "fr": "Les spécimens rencontrés durant les opérations ne sont pas de simples ennemis. Ils peuvent se déplacer, fuir, attaquer et réagir à votre présence. Votre approche doit donc évoluer en fonction de votre cible.",
+    "en": "The specimens encountered during operations aren't simple enemies. They can move, flee, attack and react to your presence. Your approach has to adapt to your target."
+  },
+  "project.dino.stegosaurus": {
+    "fr": "Stégosaure",
+    "en": "Stegosaurus"
+  },
+  "project.dino.pachy": {
+    "fr": "Pachycéphalosaure",
+    "en": "Pachycephalosaurus"
+  },
+  "project.dino.foreground": {
+    "fr": "Au premier plan",
+    "en": "In the foreground"
+  },
+  "project.coop.p1": {
+    "fr": "Jouez en équipe et coordonnez vos actions pour accomplir votre mission. Chaque joueur peut contribuer différemment à l'opération : exploration, soutien, combat, capture ou gestion de l'équipement.",
+    "en": "Play as a team and coordinate your actions to complete the mission. Every player can contribute differently to the operation: scouting, support, combat, capture or equipment management."
+  },
+  "project.coop.p2": {
+    "fr": "Une bonne préparation peut faire la différence entre une mission réussie et une extraction catastrophique.",
+    "en": "Good preparation can make the difference between a successful mission and a catastrophic extraction."
+  },
+  "project.progression.p1": {
+    "fr": "Chaque opération contribue à votre progression. Gagnez de l'expérience, développez votre réputation et débloquez progressivement de nouvelles possibilités pour votre équipement et vos missions.",
+    "en": "Every operation contributes to your progression. Earn experience, build your reputation and gradually unlock new options for your equipment and missions."
+  },
+  "project.progression.p2": {
+    "fr": "Votre réputation ouvre l'accès à des opérations plus dangereuses — et à des récompenses plus importantes.",
+    "en": "Your reputation opens access to more dangerous operations — and bigger rewards."
+  },
+  "project.ui.lead": {
+    "fr": "Dans Jurassic Containment, l'interface ne se contente pas d'afficher des informations. Elle fait partie de l'univers. Du quartier général aux briefings de mission, chaque écran est conçu comme un outil utilisé par les contractants de Lakeust BioGen.",
+    "en": "In Jurassic Containment, the interface doesn't just display information. It's part of the world. From headquarters to mission briefings, every screen is designed as a tool used by Lakeust BioGen's contractors."
+  },
+  "project.gallery.title": {
+    "fr": "Galerie",
+    "en": "Gallery"
+  },
+  "project.gallery.hint": {
+    "fr": "Glisser · flèches · ← →",
+    "en": "Drag · arrows · ← →"
+  },
+  "project.dev.lead": {
+    "fr": "Jurassic Containment est actuellement en développement. Le projet évolue progressivement autour de plusieurs axes :",
+    "en": "Jurassic Containment is currently in development. The project is progressively evolving around several axes:"
+  },
+  "project.dev.gameplay": {
+    "fr": "Développer les mécaniques de chasse, de capture et de coopération.",
+    "en": "Develop the hunting, capture and cooperation mechanics."
+  },
+  "project.dev.world": {
+    "fr": "Construire différents environnements et zones d'opération.",
+    "en": "Build different environments and operation zones."
+  },
+  "project.dev.creatures": {
+    "fr": "Développer des spécimens avec des comportements et des situations de chasse variés.",
+    "en": "Develop specimens with varied behaviours and hunting situations."
+  },
+  "project.dev.systems": {
+    "fr": "Construire les systèmes de progression, d'équipement, de missions et de coopération.",
+    "en": "Build the progression, equipment, mission and cooperation systems."
+  },
+  "project.cta.kicker": {
+    "fr": "Le monde n'est pas prêt. Votre équipe non plus.",
+    "en": "The world isn't ready. Neither is your team."
+  },
+  "project.cta.allworks": {
+    "fr": "Tous les travaux",
+    "en": "All work"
+  },
+  "lab.title": {
+    "fr": "Laboratoire",
+    "en": "Lab"
+  },
+  "lab.subtitle": {
+    "fr": "Six mécaniques.",
+    "en": "Six mechanics."
+  },
+  "lab.status": {
+    "fr": "Prototypé",
+    "en": "Prototyped"
+  },
+  "lab.open": {
+    "fr": "Ouvrir",
+    "en": "Open"
+  },
+  "lab.cat.barba": {
+    "fr": "Rien ne défile. Le document entier tient dans l'écran et le scroll ne déplace que le point de lecture : la bande visée s'ouvre, les autres se compriment en filets.",
+    "en": "Nothing scrolls. The whole document fits on screen and scrolling only moves the reading point: the targeted band opens, the others compress into threads."
+  },
+  "lab.cat.scroll": {
+    "fr": "Rien ne défile. Le document entier tient dans l'écran et le scroll ne déplace que le point de lecture : la bande visée s'ouvre, les autres se compriment en filets.",
+    "en": "Nothing scrolls. The whole document fits on screen and scrolling only moves the reading point: the targeted band opens, the others compress into threads."
+  },
+  "lab.cat.three": {
+    "fr": "Rien ne défile. Le document entier tient dans l'écran et le scroll ne déplace que le point de lecture : la bande visée s'ouvre, les autres se compriment en filets.",
+    "en": "Nothing scrolls. The whole document fits on screen and scrolling only moves the reading point: the targeted band opens, the others compress into threads."
+  },
+  "lab.cat.animation": {
+    "fr": "Rien ne défile. Le document entier tient dans l'écran et le scroll ne déplace que le point de lecture : la bande visée s'ouvre, les autres se compriment en filets.",
+    "en": "Nothing scrolls. The whole document fits on screen and scrolling only moves the reading point: the targeted band opens, the others compress into threads."
+  },
+  "lab.cat.carousel": {
+    "fr": "Une seule valeur — la position fractionnaire dans la liste — pilote six dispositions spatiales et deux transitions par post-traitement sur les mêmes huit plans.",
+    "en": "A single value — the fractional position in the list — drives six spatial layouts and two post-processing transitions across the same eight planes."
+  },
+  "lab.cat.chevron": {
+    "fr": "Deux bras de chevron partant d'un même apex, découpés en polygones SVG exacts : chaque bande vient buter contre la précédente, jamais de recouvrement, même en mouvement.",
+    "en": "Two chevron arms starting from the same apex, cut into exact SVG polygons: each band butts against the previous one, never overlapping, even in motion."
+  },
+  "lab.title.catalogue": {
+    "fr": "Catalogue",
+    "en": "Catalogue"
+  },
+  "lab.field.trigger": {
+    "fr": "Déclenche",
+    "en": "Trigger"
+  },
+  "lab.field.seen": {
+    "fr": "Vu",
+    "en": "Seen"
+  },
+  "lab.field.tech": {
+    "fr": "Tech",
+    "en": "Tech"
+  },
+  "lab.field.cost": {
+    "fr": "Coût",
+    "en": "Cost"
+  },
+  "lab.field.portfolio": {
+    "fr": "Portfolio",
+    "en": "Portfolio"
+  },
+  "barba.intro": {
+    "fr": "Dix scènes du système de transitions Barba, chacune une démonstration autonome sur un mock de navigateur. Quatre sont réellement chargées sur le site (01, 02, 03, 04) ; les six autres prolongent la réflexion vers des techniques non encore branchées.",
+    "en": "Ten scenes from the Barba transition system, each a standalone demo on a mock browser. Four are actually loaded on the site (01, 02, 03, 04); the other six extend the thinking toward techniques not wired up yet."
+  },
+  "barba.cat.1.desc": {
+    "fr": "Le blanc monte à 80 %, jamais à 100 % — le plafond de la traversée nuageuse du cinématique. Le conteneur est échangé au sommet du voile, page sortante déjà floue.",
+    "en": "The white rises to 80%, never 100% — the ceiling of the cinematic's cloud crossing. The container swaps at the peak of the veil, the outgoing page already blurred."
+  },
+  "barba.cat.1.trigger": {
+    "fr": "Clic sur un lien interne ; Barba intercepte et attend la promesse de leave avant le swap.",
+    "en": "Click on an internal link; Barba intercepts and waits for the leave promise before the swap."
+  },
+  "barba.cat.1.seen": {
+    "fr": "Flou + voile blanc montant, contenu échangé au sommet, puis le voile redescend sur la nouvelle page.",
+    "en": "Blur + rising white veil, content swapped at the peak, then the veil falls back over the new page."
+  },
+  "barba.cat.1.tech": {
+    "fr": "gsap.to sur filter/opacity, deux tweens chaînés (leave 520 ms, enter 680 ms).",
+    "en": "gsap.to on filter/opacity, two chained tweens (leave 520ms, enter 680ms)."
+  },
+  "barba.cat.1.cost": {
+    "fr": "Faible — c'est la règle par défaut du site, déjà en place partout où aucune paire plus spécifique ne matche.",
+    "en": "Low — this is the site's default rule, already in place wherever no more specific pair matches."
+  },
+  "barba.cat.1.portfolio": {
+    "fr": "Déjà en production — c'est le filet de sécurité de toute navigation.",
+    "en": "Already in production — it's the safety net for every navigation."
+  },
+  "barba.cat.2.desc": {
+    "fr": "La ligne se trace d'abord, les deux panneaux se referment sur elle, puis rouvrent sur la page suivante.",
+    "en": "The line draws first, the two panels close over it, then reopen onto the next page."
+  },
+  "barba.cat.2.trigger": {
+    "fr": "Navigation à propos ↔ travaux.",
+    "en": "About ↔ Work navigation."
+  },
+  "barba.cat.2.seen": {
+    "fr": "Une ligne lumineuse qui se dessine, deux panneaux qui se referment dessus puis rouvrent sur le contenu suivant.",
+    "en": "A glowing line that draws itself, two panels that close over it then reopen onto the next content."
+  },
+  "barba.cat.2.tech": {
+    "fr": "leave() dessine la ligne puis ferme les panneaux ; Barba attend la promesse — pas de raccourci possible.",
+    "en": "leave() draws the line then closes the panels; Barba waits for the promise — no shortcut possible."
+  },
+  "barba.cat.2.cost": {
+    "fr": "Faible — deux tweens séquencés, aucun état à réconcilier.",
+    "en": "Low — two sequenced tweens, no state to reconcile."
+  },
+  "barba.cat.2.portfolio": {
+    "fr": "Déjà en production entre à-propos et travaux.",
+    "en": "Already in production between About and Work."
+  },
+  "barba.cat.3.desc": {
+    "fr": "Perte de signal : la page s'assombrit, un balayage passe deux fois, le relevé de route s'affiche, puis le contenu revient par paliers.",
+    "en": "Signal loss: the page darkens, a sweep passes twice, the route readout appears, then the content returns in steps."
+  },
+  "barba.cat.3.trigger": {
+    "fr": "Navigation travaux ↔ projet.",
+    "en": "Work ↔ Project navigation."
+  },
+  "barba.cat.3.seen": {
+    "fr": "Assombrissement, double balayage lumineux, relevé de route (namespaces), retour par paliers steps().",
+    "en": "Darkening, double light sweep, route readout (namespaces), stepped return via steps()."
+  },
+  "barba.cat.3.tech": {
+    "fr": "Relevé composé depuis les namespaces des deux vues, disponibles dans leave().",
+    "en": "Readout built from both views' namespaces, available inside leave()."
+  },
+  "barba.cat.3.cost": {
+    "fr": "Moyen — la seule transition du jeu qui affiche la navigation elle-même, donc la seule à lire le contexte des deux pages.",
+    "en": "Medium — the only transition in the set that displays the navigation itself, so the only one reading both pages' context."
+  },
+  "barba.cat.3.portfolio": {
+    "fr": "Déjà en production entre travaux et projet.",
+    "en": "Already in production between Work and Project."
+  },
+  "barba.cat.4.desc": {
+    "fr": "L'ouverture se referme jusqu'au noir complet, l'anneau tient 200 ms sur la bascule, puis rouvre sur la page suivante.",
+    "en": "The opening closes down to full black, the ring holds for 200ms at the switch, then reopens onto the next page."
+  },
+  "barba.cat.4.trigger": {
+    "fr": "Navigation à propos ↔ projet.",
+    "en": "About ↔ Project navigation."
+  },
+  "barba.cat.4.seen": {
+    "fr": "Un disque qui se referme jusqu'au noir, un anneau lumineux qui tient la bascule, puis une ouverture progressive.",
+    "en": "A disc that closes down to black, a glowing ring holding the switch, then a gradual opening."
+  },
+  "barba.cat.4.tech": {
+    "fr": "La couverture vient d'un box-shadow à écartement constant : on anime la taille de l'ouverture, jamais un scale.",
+    "en": "Coverage comes from a constant-spread box-shadow: the opening's size is animated, never a scale."
+  },
+  "barba.cat.4.cost": {
+    "fr": "Moyen — le piège du scale sur l'ombre est le genre d'erreur qui ne se voit qu'à l'écran.",
+    "en": "Medium — the scale-on-shadow trap is the kind of mistake you only catch on screen."
+  },
+  "barba.cat.4.portfolio": {
+    "fr": "Déjà en production entre à-propos et projet.",
+    "en": "Already in production between About and Project."
+  },
+  "barba.cat.5.desc": {
+    "fr": "Avec sync: true, les deux conteneurs coexistent dans le document : le sortant part à gauche pendant que l'entrant arrive de la droite.",
+    "en": "With sync: true, both containers coexist in the document: the outgoing one leaves to the left while the incoming one arrives from the right."
+  },
+  "barba.cat.5.trigger": {
+    "fr": "Piste non branchée sur le site.",
+    "en": "Not wired up on the live site."
+  },
+  "barba.cat.5.seen": {
+    "fr": "Les deux pages glissent en même temps, côte à côte, au lieu de se succéder.",
+    "en": "Both pages slide at the same time, side by side, instead of one after the other."
+  },
+  "barba.cat.5.tech": {
+    "fr": "Sans ce drapeau, leave doit finir avant qu'enter commence — un raccord immédiat est alors impossible.",
+    "en": "Without this flag, leave must finish before enter starts — an immediate join is then impossible."
+  },
+  "barba.cat.5.cost": {
+    "fr": "Élevé — gérer deux conteneurs vivants en même temps complique tout ce qui suit (scroll, focus, mesures).",
+    "en": "High — managing two live containers at once complicates everything downstream (scroll, focus, measurements)."
+  },
+  "barba.cat.5.portfolio": {
+    "fr": "Faible aujourd'hui : aucune paire de routes du site n'en a besoin.",
+    "en": "Low today: no route pair on the site needs it."
+  },
+  "barba.cat.6.desc": {
+    "fr": "Une transition par paire de vues. Barba retient la première règle qui correspond : les paires spécifiques d'abord, la règle sans condition en dernier recours.",
+    "en": "One transition per view pair. Barba keeps the first matching rule: specific pairs first, the unconditional rule as a last resort."
+  },
+  "barba.cat.6.trigger": {
+    "fr": "Choix d'un départ et d'une arrivée dans le sélecteur.",
+    "en": "Choosing a start and destination in the selector."
+  },
+  "barba.cat.6.seen": {
+    "fr": "La règle appliquée s'allume dans la liste selon la paire choisie.",
+    "en": "The applied rule lights up in the list depending on the chosen pair."
+  },
+  "barba.cat.6.tech": {
+    "fr": "TRANSITIONS dans barba-transitions.js ; les namespaces viennent du nom de route Blade (data-barba-namespace).",
+    "en": "TRANSITIONS in barba-transitions.js; the namespaces come from the Blade route name (data-barba-namespace)."
+  },
+  "barba.cat.6.cost": {
+    "fr": "Faible — c'est une lecture, pas une animation.",
+    "en": "Low — it's a read, not an animation."
+  },
+  "barba.cat.6.portfolio": {
+    "fr": "C'est la table réellement chargée sur le site — documentation vivante plus qu'effet.",
+    "en": "This is the table actually loaded on the site — living documentation more than an effect."
+  },
+  "barba.cat.7.desc": {
+    "fr": "Ce qui doit vivre et mourir avec une page : reveals, scrub, parallax, et les sections épinglées ScrollTrigger de /projet.",
+    "en": "What has to live and die with a page: reveals, scrub, parallax, and the pinned ScrollTrigger sections of /project."
+  },
+  "barba.cat.7.trigger": {
+    "fr": "Entrée/sortie du conteneur Barba (afterEnter / beforeLeave).",
+    "en": "Barba container entry/exit (afterEnter / beforeLeave)."
+  },
+  "barba.cat.7.seen": {
+    "fr": "Un journal des montages/démontages au fil des navigations simulées.",
+    "en": "A log of mounts/unmounts as simulated navigations happen."
+  },
+  "barba.cat.7.tech": {
+    "fr": "bootPageSystems() et project.dispose() — sans démontage, ScrollTrigger garde les bornes de la page précédente.",
+    "en": "bootPageSystems() and project.dispose() — without teardown, ScrollTrigger keeps the previous page's bounds."
+  },
+  "barba.cat.7.cost": {
+    "fr": "Moyen — l'oubli est silencieux : la fuite ne se voit qu'après plusieurs navigations.",
+    "en": "Medium — forgetting it is silent: the leak only shows after several navigations."
+  },
+  "barba.cat.7.portfolio": {
+    "fr": "C'est le cycle réel du site — pas un effet, un garde-fou.",
+    "en": "This is the site's actual lifecycle — not an effect, a safeguard."
+  },
+  "barba.cat.8.desc": {
+    "fr": "La vignette cliquée devient l'image de tête de la fiche. Mesure avant, mesure après, une seule interpolation : le lien visuel remplace la transition.",
+    "en": "The clicked thumbnail becomes the page's header image. Measure before, measure after, one interpolation: the visual link replaces the transition."
+  },
+  "barba.cat.8.trigger": {
+    "fr": "Piste non branchée sur le site.",
+    "en": "Not wired up on the live site."
+  },
+  "barba.cat.8.seen": {
+    "fr": "Une vignette qui grandit et se déplace jusqu'à devenir l'image d'en-tête de la page suivante.",
+    "en": "A thumbnail that grows and moves until it becomes the next page's header image."
+  },
+  "barba.cat.8.tech": {
+    "fr": "FLIP : les deux conteneurs coexistent le temps de la mesure (sync: true), un couple d'attributs apparie source et cible.",
+    "en": "FLIP: both containers coexist during measurement (sync: true), a pair of attributes matches source and target."
+  },
+  "barba.cat.8.cost": {
+    "fr": "Élevé — /travaux n'a pas encore de vignettes de projet à apparier.",
+    "en": "High — /works doesn't yet have project thumbnails to pair up."
+  },
+  "barba.cat.8.portfolio": {
+    "fr": "Fort si des vignettes de projet existent un jour — le lien visuel est plus lisible qu'un fondu.",
+    "en": "Strong if project thumbnails exist one day — the visual link reads better than a fade."
+  },
+  "barba.cat.9.desc": {
+    "fr": "Le greffon @barba/prefetch demande la page au survol du lien. Au clic, il ne reste que la peinture : la transition démarre sur un cache chaud.",
+    "en": "The @barba/prefetch plugin requests the page on link hover. On click, only the paint is left: the transition starts on a warm cache."
+  },
+  "barba.cat.9.trigger": {
+    "fr": "Survol d'un lien interne.",
+    "en": "Hovering an internal link."
+  },
+  "barba.cat.9.seen": {
+    "fr": "Comparaison de l'attente réseau observée entre un lien préchargé et un lien qui ne l'est pas.",
+    "en": "A comparison of the network wait observed between a prefetched link and one that isn't."
+  },
+  "barba.cat.9.tech": {
+    "fr": "@barba/prefetch, greffon non installé sur le site — cette scène simule seulement l'écart qu'il supprimerait.",
+    "en": "@barba/prefetch, a plugin not installed on the site — this scene only simulates the gap it would remove."
+  },
+  "barba.cat.9.cost": {
+    "fr": "Faible à installer, mais dépense du réseau sur des liens jamais cliqués.",
+    "en": "Cheap to install, but spends network on links never clicked."
+  },
+  "barba.cat.9.portfolio": {
+    "fr": "Moyen — gain surtout perceptible sur mobile ou réseau lent.",
+    "en": "Medium — the gain is mostly noticeable on mobile or a slow network."
+  },
+  "barba.cat.10.desc": {
+    "fr": "Un canvas Three.js pourrait vivre hors du conteneur Barba : jamais démonté, seule l'interface serait échangée pendant que la scène continue de tourner.",
+    "en": "A Three.js canvas could live outside the Barba container: never torn down, only the UI swapped while the scene keeps running."
+  },
+  "barba.cat.10.trigger": {
+    "fr": "Piste non branchée sur le site.",
+    "en": "Not wired up on the live site."
+  },
+  "barba.cat.10.seen": {
+    "fr": "Simulation de ce qu'il faudrait pour enchaîner les cinématiques sans réinitialiser Three.js.",
+    "en": "A simulation of what it would take to chain cinematics without reinitialising Three.js."
+  },
+  "barba.cat.10.tech": {
+    "fr": "Sur ce site, chaque cinématique est une page à part hors du wrapper Barba — un vrai chargement, délibéré.",
+    "en": "On this site, each cinematic is a separate page outside the Barba wrapper — a real, deliberate load."
+  },
+  "barba.cat.10.cost": {
+    "fr": "Élevé — sortir un canvas du cycle Barba complique la synchronisation avec le reste de la page.",
+    "en": "High — taking a canvas out of the Barba lifecycle complicates syncing with the rest of the page."
+  },
+  "barba.cat.10.portfolio": {
+    "fr": "Non appliqué : le choix actuel (page à part) est plus simple et suffisant.",
+    "en": "Not applied: the current choice (separate page) is simpler and sufficient."
+  },
+  "lab.field.pilot": {
+    "fr": "Pilote",
+    "en": "Driver"
+  },
+  "three.intro": {
+    "fr": "Dix écrans autour des trois stages Three.js du site — quatre montent une vraie scène WebGL au survol (01 à 04), six documentent l'architecture qui les rend interchangeables (05 à 10).",
+    "en": "Ten screens around the site's three Three.js stages — four mount a real WebGL scene on hover (01 to 04), six document the architecture that makes them interchangeable (05 to 10)."
+  },
+  "three.cat.1.desc": {
+    "fr": "black-hole-stage dans son mode natif — drive=\"internal\", le défaut. Elle possède son propre scroll, sa propre molette, son propre pavé tactile.",
+    "en": "black-hole-stage in its native mode — drive=\"internal\", the default. It has its own scroll, its own wheel, its own trackpad."
+  },
+  "three.cat.1.pilot": {
+    "fr": "Aucun — l'élément se pilote lui-même ; rien ici ne lui envoie de setShot().",
+    "en": "None — the element drives itself; nothing here sends it setShot()."
+  },
+  "three.cat.1.seen": {
+    "fr": "Survol pour monter la scène, déplacement de la souris dedans pour orbiter.",
+    "en": "Hover to mount the scene, move the mouse inside it to orbit."
+  },
+  "three.cat.1.tech": {
+    "fr": "Même élément que la page d'accueil ; c'est le mode par défaut de black-hole-stage.",
+    "en": "Same element as the homepage; it's black-hole-stage's default mode."
+  },
+  "three.cat.1.cost": {
+    "fr": "Faible à intégrer — c'est l'usage prévu par défaut de l'élément.",
+    "en": "Cheap to integrate — it's the element's intended default use."
+  },
+  "three.cat.1.portfolio": {
+    "fr": "Déjà en production sur la page d'accueil.",
+    "en": "Already in production on the homepage."
+  },
+  "three.cat.2.desc": {
+    "fr": "Le même élément, drive=\"external\" cette fois — scroll/molette/clavier internes coupés, une boucle locale appelle setShot() à sa place.",
+    "en": "The same element, drive=\"external\" this time — internal scroll/wheel/keyboard cut off, a local loop calls setShot() instead."
+  },
+  "three.cat.2.pilot": {
+    "fr": "Boucle locale du lab qui échantillonne un extrait de la vraie timeline (27 s, ×3.4).",
+    "en": "A local lab loop that samples an excerpt of the real timeline (27s, ×3.4)."
+  },
+  "three.cat.2.seen": {
+    "fr": "Curseur de scrub et trois raccourcis de phase (approche, plongée, horizon).",
+    "en": "A scrub slider and three phase shortcuts (approach, plunge, horizon)."
+  },
+  "three.cat.2.tech": {
+    "fr": "Extrait, pas le montage de référence — sept champs sur la vingtaine que le seam accepte.",
+    "en": "An excerpt, not the reference cut — seven fields out of the twenty-odd the seam accepts."
+  },
+  "three.cat.2.cost": {
+    "fr": "Moyen — écrire un pilote externe demande de connaître les champs attendus par le seam.",
+    "en": "Medium — writing an external driver requires knowing the fields the seam expects."
+  },
+  "three.cat.2.portfolio": {
+    "fr": "Mode déjà utilisé par /home-cinematic, avec Theatre.js à la place de la boucle locale.",
+    "en": "Mode already used by /home-cinematic, with Theatre.js instead of the local loop."
+  },
+  "three.cat.3.desc": {
+    "fr": "forest-stage charge le GLB de la route forestière (16 Mo compressés) puis attend setShot() — pas de mode interne, pas d'attribut drive à poser.",
+    "en": "forest-stage loads the forest road GLB (16MB compressed) then waits for setShot() — no internal mode, no drive attribute to set."
+  },
+  "three.cat.3.pilot": {
+    "fr": "Obligatoirement externe — la scène n'a aucun scroll ni molette à elle.",
+    "en": "Necessarily external — the scene has no scroll or wheel of its own."
+  },
+  "three.cat.3.seen": {
+    "fr": "Curseur de scrub et raccourcis départ / route / titre.",
+    "en": "A scrub slider and start / road / title shortcuts."
+  },
+  "three.cat.3.tech": {
+    "fr": "Extrait de 20 s à ×2.5 ; la caméra est accrochée à l'axe de la route (voir Caméra sur rail).",
+    "en": "A 20s excerpt at ×2.5; the camera is locked to the road's axis (see On Rails)."
+  },
+  "three.cat.3.cost": {
+    "fr": "Moyen à élevé — 16 Mo à charger avant la première image.",
+    "en": "Medium to high — 16MB to load before the first frame."
+  },
+  "three.cat.3.portfolio": {
+    "fr": "Déjà en production sur /forest-cinematic.",
+    "en": "Already in production on /forest-cinematic."
+  },
+  "three.cat.4.desc": {
+    "fr": "orbital-stage, la plus lourde des trois, deux mondes dans la même scène (voir Deux mondes). Pilotage par hold()/release().",
+    "en": "orbital-stage, the heaviest of the three, two worlds in the same scene (see Two Worlds). Driven by hold()/release()."
+  },
+  "three.cat.4.pilot": {
+    "fr": "hold() prend la main ; le lab n'appelle jamais release() (voir Démontage).",
+    "en": "hold() takes over; the lab never calls release() (see Teardown)."
+  },
+  "three.cat.4.seen": {
+    "fr": "Curseur de scrub et raccourcis orbite / nuages / révélation.",
+    "en": "A scrub slider and orbit / clouds / reveal shortcuts."
+  },
+  "three.cat.4.tech": {
+    "fr": "Extrait de 46 s à ×3.4 — la plus coûteuse à monter, laisse-lui une fraction de seconde après le survol.",
+    "en": "A 46s excerpt at ×3.4 — the most expensive to mount, give it a fraction of a second after hover."
+  },
+  "three.cat.4.cost": {
+    "fr": "Élevé — c'est la scène la plus lourde du site.",
+    "en": "High — it's the heaviest scene on the site."
+  },
+  "three.cat.4.portfolio": {
+    "fr": "Déjà en production sur /home-cinematic.",
+    "en": "Already in production on /home-cinematic."
+  },
+  "three.cat.5.desc": {
+    "fr": "Quatre points de couture entre Three.js et n'importe quel pilote externe — Theatre.js sur les pages cinématiques, la table locale de ce lab, ou une autre timeline demain.",
+    "en": "Four seam points between Three.js and any external driver — Theatre.js on the cinematic pages, this lab's local table, or another timeline tomorrow."
+  },
+  "three.cat.5.pilot": {
+    "fr": "N'importe lequel : aucune scène ne connaît son pilote.",
+    "en": "Any of them: no scene knows its driver."
+  },
+  "three.cat.5.seen": {
+    "fr": "Le détail des quatre points de couture (attribut drive, setShot, hold/release, événements).",
+    "en": "The detail of the four seam points (drive attribute, setShot, hold/release, events)."
+  },
+  "three.cat.5.tech": {
+    "fr": "C'est ce qui permet de rejouer les mêmes éléments ici, hors de leur page, sans dupliquer une ligne de rendu.",
+    "en": "This is what lets the same elements replay here, off their page, without duplicating a single line of rendering."
+  },
+  "three.cat.5.cost": {
+    "fr": "Faible — c'est déjà l'architecture en place, pas un ajout.",
+    "en": "Low — it's already the architecture in place, not an addition."
+  },
+  "three.cat.5.portfolio": {
+    "fr": "Ce qui rend ce lab possible — documentation d'une frontière, pas un effet à part.",
+    "en": "What makes this lab possible — documentation of a boundary, not a standalone effect."
+  },
+  "three.cat.6.desc": {
+    "fr": "Le trou noir passe par cinq cibles de rendu, mais un seul fragment shader fait le travail optique : lentille gravitationnelle, aberration chromatique, grain, vignettage.",
+    "en": "The black hole passes through five render targets, but a single fragment shader does the optical work: gravitational lensing, chromatic aberration, grain, vignette."
+  },
+  "three.cat.6.pilot": {
+    "fr": "Les uniforms du seam (lens, aberr…), lus à chaque frame.",
+    "en": "The seam's uniforms (lens, aberr…), read every frame."
+  },
+  "three.cat.6.seen": {
+    "fr": "Le rendu final du trou noir, sans rien à manipuler ici.",
+    "en": "The black hole's final render, nothing to manipulate here."
+  },
+  "three.cat.6.tech": {
+    "fr": "Changer lens ou aberr dans le seam ne recompile rien — ce sont des uniforms.",
+    "en": "Changing lens or aberr in the seam recompiles nothing — they're uniforms."
+  },
+  "three.cat.6.cost": {
+    "fr": "Élevé à écrire une fois, gratuit ensuite : aucun coût de recompilation en usage.",
+    "en": "Expensive to write once, free after that: no recompilation cost in use."
+  },
+  "three.cat.6.portfolio": {
+    "fr": "Déjà en production — c'est le shader réel du trou noir.",
+    "en": "Already in production — it's the black hole's actual shader."
+  },
+  "three.cat.7.desc": {
+    "fr": "La caméra spatiale et la caméra au sol coexistent dans la même scène orbitale ; world — 0 à 1 continu — bascule laquelle est active à 0.5.",
+    "en": "The space camera and the ground camera coexist in the same orbital scene; world — a continuous 0 to 1 — switches which is active at 0.5."
+  },
+  "three.cat.7.pilot": {
+    "fr": "L'uniform world, pas un booléen malgré l'air.",
+    "en": "The world uniform, not a boolean despite appearances."
+  },
+  "three.cat.7.seen": {
+    "fr": "La bascule se fait sous le voile de nuages (veil plafonne à 80 %, jamais 100 %).",
+    "en": "The switch happens under the cloud veil (veil caps at 80%, never 100%)."
+  },
+  "three.cat.7.tech": {
+    "fr": "La matière continue de bouger pendant que la vue est bouchée : on ne voit plus rien, mais on descend.",
+    "en": "The material keeps moving while the view is blocked: you see nothing, but you're descending."
+  },
+  "three.cat.7.cost": {
+    "fr": "Élevé — synchroniser deux caméras et un voile qui ne doit jamais atteindre l'opacité totale.",
+    "en": "High — syncing two cameras and a veil that must never reach full opacity."
+  },
+  "three.cat.7.portfolio": {
+    "fr": "Déjà en production — c'est la bascule espace → sol de /home-cinematic.",
+    "en": "Already in production — it's the space → ground switch of /home-cinematic."
+  },
+  "three.cat.8.desc": {
+    "fr": "La forêt n'a pas de caméra à six degrés de liberté : elle en a cinq, tous relatifs à la route. s — 0 à 1 — est la seule position réelle.",
+    "en": "The forest doesn't have a six-degrees-of-freedom camera: it has five, all relative to the road. s — 0 to 1 — is the only real position."
+  },
+  "three.cat.8.pilot": {
+    "fr": "s, la progression le long de la route ; le reste ne fait que cadrer depuis ce point.",
+    "en": "s, the progress along the road; everything else just frames from that point."
+  },
+  "three.cat.8.seen": {
+    "fr": "Le détail des cinq degrés relatifs, sans manipulation directe ici.",
+    "en": "The detail of the five relative degrees, nothing to manipulate directly here."
+  },
+  "three.cat.8.tech": {
+    "fr": "Contrainte plutôt que liberté : la caméra ne peut pas quitter l'axe de la route.",
+    "en": "Constraint rather than freedom: the camera can't leave the road's axis."
+  },
+  "three.cat.8.cost": {
+    "fr": "Faible — une seule valeur à piloter au lieu de six.",
+    "en": "Low — a single value to drive instead of six."
+  },
+  "three.cat.8.portfolio": {
+    "fr": "Déjà en production — c'est la caméra réelle de /forest-cinematic.",
+    "en": "Already in production — it's the actual camera of /forest-cinematic."
+  },
+  "three.cat.9.desc": {
+    "fr": "Trois économies reviennent dans les trois scènes : l'instancing pour tout ce qui se répète, le travail poussé dans le vertex shader plutôt que le fragment, le blending additif pour la lumière plutôt que des lampes réelles.",
+    "en": "Three savings recur across the three scenes: instancing for anything repeated, work pushed into the vertex shader rather than the fragment, additive blending for light rather than real lamps."
+  },
+  "three.cat.9.pilot": {
+    "fr": "Le palier LOW, qui resserre les trois budgets d'un cran plutôt que de couper des effets entiers.",
+    "en": "The LOW tier, which tightens all three budgets a notch rather than cutting whole effects."
+  },
+  "three.cat.9.seen": {
+    "fr": "Une explication, sans scène à manipuler ici.",
+    "en": "An explanation, no scene to manipulate here."
+  },
+  "three.cat.9.tech": {
+    "fr": "C'est pourquoi LOW existe : sur mobile, un resserrement plutôt qu'une coupe.",
+    "en": "This is why LOW exists: on mobile, a tightening rather than a cut."
+  },
+  "three.cat.9.cost": {
+    "fr": "Faible à appliquer une fois la discipline posée — coûteux à ajouter après coup sur une scène déjà écrite autrement.",
+    "en": "Cheap to apply once the discipline is in place — costly to retrofit onto a scene already written otherwise."
+  },
+  "three.cat.9.portfolio": {
+    "fr": "Déjà en production dans les trois stages du site.",
+    "en": "Already in production across the site's three stages."
+  },
+  "three.cat.10.desc": {
+    "fr": "Le compteur de l'en-tête ne dépasse jamais 1 — quatre garde-fous s'en assurent, en plus du survol lui-même : sortie d'écran, onglet caché, sortie de page.",
+    "en": "The header's counter never exceeds 1 — four safeguards ensure it, on top of hover itself: leaving the screen, hidden tab, leaving the page."
+  },
+  "three.cat.10.pilot": {
+    "fr": "Le survol/tactile — un appui épingle la plaque, un second la relâche.",
+    "en": "Hover/touch — one tap pins the plate, a second releases it."
+  },
+  "three.cat.10.seen": {
+    "fr": "Une démonstration des garde-fous, sans scène à manipuler ici.",
+    "en": "A demonstration of the safeguards, no scene to manipulate here."
+  },
+  "three.cat.10.tech": {
+    "fr": "L'orbitale ne rend jamais la main à sa caméra libre dans ce lab — release() n'est jamais appelé, le lab garde le pilotage jusqu'au démontage.",
+    "en": "The orbital never hands control back to its free camera in this lab — release() is never called, the lab keeps driving until teardown."
+  },
+  "three.cat.10.cost": {
+    "fr": "Élevé si oublié : un navigateur plafonne les contextes WebGL et abandonne les plus anciens sans prévenir.",
+    "en": "High if forgotten: a browser caps WebGL contexts and drops the oldest ones without warning."
+  },
+  "three.cat.10.portfolio": {
+    "fr": "La règle qui permet à ce lab d'exister sans planter — un seul contexte WebGL vivant à la fois.",
+    "en": "The rule that lets this lab exist without crashing — only one live WebGL context at a time."
+  },
+  "animation.intro": {
+    "fr": "Neuf animations d'entrée de section, chacune vivant dans section-anim.js sous la même interface — play, reset, resize, destroy — et n'utilisant que gsap déjà booté par portfolio/motion.js. La dixième, Orbite, est différente : c'est le carrefour du site (voir /), isolé ici sous la même mécanique d'écran unique.",
+    "en": "Nine section-entry animations, each living in section-anim.js under the same interface — play, reset, resize, destroy — using only gsap already booted by portfolio/motion.js. The tenth, Orbit, is different: it's the site's crossroads (see /), isolated here under the same single-screen mechanic."
+  },
+  "animation.trigger.fixed": {
+    "fr": "Entrée du bloc dans le viewport (IntersectionObserver).",
+    "en": "The block entering the viewport (IntersectionObserver)."
+  },
+  "animation.cat.1.desc": {
+    "fr": "Le cadre se fissure en 20 éclats SVG disposés autour du périmètre, avec quelques lignes de fracture qui filent vers le centre.",
+    "en": "The frame cracks into 20 SVG shards arranged around the perimeter, with a few fracture lines running toward the centre."
+  },
+  "animation.cat.1.seen": {
+    "fr": "Des éclats triangulaires qui se referment vers le centre en cascade, dans un ordre légèrement aléatoire.",
+    "en": "Triangular shards closing toward the centre in a cascade, in a slightly random order."
+  },
+  "animation.cat.1.cost": {
+    "fr": "Moyen — géométrie recalculée à chaque resize, mais pas de canvas à redessiner par frame.",
+    "en": "Medium — geometry recalculated on every resize, but no canvas to redraw per frame."
+  },
+  "animation.cat.1.portfolio": {
+    "fr": "Fort pour une accroche de section ponctuelle — trop marqué pour un usage répété sur la même page.",
+    "en": "Strong for a one-off section hook — too distinctive for repeated use on the same page."
+  },
+  "animation.cat.2.desc": {
+    "fr": "Un cadre technique se dessine — bords tiretés, coins en équerre, rampe de graduations — puis un balayage lumineux traverse le bloc de haut en bas.",
+    "en": "A technical frame draws itself — dashed edges, corner brackets, a graduation ramp — then a light sweep crosses the block top to bottom."
+  },
+  "animation.cat.2.seen": {
+    "fr": "Bordures et graduations qui apparaissent en premier, puis une bande lumineuse qui balaye le contenu.",
+    "en": "Borders and graduations appearing first, then a glowing band sweeping across the content."
+  },
+  "animation.cat.2.cost": {
+    "fr": "Faible — que des éléments DOM statiques, rien à recalculer par frame.",
+    "en": "Low — only static DOM elements, nothing to recalculate per frame."
+  },
+  "animation.cat.2.portfolio": {
+    "fr": "Fort pour une section technique ou un HUD — le vocabulaire visuel est déjà celui du reste du site.",
+    "en": "Strong for a technical section or a HUD — the visual vocabulary already matches the rest of the site."
+  },
+  "animation.cat.3.desc": {
+    "fr": "Une tache d'encre organique grandit depuis un coin et dévoile le contenu derrière elle, contour flou plutôt que net.",
+    "en": "An organic ink blot grows from a corner and reveals the content behind it, blurred edge rather than sharp."
+  },
+  "animation.cat.3.seen": {
+    "fr": "Une forme irrégulière qui s'étend en respirant légèrement, jusqu'à couvrir tout le cadre.",
+    "en": "An irregular shape expanding with a slight breathing motion, until it covers the whole frame."
+  },
+  "animation.cat.3.cost": {
+    "fr": "Moyen — redessiné par frame le temps de la révélation, mais léger (une seule forme, pas de particules).",
+    "en": "Medium — redrawn every frame for the duration of the reveal, but light (one shape, no particles)."
+  },
+  "animation.cat.3.portfolio": {
+    "fr": "Fort et singulier — se démarque des transitions géométriques déjà nombreuses ailleurs sur le site.",
+    "en": "Strong and distinctive — stands out from the many geometric transitions already used elsewhere on the site."
+  },
+  "animation.cat.4.desc": {
+    "fr": "Le cadre se découpe en 7 tranches horizontales qui rentrent en place indépendamment, pendant que deux doublures colorées se désalignent puis se rejoignent.",
+    "en": "The frame splits into 7 horizontal slices that snap into place independently, while two coloured ghosts drift apart then rejoin."
+  },
+  "animation.cat.4.seen": {
+    "fr": "Un effet de dédoublement chromatique bref (accent + encre) qui se résorbe en un cadre net.",
+    "en": "A brief chromatic-split effect (accent + ink) resolving into a sharp frame."
+  },
+  "animation.cat.4.cost": {
+    "fr": "Faible — 9 éléments DOM fixes, aucune géométrie recalculée en boucle.",
+    "en": "Low — 9 fixed DOM elements, no geometry recalculated in a loop."
+  },
+  "animation.cat.4.portfolio": {
+    "fr": "Moyen : lisible et technique, mais à réserver à un contexte qui assume le vocabulaire « erreur/signal ».",
+    "en": "Medium: readable and technical, but best kept for a context that embraces the \"error/signal\" vocabulary."
+  },
+  "animation.cat.5.desc": {
+    "fr": "Un volume filaire (12 arêtes, perspective CSS) s'aplatit progressivement jusqu'à se confondre avec le plan du cadre.",
+    "en": "A wireframe volume (12 edges, CSS perspective) progressively flattens until it merges with the frame's plane."
+  },
+  "animation.cat.5.seen": {
+    "fr": "Une boîte 3D en fil de fer qui perd sa profondeur et devient un rectangle plat.",
+    "en": "A 3D wireframe box losing its depth and becoming a flat rectangle."
+  },
+  "animation.cat.5.cost": {
+    "fr": "Moyen — la 3D CSS est peu coûteuse, mais sensible aux erreurs de perspective sur petits écrans.",
+    "en": "Medium — CSS 3D is cheap, but sensitive to perspective errors on small screens."
+  },
+  "animation.cat.5.portfolio": {
+    "fr": "Fort pour une section qui parle de structure ou d'architecture — le concept illustre littéralement l'idée.",
+    "en": "Strong for a section about structure or architecture — the concept literally illustrates the idea."
+  },
+  "animation.cat.6.desc": {
+    "fr": "Des particules dispersées convergent vers des points échantillonnés sur le contenu et le recomposent, comme un nuage qui se condense en texte.",
+    "en": "Scattered particles converge onto points sampled from the content and reassemble it, like a cloud condensing into text."
+  },
+  "animation.cat.6.seen": {
+    "fr": "Un nuage de points qui se rassemble en glyphes lisibles.",
+    "en": "A cloud of dots gathering into readable glyphs."
+  },
+  "animation.cat.6.cost": {
+    "fr": "Élevé — nombre de particules proportionnel à la densité de texte, à surveiller sur mobile.",
+    "en": "High — particle count proportional to text density, worth watching on mobile."
+  },
+  "animation.cat.6.portfolio": {
+    "fr": "Très fort pour un titre d'accroche isolé — trop coûteux pour plusieurs blocs sur la même page.",
+    "en": "Very strong for a single hero headline — too costly for several blocks on the same page."
+  },
+  "animation.cat.7.desc": {
+    "fr": "Le contenu est cloné en 8 bandes découpées en dents de scie, dispersées puis réalignées jusqu'à ne plus faire qu'un bloc net.",
+    "en": "The content is cloned into 8 sawtooth-cut bands, scattered then realigned until they form one sharp block again."
+  },
+  "animation.cat.7.seen": {
+    "fr": "Des lignes de texte qui semblent déchirées puis qui se recollent en place.",
+    "en": "Lines of text that look torn apart, then piece themselves back together."
+  },
+  "animation.cat.7.cost": {
+    "fr": "Moyen à élevé — chaque bande clone le DOM réel du bloc, donc son coût suit celui du contenu.",
+    "en": "Medium to high — each band clones the block's real DOM, so its cost tracks the content's."
+  },
+  "animation.cat.7.portfolio": {
+    "fr": "Fort pour un bloc de texte éditorial — l'effet reste lisible, contrairement à des concepts plus abstraits.",
+    "en": "Strong for an editorial text block — the effect stays readable, unlike more abstract concepts."
+  },
+  "animation.cat.8.desc": {
+    "fr": "Une bande de verre dépoli (backdrop-filter) balaye le cadre en biais pendant que le contenu se révèle derrière elle par un clip-path progressif.",
+    "en": "A frosted-glass band (backdrop-filter) sweeps across the frame at an angle while the content reveals itself behind it through a progressive clip-path."
+  },
+  "animation.cat.8.seen": {
+    "fr": "Un reflet flouté qui glisse sur le contenu, laissant le texte net derrière son passage.",
+    "en": "A blurred reflection sliding over the content, leaving sharp text in its wake."
+  },
+  "animation.cat.8.cost": {
+    "fr": "Élevé — backdrop-filter est cher à composer, à limiter à une bande étroite et à un seul passage.",
+    "en": "High — backdrop-filter is expensive to composite, best kept to a narrow band and a single pass."
+  },
+  "animation.cat.8.portfolio": {
+    "fr": "Fort visuellement mais à tester sur les GPU faibles avant un usage répété.",
+    "en": "Visually strong but worth testing on weak GPUs before repeated use."
+  },
+  "animation.cat.9.desc": {
+    "fr": "Une maille de triangles en chevrons se dévoile depuis le centre vers les bords, chaque triangle rejoignant sa place avec un délai qui dépend de sa distance à l'axe.",
+    "en": "A chevron triangle mesh reveals itself from the centre outward, each triangle settling into place with a delay based on its distance from the axis."
+  },
+  "animation.cat.9.seen": {
+    "fr": "Un masque en dents de scie qui se résorbe du centre vers les bords, en V inversé.",
+    "en": "A sawtooth mask receding from the centre to the edges, in an inverted V."
+  },
+  "animation.cat.9.cost": {
+    "fr": "Moyen — nombre de triangles proportionnel à la largeur de l'écran, calculé une fois au build.",
+    "en": "Medium — triangle count proportional to screen width, computed once at build time."
+  },
+  "animation.cat.9.portfolio": {
+    "fr": "Fort pour une bannière ou un hero — motif directement réutilisable comme élément de marque.",
+    "en": "Strong for a banner or hero — the pattern is directly reusable as a brand element."
+  },
+  "animation.cat.10.desc": {
+    "fr": "Le carrefour du site (voir '/'), isolé ici pour l'étudier seul : deux nœuds tournent sur une ellipse en perspective, celui que le pointeur approche passe devant et ouvre sa fiche.",
+    "en": "The site's crossroads (see '/'), isolated here to study on its own: two nodes orbit on a perspective ellipse, the one the pointer approaches moves to the front and opens its panel."
+  },
+  "animation.cat.10.seen": {
+    "fr": "Deux points qui orbitent devant un halo central ; le survol en avance un, révèle son panneau et son bouton d'entrée, un rideau couvre l'écran avant de partir.",
+    "en": "Two dots orbiting in front of a central glow; hovering brings one forward, revealing its panel and entry button, a curtain covers the screen before leaving."
+  },
+  "animation.cat.10.cost": {
+    "fr": "Faible — une boucle trigonométrique par nœud et par frame, aucun DOM recréé en cours de route.",
+    "en": "Low — one trigonometric loop per node per frame, no DOM recreated along the way."
+  },
+  "animation.cat.10.portfolio": {
+    "fr": "C'est la page d'accueil réelle du site — vue ici hors contexte, seule, pour l'étudier sans le reste de la page.",
+    "en": "This is the site's actual homepage — shown here out of context, alone, to study without the rest of the page."
+  },
+  "lab.field.scroll": {
+    "fr": "Scroll",
+    "en": "Scroll"
+  },
+  "carousel.driver.label": {
+    "fr": "Le pilote",
+    "en": "The driver"
+  },
+  "carousel.driver.desc": {
+    "fr": "Une section épinglée, <code style=\"font-size:12px;color:var(--accent-2);\">scrub</code> vrai. La progression devient la position fractionnaire&nbsp;; le rendu lisse la valeur d'une frame à l'autre au lieu de tweener chaque plan.",
+    "en": "A pinned section, true <code style=\"font-size:12px;color:var(--accent-2);\">scrub</code>. Progress becomes the fractional position; the render smooths the value frame to frame instead of tweening each plane."
+  },
+  "carousel.inputs.label": {
+    "fr": "Les entrées",
+    "en": "The inputs"
+  },
+  "carousel.inputs.desc": {
+    "fr": "Drag, clic, flèches et tactile n'écrivent jamais la position : ils déplacent le scroll par Lenis. Un seul système tient le scroll, donc rien à réconcilier.",
+    "en": "Drag, click, arrows and touch never write the position directly: they move the scroll via Lenis. One single system owns the scroll, so nothing to reconcile."
+  },
+  "carousel.background.label": {
+    "fr": "Le fond",
+    "en": "The background"
+  },
+  "carousel.background.desc": {
+    "fr": "<code style=\"font-size:12px;color:var(--accent-2);\">&lt;carousel-field&gt;</code> possède le renderer, la scène et la boucle&nbsp;; la page ne lui pousse que des valeurs par <code style=\"font-size:12px;color:var(--accent-2);\">setField()</code> — même contrat que les stages existants.",
+    "en": "<code style=\"font-size:12px;color:var(--accent-2);\">&lt;carousel-field&gt;</code> owns the renderer, the scene and the loop; the page only pushes values to it via <code style=\"font-size:12px;color:var(--accent-2);\">setField()</code> — the same contract as the existing stages."
+  },
+  "carousel.data.label": {
+    "fr": "Les données",
+    "en": "The data"
+  },
+  "carousel.data.desc": {
+    "fr": "Un tableau d'items — titre, année, discipline. Ajouter ou retirer une entrée ne touche à aucune loi de placement.",
+    "en": "An array of items — title, year, discipline. Adding or removing an entry doesn't touch any placement law."
+  },
+  "carousel.postfx.label": {
+    "fr": "Le post-traitement",
+    "en": "Post-processing"
+  },
+  "carousel.postfx.desc": {
+    "fr": "Les écrans 07 et 08 passent par un graphe de filtres SVG monté une fois&nbsp;: chaque image ne réécrit qu'un seuil ou une amplitude — <code style=\"font-size:12px;color:var(--accent-2);\">intercept</code>, <code style=\"font-size:12px;color:var(--accent-2);\">scale</code> — et le filtre est retiré du plan dès la fin.",
+    "en": "Screens 07 and 08 go through an SVG filter graph mounted once: each frame only rewrites a threshold or an amplitude — <code style=\"font-size:12px;color:var(--accent-2);\">intercept</code>, <code style=\"font-size:12px;color:var(--accent-2);\">scale</code> — and the filter is removed from the plane as soon as it's done."
+  },
+  "carousel.cat.1.desc": {
+    "fr": "Cover-flow spatial : la profondeur croît au carré de la distance, la rotation reste plafonnée. Le plan actif est le seul parfaitement de face.",
+    "en": "Spatial cover-flow: depth grows with the square of the distance, rotation stays capped. The active plane is the only one perfectly face-on."
+  },
+  "carousel.cat.1.scroll": {
+    "fr": "Position fractionnaire → décalage X, profondeur en d², rotation plafonnée.",
+    "en": "Fractional position → X offset, depth in d², capped rotation."
+  },
+  "carousel.cat.1.seen": {
+    "fr": "Le plan actif de face, les suivants qui reculent et pivotent jusqu'à ±44°, floutés au-delà d'un tiers de plan.",
+    "en": "The active plane face-on, the next ones receding and rotating up to ±44°, blurred beyond a third of a plane away."
+  },
+  "carousel.cat.1.cost": {
+    "fr": "Faible — une seule loi trigonométrique par plan, pas de géométrie recalculée en boucle.",
+    "en": "Low — a single trigonometric law per plane, no geometry recalculated in a loop."
+  },
+  "carousel.cat.1.portfolio": {
+    "fr": "Fort — le plus lisible des six, bon candidat pour une grille de projets.",
+    "en": "Strong — the most legible of the six, a good candidate for a project grid."
+  },
+  "carousel.cat.2.desc": {
+    "fr": "Un cercle horizontal dont le rayon vaut deux fois la carte : on est dedans, les voisins passent en périphérie plutôt que derrière.",
+    "en": "A horizontal circle whose radius is twice the card: you're inside it, neighbours pass around the edge rather than behind."
+  },
+  "carousel.cat.2.scroll": {
+    "fr": "Position fractionnaire → angle sur le cercle, 0,52 rad par pas.",
+    "en": "Fractional position → angle on the circle, 0.52 rad per step."
+  },
+  "carousel.cat.2.seen": {
+    "fr": "Les huit plans répartis sur un cercle, aucun changement d'échelle — seule la profondeur trahit la position.",
+    "en": "The eight planes spread over a circle, no scale change — only depth gives away the position."
+  },
+  "carousel.cat.2.cost": {
+    "fr": "Faible — une rotation, un rayon fixe.",
+    "en": "Low — one rotation, one fixed radius."
+  },
+  "carousel.cat.2.portfolio": {
+    "fr": "Moyen — élégant mais les plans latéraux restent petits à l'écran.",
+    "en": "Medium — elegant, but the side planes stay small on screen."
+  },
+  "carousel.cat.3.desc": {
+    "fr": "Même cercle, mais le déport vertical prend le signe de la distance : ce qui est passé remonte, ce qui vient descend. Les plans arrivent des quatre côtés.",
+    "en": "Same circle, but the vertical offset takes the sign of the distance: what's past rises, what's coming descends. Planes arrive from all four sides."
+  },
+  "carousel.cat.3.scroll": {
+    "fr": "Position fractionnaire → angle + déport vertical signé (0,58 × le rayon).",
+    "en": "Fractional position → angle + signed vertical offset (0.58 × the radius)."
+  },
+  "carousel.cat.3.seen": {
+    "fr": "Les plans qui montent ou descendent selon qu'ils sont passés ou à venir, arrivée par les quatre côtés de l'écran.",
+    "en": "Planes rising or falling depending on whether they're past or upcoming, arriving from all four sides of the screen."
+  },
+  "carousel.cat.3.cost": {
+    "fr": "Moyen — même base que l'anneau, une composante verticale signée en plus.",
+    "en": "Medium — same base as the ring, plus one signed vertical component."
+  },
+  "carousel.cat.3.portfolio": {
+    "fr": "Fort — la variation la plus dynamique visuellement du lot.",
+    "en": "Strong — the most visually dynamic variation of the set."
+  },
+  "carousel.cat.4.desc": {
+    "fr": "Une seule phase pilote deux choses : la hauteur monte linéairement, la position latérale suit son sinus. La colonne tourne en s'élevant.",
+    "en": "A single phase drives two things: height rises linearly, lateral position follows its sine. The column spins as it rises."
+  },
+  "carousel.cat.4.scroll": {
+    "fr": "Position fractionnaire → hauteur linéaire + position latérale en sinus de la même phase.",
+    "en": "Fractional position → linear height + lateral position as the sine of the same phase."
+  },
+  "carousel.cat.4.seen": {
+    "fr": "Une colonne qui tourne en s'élevant, chaque plan un peu plus haut que le précédent.",
+    "en": "A column spinning as it rises, each plane a bit higher than the last."
+  },
+  "carousel.cat.4.cost": {
+    "fr": "Faible — une seule phase, deux fonctions trigonométriques.",
+    "en": "Low — one phase, two trigonometric functions."
+  },
+  "carousel.cat.4.portfolio": {
+    "fr": "Moyen — lecture verticale, adaptée à un historique ou une chronologie.",
+    "en": "Medium — vertical reading, suited to a history or a timeline."
+  },
+  "carousel.cat.5.desc": {
+    "fr": "Tout en Z, presque rien en X : l'actif devant, les suivants empilés derrière avec un décalage constant. Le cas dense, pour lire un ordre.",
+    "en": "All in Z, almost nothing in X: the active one in front, the next ones stacked behind with a constant offset. The dense case, for reading an order."
+  },
+  "carousel.cat.5.scroll": {
+    "fr": "Position fractionnaire → recul Z (126 px/rang) + décalage latéral (20 px/rang).",
+    "en": "Fractional position → Z pullback (126px/rank) + lateral offset (20px/rank)."
+  },
+  "carousel.cat.5.seen": {
+    "fr": "Une pile compacte, l'actif devant, les suivants qui reculent avec un léger décalage latéral.",
+    "en": "A compact stack, the active one in front, the next ones receding with a slight lateral offset."
+  },
+  "carousel.cat.5.cost": {
+    "fr": "Faible — la disposition la plus simple des six.",
+    "en": "Low — the simplest layout of the six."
+  },
+  "carousel.cat.5.portfolio": {
+    "fr": "Fort — le cas dense, utile quand l'ordre compte plus que l'espace.",
+    "en": "Strong — the dense case, useful when order matters more than space."
+  },
+  "carousel.cat.6.desc": {
+    "fr": "Trois colonnes qui défilent en continu ; le plan actif quitte sa cellule, vient au centre et repousse les autres. La grille se recompose derrière lui.",
+    "en": "Three columns scrolling continuously; the active plane leaves its cell, comes to the centre and pushes the others aside. The grid recomposes behind it."
+  },
+  "carousel.cat.6.scroll": {
+    "fr": "Position fractionnaire → sortie/entrée de cellule, interpolée sur les deux tiers d'un pas.",
+    "en": "Fractional position → cell exit/entry, interpolated over two thirds of a step."
+  },
+  "carousel.cat.6.seen": {
+    "fr": "Une grille qui se recompose en direct : le plan actif sort de sa cellule, vient au centre, puis regagne sa place.",
+    "en": "A grid recomposing live: the active plane leaves its cell, comes to the centre, then returns to its place."
+  },
+  "carousel.cat.6.cost": {
+    "fr": "Moyen — la loi combine une position de grille et une interpolation vers le centre.",
+    "en": "Medium — the law combines a grid position and an interpolation toward the centre."
+  },
+  "carousel.cat.6.portfolio": {
+    "fr": "Fort — seule disposition qui montre l'ensemble et l'actif en même temps.",
+    "en": "Strong — the only layout that shows the whole set and the active item at once."
+  },
+  "carousel.cat.7.desc": {
+    "fr": "Le plan sortant n'est pas fondu : il est détruit. Un seuil balaye un champ de bruit, les pixels tombent au-dessous, et le plan suivant se reforme dans le même mouvement.",
+    "en": "The outgoing plane isn't faded: it's destroyed. A threshold sweeps across a noise field, pixels drop below it, and the next plane reforms in the same motion."
+  },
+  "carousel.cat.7.scroll": {
+    "fr": "Position fractionnaire → index élu ; le franchissement d'un demi-plan déclenche la passe de seuil.",
+    "en": "Fractional position → chosen index; crossing half a plane triggers the threshold pass."
+  },
+  "carousel.cat.7.seen": {
+    "fr": "Un seuil qui balaye un bruit fractal, le plan sortant mangé pixel par pixel, l'entrant qui se reforme dans un bruit différent.",
+    "en": "A threshold sweeping across fractal noise, the outgoing plane eaten pixel by pixel, the incoming one reforming out of different noise."
+  },
+  "carousel.cat.7.cost": {
+    "fr": "Élevé — graphe de filtres SVG monté une fois, mais coûteux à l'exécution sur GPU faible.",
+    "en": "High — SVG filter graph mounted once, but costly to run on a weak GPU."
+  },
+  "carousel.cat.7.portfolio": {
+    "fr": "Fort — la transition la plus mémorable des huit, à réserver à un moment fort.",
+    "en": "Strong — the most memorable transition of the eight, best reserved for a key moment."
+  },
+  "carousel.cat.8.desc": {
+    "fr": "Une displacement map disloque le plan pendant un quart de seconde ; les trois couches de couleur se séparent, la coupe a lieu au pic, et l'image se recompose derrière.",
+    "en": "A displacement map dislocates the plane for a quarter second; the three colour layers separate, the cut happens at the peak, and the image recomposes behind it."
+  },
+  "carousel.cat.8.scroll": {
+    "fr": "Position fractionnaire → index élu ; le franchissement déclenche la passe de displacement.",
+    "en": "Fractional position → chosen index; crossing triggers the displacement pass."
+  },
+  "carousel.cat.8.seen": {
+    "fr": "Le plan qui se disloque en bandes, les trois couches de couleur qui se séparent puis se recomposent.",
+    "en": "The plane breaking into bands, the three colour layers separating then recomposing."
+  },
+  "carousel.cat.8.cost": {
+    "fr": "Élevé — displacement map + séparation RVB, même famille de coût que Dissolve.",
+    "en": "High — displacement map + RGB split, same cost family as Dissolve."
+  },
+  "carousel.cat.8.portfolio": {
+    "fr": "Fort — plus abrupt que Dissolve, adapté à un changement de registre plutôt qu'une continuité.",
+    "en": "Strong — sharper than Dissolve, suited to a change of register rather than continuity."
+  },
+  "lab.status.sheet": {
+    "fr": "Fiche",
+    "en": "Concept"
+  },
+  "scroll.intro": {
+    "fr": "Quinze mécaniques de scroll inventées pour ce laboratoire, au-delà des six systèmes de base. Neuf sont prototypées et navigables ; six restent à l'état de fiche. Chaque fiche indique ce que le scroll pilote, ce que l'on voit, la difficulté réelle et l'intérêt pour le portfolio.",
+    "en": "Fifteen scroll mechanics invented for this lab, beyond the six base systems. Nine are prototyped and navigable; six remain concept sheets. Each sheet states what the scroll drives, what you see, the real difficulty, and the portfolio value."
+  },
+  "scroll.cat.1.desc": {
+    "fr": "Les fiches d'un ensemble ne sont plus une grille mais une orbite. Le scroll fait arriver les objets sur l'anneau, bascule le plan de l'orbite vers l'horizontale, puis effondre l'anneau en liste lisible.",
+    "en": "A set's cards are no longer a grid but an orbit. Scrolling brings objects onto the ring, tilts the orbit's plane toward horizontal, then collapses the ring into a readable list."
+  },
+  "scroll.cat.1.scroll": {
+    "fr": "Angle, rayon, inclinaison du plan et effondrement — quatre paramètres lus dans la même progression.",
+    "en": "Angle, radius, plane tilt and collapse — four parameters read from the same progress value."
+  },
+  "scroll.cat.1.seen": {
+    "fr": "Neuf fiches tournant autour d'un noyau lumineux, celles du fond floues et petites, qui finissent alignées en colonne.",
+    "en": "Nine cards spinning around a glowing core, the ones in the back blurred and small, ending aligned in a column."
+  },
+  "scroll.cat.1.cost": {
+    "fr": "Moyen — la difficulté est le passage anneau → liste sans saut.",
+    "en": "Medium — the difficulty is the ring → list transition without a jump."
+  },
+  "scroll.cat.1.use": {
+    "fr": "Fort : page « projets » ou « services » qui se range toute seule.",
+    "en": "Strong: a \"projects\" or \"services\" page that tidies itself up."
+  },
+  "scroll.cat.2.desc": {
+    "fr": "Le scroll n'est plus une position mais une force. Descendre attire la matière vers un noyau, remonter la repousse, s'arrêter laisse le champ se détendre lentement.",
+    "en": "Scroll is no longer a position but a force. Scrolling down pulls matter toward a core, scrolling up repels it, stopping lets the field slowly relax."
+  },
+  "scroll.cat.2.scroll": {
+    "fr": "Vitesse et signe du scroll → polarité et amplitude du champ ; la position ne sert qu'à déplacer le noyau.",
+    "en": "Scroll speed and sign → the field's polarity and amplitude; position only moves the core."
+  },
+  "scroll.cat.2.seen": {
+    "fr": "135 nœuds qui se resserrent ou explosent selon le geste, et un anneau qui pulse avec la vitesse.",
+    "en": "135 nodes tightening or exploding depending on the gesture, and a ring pulsing with the speed."
+  },
+  "scroll.cat.2.cost": {
+    "fr": "Moyen — surveiller le coût par frame et le nombre de nœuds.",
+    "en": "Medium — watch the per-frame cost and node count."
+  },
+  "scroll.cat.2.use": {
+    "fr": "Moyen : superbe en page d'accueil, à réserver au desktop.",
+    "en": "Medium: gorgeous on a homepage, best kept to desktop."
+  },
+  "scroll.cat.3.desc": {
+    "fr": "La page ne défile pas : la caméra avance. Les plans viennent du fond, grossissent, passent derrière l'observateur et disparaissent.",
+    "en": "The page doesn't scroll: the camera moves forward. Planes come from the back, grow larger, pass behind the viewer and disappear."
+  },
+  "scroll.cat.3.scroll": {
+    "fr": "Progression → position Z de la caméra ; chaque plan garde sa profondeur propre.",
+    "en": "Progress → the camera's Z position; each plane keeps its own depth."
+  },
+  "scroll.cat.3.seen": {
+    "fr": "Une traversée : des plaques de contenu qui défilent de part et d'autre du regard, avec un léger roulis.",
+    "en": "A journey through: content plates scrolling past on either side of view, with a slight roll."
+  },
+  "scroll.cat.3.cost": {
+    "fr": "Faible à moyen — attention au nombre de plans composités.",
+    "en": "Low to medium — watch the number of composited planes."
+  },
+  "scroll.cat.3.use": {
+    "fr": "Fort : introduction de portfolio, ou traversée d'un projet.",
+    "en": "Strong: a portfolio intro, or a walkthrough of a project."
+  },
+  "scroll.cat.4.desc": {
+    "fr": "Aucune section n'apparaît : la précédente est démontée. Lettres dispersées, lignes détachées, plaques envoyées vers leurs points de fuite — la suivante se réassemble depuis ces trajectoires.",
+    "en": "No section simply appears: the previous one is dismantled. Letters scattered, lines detached, plates sent toward their vanishing points — the next one reassembles from those trajectories."
+  },
+  "scroll.cat.4.scroll": {
+    "fr": "Progression → avancement du démontage puis de la reconstruction, les deux se chevauchant.",
+    "en": "Progress → the dismantling then the reconstruction, the two overlapping."
+  },
+  "scroll.cat.4.seen": {
+    "fr": "Un titre qui explose caractère par caractère pendant que le titre suivant se recompose.",
+    "en": "A title exploding character by character while the next title reassembles."
+  },
+  "scroll.cat.4.cost": {
+    "fr": "Moyen — il faut choisir les vecteurs à la main pour éviter le bruit.",
+    "en": "Medium — vectors have to be hand-picked to avoid visual noise."
+  },
+  "scroll.cat.4.use": {
+    "fr": "Fort : transition entre deux chapitres d'un même projet.",
+    "en": "Strong: a transition between two chapters of the same project."
+  },
+  "scroll.cat.5.desc": {
+    "fr": "Une seule section, quatre lois de mouvement. Deux zones suivent le scroll à des vitesses différentes, une le contredit, la dernière le traduit en échelle et rotation.",
+    "en": "One section, four laws of motion. Two zones follow the scroll at different speeds, one contradicts it, the last translates it into scale and rotation."
+  },
+  "scroll.cat.5.scroll": {
+    "fr": "Une même progression, quatre coefficients — dont un négatif.",
+    "en": "One shared progress value, four coefficients — one of them negative."
+  },
+  "scroll.cat.5.seen": {
+    "fr": "Quatre fenêtres dont les contenus glissent dans des sens différents autour d'un centre immobile.",
+    "en": "Four windows whose contents slide in different directions around a still centre."
+  },
+  "scroll.cat.5.cost": {
+    "fr": "Faible — le plus simple des six.",
+    "en": "Low — the simplest of the six."
+  },
+  "scroll.cat.5.use": {
+    "fr": "Très fort : grille de projets à quatre entrées.",
+    "en": "Very strong: a four-entry project grid."
+  },
+  "scroll.cat.6.desc": {
+    "fr": "Une surface unique change de forme au fil du scroll : rectangle, hexagone, cercle, plaque. Le contenu se révèle pendant la transformation.",
+    "en": "A single surface changes shape as you scroll: rectangle, hexagon, circle, plate. The content reveals itself during the transformation."
+  },
+  "scroll.cat.6.scroll": {
+    "fr": "Progression → curseur dans une séquence de formes, interpolation continue entre deux voisines.",
+    "en": "Progress → a cursor within a shape sequence, continuous interpolation between two neighbours."
+  },
+  "scroll.cat.6.seen": {
+    "fr": "Une forme qui se déforme sans à-coup, un mot par état, une valeur d'interpolation.",
+    "en": "A shape morphing smoothly, one word per state, one interpolation value."
+  },
+  "scroll.cat.6.cost": {
+    "fr": "Moyen — la partie mathématique est écrite une fois pour toutes.",
+    "en": "Medium — the math is written once and for all."
+  },
+  "scroll.cat.6.use": {
+    "fr": "Fort : révélation d'une image de couverture.",
+    "en": "Strong: revealing a cover image."
+  },
+  "scroll.cat.7.desc": {
+    "fr": "Trois brins de contenu se tressent : chacun passe devant les autres puis repasse derrière, sans qu'aucune règle de superposition ne soit écrite à la main.",
+    "en": "Three content strands braid together: each one passes in front of the others then behind again, with no stacking rule hand-written anywhere."
+  },
+  "scroll.cat.7.scroll": {
+    "fr": "Progression → angle de phase ; le sinus donne la position latérale, le cosinus la profondeur.",
+    "en": "Progress → a phase angle; the sine gives the lateral position, the cosine the depth."
+  },
+  "scroll.cat.7.seen": {
+    "fr": "Trois colonnes qui se croisent, celle du fond floue et rétrécie, l'ordre changeant à chaque demi-tour.",
+    "en": "Three columns crossing, the one in the back blurred and shrunk, the order changing every half-turn."
+  },
+  "scroll.cat.7.cost": {
+    "fr": "Faible — une seule formule, aucun état à conserver.",
+    "en": "Low — a single formula, no state to keep."
+  },
+  "scroll.cat.7.use": {
+    "fr": "Fort : trois références mises en avant sur une page d'accueil.",
+    "en": "Strong: three references highlighted on a homepage."
+  },
+  "scroll.cat.8.desc": {
+    "fr": "Le scroll est replié en onde triangulaire : passé la moitié de la section, continuer à descendre rejoue la scène à l'envers. La page avance, le contenu recule.",
+    "en": "Scroll is folded into a triangle wave: past the middle of the section, continuing to scroll down replays the scene in reverse. The page moves forward, the content moves back."
+  },
+  "scroll.cat.8.scroll": {
+    "fr": "Progression → onde triangulaire ; le signe de la pente change le sol et le sens des entrées.",
+    "en": "Progress → a triangle wave; the sign of the slope changes the ground and the direction of entries."
+  },
+  "scroll.cat.8.seen": {
+    "fr": "Quatre états qui se succèdent, puis les mêmes en marche arrière sur fond indigo avec un reflet inversé.",
+    "en": "Four states following each other, then the same ones in reverse over an indigo background with an inverted reflection."
+  },
+  "scroll.cat.8.cost": {
+    "fr": "Faible — le risque est la lisibilité, pas la performance.",
+    "en": "Low — the risk is readability, not performance."
+  },
+  "scroll.cat.8.use": {
+    "fr": "Moyen : conclusion d'un chapitre, ou page manifeste.",
+    "en": "Medium: closing a chapter, or a manifesto page."
+  },
+  "scroll.cat.9.desc": {
+    "fr": "Rien ne défile. Le document entier tient dans l'écran et le scroll ne déplace que le point de lecture : la bande visée s'ouvre, les autres se compriment en filets.",
+    "en": "Nothing scrolls. The whole document fits on screen and scrolling only moves the reading point: the targeted band opens, the others compress into threads."
+  },
+  "scroll.cat.9.scroll": {
+    "fr": "Progression → position de la focale ; la hauteur de chaque bande est une gaussienne de sa distance à ce point.",
+    "en": "Progress → the focal position; each band's height is a gaussian of its distance from that point."
+  },
+  "scroll.cat.9.seen": {
+    "fr": "Sept bandes empilées dont une seule est ouverte et lisible, les voisines à demi ouvertes.",
+    "en": "Seven stacked bands, only one open and readable, its neighbours half-open."
+  },
+  "scroll.cat.9.cost": {
+    "fr": "Faible à moyen — attention au reflow, les hauteurs seules changent.",
+    "en": "Low to medium — watch reflow, only heights change."
+  },
+  "scroll.cat.9.use": {
+    "fr": "Très fort : sommaire, index de projets, ou page de services.",
+    "en": "Very strong: a table of contents, a project index, or a services page."
+  },
+  "scroll.cat.10.desc": {
+    "fr": "Le scroll charge une valeur qui se décharge dès qu'on s'arrête. Rester immobile rembobine la scène : pour maintenir un état, il faut continuer à scroller.",
+    "en": "Scrolling charges a value that discharges as soon as you stop. Staying still rewinds the scene: maintaining a state requires continuing to scroll."
+  },
+  "scroll.cat.10.scroll": {
+    "fr": "Intégration de la vitesse avec fuite : la progression n'est plus liée à la position de la page.",
+    "en": "Speed integration with leak: progress is no longer tied to the page's position."
+  },
+  "scroll.cat.10.seen": {
+    "fr": "Une scène qui avance tant qu'on pousse et revient doucement en arrière dès qu'on lâche.",
+    "en": "A scene advancing as long as you push and drifting gently back the moment you let go."
+  },
+  "scroll.cat.10.cost": {
+    "fr": "Moyen — risque de désorientation, exige un indicateur clair.",
+    "en": "Medium — risk of disorientation, requires a clear indicator."
+  },
+  "scroll.cat.10.use": {
+    "fr": "Moyen : une seule scène manifeste, pas une page entière.",
+    "en": "Medium: a single manifesto scene, not a whole page."
+  },
+  "scroll.cat.11.desc": {
+    "fr": "Les blocs de contenu sont soumis à une gravité dont le scroll règle l'intensité et la direction : ils tombent, s'empilent, rebondissent, puis se remettent en orbite quand la gravité s'annule.",
+    "en": "Content blocks are subject to a gravity whose intensity and direction the scroll controls: they fall, stack, bounce, then return to orbit once gravity cancels out."
+  },
+  "scroll.cat.11.scroll": {
+    "fr": "Progression → vecteur de gravité (intensité et angle).",
+    "en": "Progress → a gravity vector (intensity and angle)."
+  },
+  "scroll.cat.11.seen": {
+    "fr": "Des cartes qui s'empilent au bas de l'écran puis remontent en flottant.",
+    "en": "Cards stacking at the bottom of the screen then floating back up."
+  },
+  "scroll.cat.11.cost": {
+    "fr": "Élevé — stabilité de la simulation et reprise après retour arrière.",
+    "en": "High — simulation stability and resuming after scrolling back."
+  },
+  "scroll.cat.11.use": {
+    "fr": "Moyen : page « à propos » ludique.",
+    "en": "Medium: a playful \"about\" page."
+  },
+  "scroll.cat.12.desc": {
+    "fr": "Chaque section traversée laisse une strate empilée en bas de l'écran : une coupe géologique de la lecture. Remonter creuse les strates et rouvre la section correspondante.",
+    "en": "Every section you pass through leaves a layer stacked at the bottom of the screen: a geological cross-section of your reading. Scrolling back up digs into the layers and reopens the matching section."
+  },
+  "scroll.cat.12.scroll": {
+    "fr": "Sens du scroll → dépôt ou érosion ; hauteur cumulée des strates = position dans le document.",
+    "en": "Scroll direction → deposit or erosion; cumulative layer height = position in the document."
+  },
+  "scroll.cat.12.seen": {
+    "fr": "Une barre stratifiée qui grandit, chaque strate portant le titre de sa section.",
+    "en": "A layered bar growing, each layer bearing its section's title."
+  },
+  "scroll.cat.12.cost": {
+    "fr": "Faible à moyen.",
+    "en": "Low to medium."
+  },
+  "scroll.cat.12.use": {
+    "fr": "Très fort : remplace la barre de progression par un objet mémorable.",
+    "en": "Very strong: replaces the progress bar with a memorable object."
+  },
+  "scroll.cat.13.desc": {
+    "fr": "Le scroll est traité comme une fréquence d'échantillonnage. Au-delà d'un seuil de vitesse la typographie se dédouble et se déchire ; en dessous elle se stabilise. Lire vite abîme l'image.",
+    "en": "Scroll is treated as a sampling frequency. Past a speed threshold the typography splits and tears; below it, it stabilises. Reading fast damages the image."
+  },
+  "scroll.cat.13.scroll": {
+    "fr": "Vitesse → seuil de déformation ; l'arrêt restaure la netteté.",
+    "en": "Speed → a distortion threshold; stopping restores sharpness."
+  },
+  "scroll.cat.13.seen": {
+    "fr": "Un titre qui se dédouble en fantômes colorés quand on accélère.",
+    "en": "A title splitting into coloured ghosts as you speed up."
+  },
+  "scroll.cat.13.cost": {
+    "fr": "Élevé en GLSL, moyen en CSS.",
+    "en": "High in GLSL, medium in CSS."
+  },
+  "scroll.cat.13.use": {
+    "fr": "Moyen : accroche de page d'accueil.",
+    "en": "Medium: a homepage hook."
+  },
+  "scroll.cat.14.desc": {
+    "fr": "Deux colonnes, deux temporalités : l'une suit le scroll, l'autre le rattrape avec retard élastique. Le texte et l'image ne coïncident qu'à l'arrêt — le sens se forme quand on s'immobilise.",
+    "en": "Two columns, two timings: one follows the scroll, the other catches up with elastic lag. Text and image only coincide when still — meaning forms when you stop moving."
+  },
+  "scroll.cat.14.scroll": {
+    "fr": "Une colonne en position directe, l'autre en ressort amorti sur la même valeur.",
+    "en": "One column at the direct position, the other on a damped spring toward the same value."
+  },
+  "scroll.cat.14.seen": {
+    "fr": "Une image qui court derrière son texte puis le rejoint exactement.",
+    "en": "An image chasing its text then meeting it exactly."
+  },
+  "scroll.cat.14.cost": {
+    "fr": "Faible.",
+    "en": "Low."
+  },
+  "scroll.cat.14.use": {
+    "fr": "Très fort : page projet éditoriale, très adaptable.",
+    "en": "Very strong: an editorial project page, highly adaptable."
+  },
+  "scroll.cat.15.desc": {
+    "fr": "Le scroll ne déplace pas la page mais le plan de mise au point dans une pile d'images superposées. On scrolle dans la profondeur de champ.",
+    "en": "Scroll doesn't move the page but the focal plane within a stack of overlaid images. You scroll through depth of field."
+  },
+  "scroll.cat.15.scroll": {
+    "fr": "Progression → position du plan net ; le flou de chaque couche dépend de sa distance à ce plan.",
+    "en": "Progress → the sharp plane's position; each layer's blur depends on its distance from that plane."
+  },
+  "scroll.cat.15.seen": {
+    "fr": "Une pile d'images où une seule est nette à la fois, les autres respirant autour.",
+    "en": "A stack of images where only one is sharp at a time, the others breathing around it."
+  },
+  "scroll.cat.15.cost": {
+    "fr": "Moyen — le flou CSS coûte cher, à limiter en nombre de couches.",
+    "en": "Medium — CSS blur is expensive, best kept to a limited number of layers."
+  },
+  "scroll.cat.15.use": {
+    "fr": "Fort : galerie photo ou séquence de références.",
+    "en": "Strong: a photo gallery or a sequence of references."
+  },
+  "project02.hero.kicker": {
+    "fr": "En développement — PC",
+    "en": "In development — PC"
+  },
+  "project02.hero.lead": {
+    "fr": "2034. Une météorite d'origine inconnue percute la Terre. Vous survivez depuis un bunker — jusqu'au jour où il faut enfin sortir.",
+    "en": "2034. A meteorite of unknown origin strikes Earth. You survive from a bunker — until the day you finally have to go outside."
+  },
+  "project02.hero.cta.discover": {
+    "fr": "Découvrir le projet",
+    "en": "Discover the project"
+  },
+  "project02.meta.status.value": {
+    "fr": "En pause — cadrage",
+    "en": "On hold — scoping"
+  },
+  "project02.hunt.title": {
+    "fr": "Survivre. Attendre. Comprendre. Sortir.",
+    "en": "Survive. Wait. Understand. Get out."
+  },
+  "project02.hunt.p1": {
+    "fr": "Novum est un jeu de survie vu depuis un bunker. Après l'impact d'une météorite aux propriétés inconnues, vous et votre équipe tenez le fort : gestion des ressources, maintien des systèmes vitaux, et le compte des jours qui s'accumulent.",
+    "en": "Novum is a survival game seen from inside a bunker. After a meteorite of unknown properties hits, you and your team hold the fort: resource management, keeping life-support systems running, and counting the days as they add up."
+  },
+  "project02.hunt.p2": {
+    "fr": "Le monde extérieur ne se raconte pas en une cinématique : il se découvre par le journal de bord, entrée après entrée, jusqu'au jour où la porte du bunker s'ouvre enfin.",
+    "en": "The outside world isn't told through a cutscene: it's uncovered through the logbook, entry after entry, until the day the bunker door finally opens."
+  },
+  "project02.stat.env": {
+    "fr": "États environnement",
+    "en": "Environment states"
+  },
+  "project02.stat.years": {
+    "fr": "Ans avant la sortie",
+    "en": "Years before the exit"
+  },
+  "project02.stat.journal": {
+    "fr": "Jours de journal couverts",
+    "en": "Journal days covered"
+  },
+  "project02.gameplay.lead": {
+    "fr": "L'objectif immédiat est simple : tenir. Mais tenir demande de sortir — chercher des ressources, réparer un système, comprendre une anomalie — et chaque sortie est un risque.",
+    "en": "The immediate goal is simple: hold on. But holding on means going outside — scavenging resources, repairing a system, investigating an anomaly — and every trip out is a risk."
+  },
+  "project02.relay.label": {
+    "fr": "Panne système",
+    "en": "System failure"
+  },
+  "project02.relay.desc": {
+    "fr": "Aucune alerte, aucun rapport d'erreur — puis tout s'arrête, sans raison retrouvée dans les journaux.",
+    "en": "No alert, no error log — then everything stops, with no cause found in the records."
+  },
+  "project02.zone.compromised": {
+    "fr": "Périmètre compromis",
+    "en": "Perimeter compromised"
+  },
+  "project02.extraction.label": {
+    "fr": "Sortie risquée",
+    "en": "Risky excursion"
+  },
+  "project02.extraction.desc": {
+    "fr": "Chaque sortie extérieure peut tourner court — et ce qui en revient n'est pas toujours ce qui en est parti.",
+    "en": "Every trip outside can go wrong — and what comes back isn't always what went out."
+  },
+  "project02.env.label": {
+    "fr": "Environnement",
+    "en": "Environment"
+  },
+  "project02.env.lead": {
+    "fr": "Dehors, le jour et la nuit se succèdent sur un monde redevenu respirable — mais jamais tout à fait vide.",
+    "en": "Outside, day and night follow one another over a world that's breathable again — but never quite empty."
+  },
+  "project02.atmo.p1": {
+    "fr": "Une lumière pâle réapparaît la nuit, toujours plus proche. Personne ne veut en parler ouvertement — mais plusieurs l'ont vue.",
+    "en": "A pale light reappears at night, always a little closer. No one wants to talk about it openly — but several have seen it."
+  },
+  "project02.atmo.p2": {
+    "fr": "Novum construit sa tension par accumulation : des pannes sans explication, des marques dans le métal, une silhouette qui n'approche jamais tout à fait — mais qui ne s'éloigne pas non plus.",
+    "en": "Novum builds its tension by accumulation: unexplained failures, marks in the metal, a shape that never quite comes closer — but never quite leaves either."
+  },
+  "project02.journal.lead": {
+    "fr": "Le monde de Novum se raconte moins en captures qu'en notes de journal — celles tenues par l'équipe du bunker, jour après jour, jusqu'à la sortie.",
+    "en": "Novum's world is told less through screenshots than through journal entries — kept by the bunker crew, day after day, until the exit."
+  },
+  "project02.prep.label": {
+    "fr": "Le bunker",
+    "en": "The bunker"
+  },
+  "project02.prep.p1": {
+    "fr": "Recyclage d'air, générateur, éclairage de secours : le bunker n'est pas un décor, c'est un système qu'il faut entretenir. Une panne n'est jamais juste cosmétique.",
+    "en": "Air recycling, generator, backup lighting: the bunker isn't a backdrop, it's a system that needs upkeep. A failure is never just cosmetic."
+  },
+  "project02.prep.p2": {
+    "fr": "Le craft médical — herbes cultivées, cachets, vaccins — occupe une place centrale : soigner l'équipe compte autant que l'armer pour une sortie.",
+    "en": "Medical crafting — grown herbs, pills, vaccines — plays a central role: healing the team matters as much as arming it for an excursion."
+  },
+  "project02.arsenal.lead": {
+    "fr": "Une arme, des modifications adaptées à la sortie prévue, et un kit médical — l'équipement se pense pour revenir, pas seulement pour partir.",
+    "en": "A weapon, modifications suited to the planned excursion, and a medical kit — gear is built to get you back, not just to send you out."
+  },
+  "project02.mission.lead": {
+    "fr": "Le journal de bord n'est pas un simple récap narratif : il consigne l'état du bunker, guide les priorités, et révèle progressivement ce qui se passe dehors.",
+    "en": "The logbook isn't just a narrative recap: it records the bunker's state, guides priorities, and gradually reveals what's happening outside."
+  },
+  "project02.mission.each": {
+    "fr": "Chaque jour de jeu suit :",
+    "en": "Every in-game day follows:"
+  },
+  "project02.threat.lead": {
+    "fr": "Une silhouette humanoïde, immobile à l'horizon — trop loin pour être identifiée, trop régulière pour être un hasard. Les drones envoyés en reconnaissance reviennent endommagés avant d'avoir franchi cinquante mètres.",
+    "en": "A humanoid shape, motionless on the horizon — too far to identify, too consistent to be chance. Drones sent to scout return damaged before covering fifty meters."
+  },
+  "project02.coop.p1": {
+    "fr": "Ingénieurs, scientifiques, section de sécurité : chacun tient son rôle dans le bunker, et chaque décision extérieure se discute en équipe avant d'être prise.",
+    "en": "Engineers, scientists, security detail: everyone holds their role in the bunker, and every decision about the outside is discussed as a team before it's made."
+  },
+  "project02.coop.p2": {
+    "fr": "Le silence pèse différemment sur chacun. Certains cessent d'écrire. D'autres continuent — parce que c'est ce qu'ils savent faire : observer, noter, comprendre.",
+    "en": "The silence weighs on everyone differently. Some stop writing. Others keep going — because it's what they know how to do: observe, record, understand."
+  },
+  "project02.trailer.label": {
+    "fr": "Bande-annonce",
+    "en": "Trailer"
+  },
+  "project02.dev.lead": {
+    "fr": "Novum : la terre d'après est en phase de cadrage. Le projet avance autour de plusieurs axes :",
+    "en": "Novum: the world after is in the scoping phase. The project is progressing along several axes:"
+  },
+  "project02.cta.kicker": {
+    "fr": "Le monde est calme. Ça ne veut rien dire.",
+    "en": "The world is quiet. That doesn't mean anything."
+  },
+  "lab.cat.vfx": {
+    "fr": "Quatre effets Unity construits sur VFX Graph et Shader Graph — trou noir, dissolution, radar de détection et faisceau à particules.",
+    "en": "Four Unity effects built on VFX Graph and Shader Graph — black hole, dissolve, detection radar and particle beam."
+  },
+  "lab.cat.csharp": {
+    "fr": "Trois systèmes plus proches de l'algorithme que du visuel — détection et ciblage, placement en grille, performance ECS/DOTS.",
+    "en": "Three systems closer to the algorithm than the visual — detection and targeting, grid placement, ECS/DOTS performance."
+  },
+  "project02.survie.ressources": {
+    "fr": "Ressources",
+    "en": "Resources"
+  },
+  "project02.survie.systemes": {
+    "fr": "Systèmes vitaux",
+    "en": "Life support"
+  },
+  "project02.survie.sorties": {
+    "fr": "Sorties extérieures",
+    "en": "Outside excursions"
+  },
+  "project02.survie.anomalies": {
+    "fr": "Anomalies",
+    "en": "Anomalies"
+  },
+  "project02.survie.journal": {
+    "fr": "Journal de bord",
+    "en": "Logbook"
+  },
+  "project02.dev.gameplay": {
+    "fr": "Développer la boucle bunker ↔ sorties extérieures et la gestion des ressources.",
+    "en": "Develop the bunker ↔ outside-excursion loop and resource management."
+  },
+  "project02.dev.world": {
+    "fr": "Construire le cycle jour/nuit et les zones extérieures explorables.",
+    "en": "Build the day/night cycle and the explorable outdoor zones."
+  },
+  "project02.dev.threat": {
+    "fr": "Définir la nature de ce qui rôde dehors — encore volontairement flou côté design.",
+    "en": "Define the nature of what's lurking outside — still deliberately vague on the design side."
+  },
+  "project02.dev.systems": {
+    "fr": "Construire le craft médical, l'entretien du bunker et la narration par journal.",
+    "en": "Build medical crafting, bunker upkeep and journal-driven storytelling."
+  },
+  "project02.arsenal.weapons": {
+    "fr": "Armes",
+    "en": "Weapons"
+  },
+  "project02.arsenal.mods": {
+    "fr": "Modifications",
+    "en": "Modifications"
+  },
+  "project02.arsenal.medkit": {
+    "fr": "Kit médical",
+    "en": "Medical kit"
+  },
+  "carousel.cat.9.desc": {
+    "fr": "Plus de cartes : chaque plan occupe la section entière. Les panneaux glissent bord à bord, l'image se déplace moins vite que son cadre.",
+    "en": "No more cards: each plane fills the whole section. Panels slide edge to edge while the image drifts slower than its frame."
+  },
+  "carousel.cat.9.scroll": {
+    "fr": "Position fractionnaire → glissement bord à bord, parallaxe interne du média à 22 %.",
+    "en": "Fractional position → edge-to-edge slide, 22% internal media parallax."
+  },
+  "carousel.cat.9.seen": {
+    "fr": "Un plan par écran, plein cadre, qui glisse latéralement pendant que son image dérive plus lentement à l'intérieur.",
+    "en": "One full-frame plane per screen, sliding sideways while its image drifts more slowly inside."
+  },
+  "carousel.cat.9.cost": {
+    "fr": "Faible — une translation du plan, une contre-translation du média.",
+    "en": "Low — one translation on the plane, one counter-translation on the media."
+  },
+  "carousel.cat.9.portfolio": {
+    "fr": "Fort — le format le plus immersif du lot, adapté à une galerie de captures.",
+    "en": "Strong — the most immersive format of the set, well suited to a screenshot gallery."
+  },
+  "carousel.cat.10.desc": {
+    "fr": "Rien ne sort : le plan suivant se découvre par le bas et recouvre le précédent, qui recule d'un cran sans jamais bouger latéralement.",
+    "en": "Nothing exits: the next plane rises from below and covers the previous one, which steps back a notch without ever moving sideways."
+  },
+  "carousel.cat.10.scroll": {
+    "fr": "Position fractionnaire → découpe progressive (clip-path inset) du panneau entrant.",
+    "en": "Fractional position → progressive clip-path inset reveal of the incoming panel."
+  },
+  "carousel.cat.10.seen": {
+    "fr": "Un rideau qui monte depuis le bas et recouvre le plan précédent, empilé derrière sans jamais glisser latéralement.",
+    "en": "A curtain rising from below that covers the previous plane, stacked behind it without ever sliding sideways."
+  },
+  "carousel.cat.10.cost": {
+    "fr": "Moyen — clip-path animé par plan, empilement d'index à maintenir.",
+    "en": "Medium — an animated clip-path per plane, an index stack to maintain."
+  },
+  "carousel.cat.10.portfolio": {
+    "fr": "Fort — lecture d'un empilement plutôt que d'un défilement, bon candidat pour une chronologie.",
+    "en": "Strong — reads as a stack rather than a scroll, a good fit for a timeline."
+  },
+  "carousel.cat.11.desc": {
+    "fr": "Aucun déplacement dans le plan : la caméra avance. Le suivant arrive de loin en s'ouvrant, le précédent se retire vers le fond.",
+    "en": "No movement within the plane: the camera moves forward. The next one arrives from afar, opening up; the previous one recedes into the background."
+  },
+  "carousel.cat.11.scroll": {
+    "fr": "Position fractionnaire → échelle du plan (amont/aval) + contre-zoom interne du média.",
+    "en": "Fractional position → plane scale (upstream/downstream) + internal counter-zoom on the media."
+  },
+  "carousel.cat.11.seen": {
+    "fr": "Un travelling avant : le plan à venir s'ouvre en grandissant, le plan passé recule en rétrécissant, jamais de mouvement latéral.",
+    "en": "A forward dolly shot: the coming plane opens up as it grows, the past plane recedes as it shrinks, never any sideways motion."
+  },
+  "carousel.cat.11.cost": {
+    "fr": "Faible — une échelle par plan, une contre-échelle du média.",
+    "en": "Low — one scale on the plane, one counter-scale on the media."
+  },
+  "carousel.cat.11.portfolio": {
+    "fr": "Moyen — effet de profondeur marqué, à réserver à un nombre restreint de plans.",
+    "en": "Medium — a pronounced depth effect, best reserved for a small number of planes."
+  }
+}

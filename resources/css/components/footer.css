@@ -1,0 +1,17 @@
+/* footer.css — pied de page partagé (layouts/site.blade.php). */
+
+/* ------------------------------------------------------------- footer ---- */
+
+.footer {
+    padding: var(--s-8) 0 var(--s-6);
+    border-top: 1px solid var(--line);
+    margin-top: var(--s-9);
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-5);
+    align-items: flex-end;
+    justify-content: space-between;
+}

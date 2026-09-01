@@ -1,0 +1,237 @@
+/* nav.css — en-tête fixe (.nav*, .nav-progress) et l'habillage des quatre
+   transitions Barba (.pxo-* — voile/horizon/signal/éclipse). La
+   chorégraphie GSAP vit dans core/barba-transitions.js ; ces règles ne
+   posent que la géométrie et l'état neutre de chaque pièce. */
+
+/* ---------------------------------------------------------------- nav ---- */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-5);
+    padding: var(--s-4) var(--gutter);
+    transition: background var(--t-mid) var(--ease), padding var(--t-mid) var(--ease), border-color var(--t-mid) var(--ease);
+    border-bottom: 1px solid transparent;
+    transform: translateY(-100%);
+    opacity: 0;
+    animation: nav-in 760ms var(--ease-out) 220ms forwards;
+}
+
+@keyframes nav-in {
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.nav.is-stuck {
+    background: rgba(5, 5, 10, 0.72);
+    backdrop-filter: blur(14px) saturate(1.1);
+    border-bottom-color: var(--line);
+    padding-top: var(--s-3);
+    padding-bottom: var(--s-3);
+}
+
+.nav.is-hidden {
+    transform: translateY(-101%);
+    transition: transform var(--t-mid) var(--ease);
+}
+
+.nav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-3);
+    font-size: 11px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+}
+
+    .nav-brand .dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: var(--glow);
+    }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 2.4vw, 30px);
+}
+
+.nav-link {
+    position: relative;
+    padding: 6px 0;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    text-decoration: none;
+    transition: color var(--t-fast) var(--ease);
+}
+
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background: var(--accent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform var(--t-mid) var(--ease);
+    }
+
+    .nav-link:hover {
+        color: var(--text);
+    }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+    .nav-link[aria-current="page"] {
+        color: var(--text);
+    }
+
+        .nav-link[aria-current="page"]::after {
+            transform: scaleX(1);
+            background: var(--accent);
+        }
+
+/* progression de lecture */
+.nav-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 61;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+}
+
+/* ------------------------------------------------- transition de page ---- */
+/* Quatre transitions Barba (voile / horizon / signal / éclipse) — la
+   choréographie vit dans barba-transitions.js (GSAP), ces classes ne posent
+   que la géométrie et l'état neutre de chaque pièce. Remplace l'ancien
+   rideau à trois panneaux : Barba gère désormais la navigation elle-même. */
+
+.pxo {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+}
+
+.pxo-veil {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: radial-gradient(130% 100% at 50% 116%, #e9e6f7 0%, #c7c2e0 46%, var(--accent-2) 100%);
+}
+
+.pxo-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50.2%;
+    background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+}
+
+    .pxo-panel-top {
+        top: 0;
+        transform: translateY(-101%);
+    }
+
+    .pxo-panel-bottom {
+        bottom: 0;
+        transform: translateY(101%);
+    }
+
+.pxo-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    transform: scaleX(0);
+    opacity: 0;
+    background: linear-gradient(90deg, transparent, var(--accent) 18%, var(--accent) 82%, transparent);
+    box-shadow: 0 0 18px var(--accent-dim);
+}
+
+.pxo-dim {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: rgba(5, 5, 10, 0.86);
+}
+
+.pxo-scan {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 26%;
+    opacity: 0;
+    background: linear-gradient(180deg, transparent, var(--accent-ghost) 72%, var(--accent));
+}
+
+.pxo-readout {
+    position: absolute;
+    left: var(--s-6);
+    bottom: var(--s-6);
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    opacity: 0;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--text-2);
+    font-variant-numeric: tabular-nums;
+}
+
+    .pxo-readout::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--accent), transparent);
+    }
+
+.pxo-hole {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 132%;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1400px var(--bg);
+}
+
+.pxo-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 132%;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 0;
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 26px var(--accent-dim);
+}

@@ -1,0 +1,332 @@
+/* reveals.css — animations d'entrée déclenchées une fois par
+   IntersectionObserver (attribut [data-reveal="..."] + classe .is-in,
+   posée par setupReveal dans core/page-systems.js), et les effets liés en
+   continu au scroll (.sc-* — lisent la variable --p écrite par setupScrub,
+   le CSS ne fait que réagir). Comprend aussi .page-in, l'entrée au tout
+   premier chargement (voir core/app.js). */
+
+/* ------------------------------------------------------------- reveal ---- */
+
+[data-reveal] {
+    will-change: transform, opacity, filter, clip-path;
+}
+
+[data-reveal="mask"] {
+    display: block;
+}
+
+    [data-reveal="mask"] > .mask-line {
+        display: block;
+        overflow: hidden;
+    }
+
+        [data-reveal="mask"] > .mask-line > * {
+            display: block;
+            transform: translateY(110%);
+            transition: transform var(--t-slow) var(--ease-out);
+        }
+
+    [data-reveal="mask"].is-in > .mask-line > * {
+        transform: none;
+    }
+
+    [data-reveal="mask"] > .mask-line:nth-child(2) > * {
+        transition-delay: 90ms;
+    }
+
+    [data-reveal="mask"] > .mask-line:nth-child(3) > * {
+        transition-delay: 180ms;
+    }
+
+[data-reveal="blur"] {
+    opacity: 0;
+    filter: blur(7px);
+    transform: translateY(14px);
+    transition: opacity 480ms var(--ease), filter 560ms var(--ease), transform 560ms var(--ease-out);
+}
+
+    [data-reveal="blur"].is-in {
+        opacity: 1;
+        filter: none;
+        transform: none;
+    }
+
+[data-reveal="wipe"] {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 720ms var(--ease-out);
+}
+
+    [data-reveal="wipe"].is-in {
+        clip-path: inset(0 0 0 0);
+    }
+
+[data-reveal="rise"] {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 520ms var(--ease), transform 620ms var(--ease-out);
+}
+
+    [data-reveal="rise"].is-in {
+        opacity: 1;
+        transform: none;
+    }
+
+[data-reveal="stagger"] > * {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 480ms var(--ease), transform 560ms var(--ease-out);
+}
+
+[data-reveal="stagger"].is-in > * {
+    opacity: 1;
+    transform: none;
+}
+
+    [data-reveal="stagger"].is-in > *:nth-child(1) {
+        transition-delay: 0ms;
+    }
+
+    [data-reveal="stagger"].is-in > *:nth-child(2) {
+        transition-delay: 70ms;
+    }
+
+    [data-reveal="stagger"].is-in > *:nth-child(3) {
+        transition-delay: 140ms;
+    }
+
+    [data-reveal="stagger"].is-in > *:nth-child(4) {
+        transition-delay: 210ms;
+    }
+
+    [data-reveal="stagger"].is-in > *:nth-child(5) {
+        transition-delay: 280ms;
+    }
+
+    [data-reveal="stagger"].is-in > *:nth-child(6) {
+        transition-delay: 350ms;
+    }
+
+/* ------------------------------------------------ reveals composés ---- */
+/* Déclenchés une fois à l'entrée dans le viewport (classe .is-in),
+   tous en transform / opacity / clip-path / filter. */
+
+/* arrivée latérale — et les deux côtés qui se rejoignent */
+[data-reveal="left"] {
+    opacity: 0;
+    transform: translate3d(-46px, 0, 0);
+    transition: opacity 560ms var(--ease), transform 720ms var(--ease-out);
+}
+
+[data-reveal="right"] {
+    opacity: 0;
+    transform: translate3d(46px, 0, 0);
+    transition: opacity 560ms var(--ease), transform 720ms var(--ease-out);
+}
+
+    [data-reveal="left"].is-in, [data-reveal="right"].is-in {
+        opacity: 1;
+        transform: none;
+    }
+
+[data-reveal="converge"] > * {
+    opacity: 0;
+    transition: opacity 520ms var(--ease), transform 760ms var(--ease-out);
+}
+
+    [data-reveal="converge"] > *:nth-child(odd) {
+        transform: translate3d(-56px, 0, 0);
+    }
+
+    [data-reveal="converge"] > *:nth-child(even) {
+        transform: translate3d(56px, 0, 0);
+    }
+
+[data-reveal="converge"].is-in > * {
+    opacity: 1;
+    transform: none;
+}
+
+/* ouverture géométrique — hexagone qui s'écarte du centre */
+[data-reveal="hex"] {
+    clip-path: polygon(50% 42%, 54% 46%, 54% 54%, 50% 58%, 46% 54%, 46% 46%);
+    transition: clip-path 980ms var(--ease-out), filter 980ms var(--ease);
+    filter: brightness(0.55) saturate(0.7);
+}
+
+    [data-reveal="hex"].is-in {
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        filter: none;
+    }
+
+    [data-reveal="hex"][data-shape="full"].is-in {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+/* diaphragme circulaire */
+[data-reveal="iris"] {
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 900ms var(--ease-out);
+}
+
+    [data-reveal="iris"].is-in {
+        clip-path: circle(78% at 50% 50%);
+    }
+
+/* cadre qui se dessine autour du contenu */
+[data-reveal="frame"] {
+    position: relative;
+}
+
+    [data-reveal="frame"]::before, [data-reveal="frame"]::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        border-color: var(--accent-dim);
+        border-style: solid;
+        transition: transform 620ms var(--ease-out);
+    }
+
+    [data-reveal="frame"]::before {
+        inset: -10px auto auto -10px;
+        width: 44px;
+        height: 44px;
+        border-width: 1px 0 0 1px;
+        transform: translate3d(-14px, -14px, 0) scale(0.4);
+        opacity: 0;
+        transition: transform 620ms var(--ease-out), opacity 420ms var(--ease);
+    }
+
+    [data-reveal="frame"]::after {
+        inset: auto -10px -10px auto;
+        width: 44px;
+        height: 44px;
+        border-width: 0 1px 1px 0;
+        transform: translate3d(14px, 14px, 0) scale(0.4);
+        opacity: 0;
+        transition: transform 620ms var(--ease-out) 90ms, opacity 420ms var(--ease) 90ms;
+    }
+
+    [data-reveal="frame"].is-in::before, [data-reveal="frame"].is-in::after {
+        transform: none;
+        opacity: 1;
+    }
+
+/* ligne qui se construit (règle, séparateur, bord de section) */
+[data-reveal="line"] {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 760ms var(--ease-out);
+}
+
+    [data-reveal="line"].is-in {
+        transform: none;
+    }
+
+    [data-reveal="line"][data-origin="center"] {
+        transform-origin: center;
+    }
+
+/* profondeur : trois plans qui se recalent */
+[data-reveal="depth"] > * {
+    opacity: 0;
+    transition: opacity 620ms var(--ease), transform 860ms var(--ease-out), filter 720ms var(--ease);
+}
+
+    [data-reveal="depth"] > *:nth-child(1) {
+        transform: translate3d(0, 34px, 0) scale(1.06);
+        filter: blur(6px);
+    }
+
+    [data-reveal="depth"] > *:nth-child(2) {
+        transform: translate3d(0, 22px, 0);
+        transition-delay: 110ms;
+    }
+
+    [data-reveal="depth"] > *:nth-child(3) {
+        transform: translate3d(0, 14px, 0);
+        transition-delay: 220ms;
+    }
+
+[data-reveal="depth"].is-in > * {
+    opacity: 1;
+    transform: none;
+    filter: none;
+}
+
+/* ------------------------------------------- effets liés au scroll ---- */
+/* JS écrit --p (0 → 1) sur chaque [data-scrub] ; le CSS ne fait que lire. */
+
+[data-scrub] {
+    will-change: transform, filter;
+}
+
+.sc-rise {
+    transform: translate3d(0, calc((1 - var(--p, 0)) * 44px), 0);
+}
+
+.sc-zoom {
+    transform: scale(calc(1 + var(--p, 0) * 0.10));
+}
+
+.sc-unzoom {
+    transform: scale(calc(1.10 - var(--p, 0) * 0.10));
+}
+/* convergence : au repos (p=1) l'offset est nul, l'élément est à sa place */
+.sc-in-left {
+    transform: translate3d(calc((1 - var(--p, 0)) * var(--amp, -90px)), 0, 0);
+}
+
+.sc-in-right {
+    transform: translate3d(calc((1 - var(--p, 0)) * var(--amp, 90px)), 0, 0);
+}
+/* dérive continue, symétrique autour du milieu de la bande — pour un fond, pas un bloc de contenu */
+.sc-x {
+    transform: translate3d(calc((var(--p, .5) - 0.5) * var(--amp, 90px)), 0, 0);
+}
+
+.sc-x-rev {
+    transform: translate3d(calc((0.5 - var(--p, .5)) * var(--amp, 90px)), 0, 0);
+}
+
+.sc-tilt {
+    transform: rotate(calc((var(--p, .5) - 0.5) * var(--amp, 5deg)));
+}
+
+.sc-sharp {
+    filter: blur(calc((1 - var(--p, 0)) * var(--amp, 7px)));
+}
+
+.sc-light {
+    filter: brightness(calc(0.62 + var(--p, 0) * 0.46));
+}
+
+.sc-fade {
+    opacity: var(--p, 0);
+}
+
+.sc-lift {
+    transform: translate3d(0, calc((1 - var(--p, 0)) * 26px), 0) scale(calc(0.97 + var(--p, 0) * 0.03));
+}
+
+/* couplages fréquents */
+.sc-rise.sc-sharp {
+    transform: translate3d(0, calc((1 - var(--p, 0)) * 44px), 0);
+}
+
+/* entrée du contenu — au tout premier chargement réel (voir app.js) ; les
+   transitions Barba retirent la classe avant de jouer leur propre entrée */
+.page-in {
+    animation: page-in 620ms var(--ease-out) 120ms both;
+}
+
+@keyframes page-in {
+    from {
+        opacity: 0;
+        translate: 0 16px;
+    }
+
+    to {
+        opacity: 1;
+        translate: none;
+    }
+}

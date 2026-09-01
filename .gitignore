@@ -13,6 +13,7 @@
 /.vs
 /.zed
 /auth.json
+/dist
 /node_modules
 /public/build
 /public/hot

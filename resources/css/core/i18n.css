@@ -1,0 +1,42 @@
+/* i18n.css — bascule FR/EN partagée par tout le site sauf home.blade.php
+   (qui garde son propre mécanisme indépendant, voir pages/web.css git
+   history). Deux façons de marquer du texte traduisible, pilotées par le
+   même attribut [data-lang] posé sur <html> par core/i18n.js :
+
+   1. Paires écrites à la main (contenu déjà bilingue avant ce système —
+      welcome.blade.php, about.blade.php) :
+        <span class="i18n-fr">Texte</span><span class="i18n-en">Text</span>
+   2. Nouveau contenu, piloté par le dictionnaire JSON (voir
+      resources/js/i18n/dictionary.json) :
+        <span data-i18n="ma.cle"></span>
+
+   [data-lang] cascade depuis <html> : peu importe la profondeur d'un
+   .i18n-fr/.i18n-en dans la page, il répond quand même. */
+
+.i18n-en { display: none; }
+[data-lang="en"] .i18n-en { display: inline; }
+[data-lang="en"] .i18n-fr { display: none; }
+
+/* Sélecteur de langue — <select> natif stylé, pas de menu custom à
+   maintenir (focus/clavier/clic-extérieur gratuits). Un par [data-lang-switch]. */
+.lang-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: 1px solid var(--line-2, rgba(233, 233, 237, .18));
+    border-radius: var(--r-2, 8px);
+    color: var(--text-2, rgba(226, 221, 209, .72));
+    font: inherit;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: 6px 26px 6px 12px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23e2ddd1' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    transition: border-color .2s ease, color .2s ease;
+}
+.lang-select:hover { border-color: var(--accent-dim, rgba(145, 132, 217, .42)); color: var(--text, #e2ddd1); }
+.lang-select:focus-visible { outline: 2px solid var(--accent, #9184d9); outline-offset: 2px; }
+.lang-select option { background: var(--bg-1, #0b0c14); color: var(--text, #e2ddd1); }

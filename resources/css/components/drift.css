@@ -1,0 +1,72 @@
+/* drift.css — piste horizontale pilotée par le scroll vertical (voir
+   mountDrift dans core/page-systems.js) : .drift-track avance, .drift-bar
+   affiche la progression, .drift-item réagit selon sa proximité au centre. */
+
+/* ------------------------------------------------- dérive horizontale ---- */
+/* 1d — le scroll vertical translate une piste horizontale */
+
+.drift {
+    position: relative;
+}
+
+.drift-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.drift-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--s-5);
+    padding: 0 var(--gutter) var(--s-5);
+}
+
+.drift-track {
+    display: flex;
+    gap: clamp(14px, 2vw, 28px);
+    padding: 0 var(--gutter);
+    will-change: transform;
+}
+
+.drift-item {
+    flex: none;
+    width: clamp(220px, 26vw, 340px);
+    transition: transform var(--t-slow) var(--ease), opacity var(--t-slow) var(--ease);
+}
+
+    .drift-item.is-near {
+        transform: translateY(-10px);
+    }
+
+    .drift-item.is-far {
+        opacity: 0.5;
+    }
+
+.drift-bar {
+    position: relative;
+    height: 1px;
+    margin: var(--s-5) var(--gutter) 0;
+    background: var(--line);
+}
+
+    .drift-bar > span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 1px;
+        width: 34%;
+        background: var(--accent);
+        transform-origin: left;
+    }
+
+.drift-count {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-3);
+}

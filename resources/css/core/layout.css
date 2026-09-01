@@ -1,0 +1,45 @@
+/* layout.css — conteneurs de page (.shell/.wrap/.section*), mise en page
+   à colonne collante (.split*). Les points de rupture responsive qui
+   ajustent CES règles + nav/drift/carousel définis ailleurs vivent dans
+   core/responsive.css, chargé après tous les composants (l'ordre
+   d'@import compte : une media query doit suivre la règle de base qu'elle
+   corrige pour gagner la cascade à spécificité égale). */
+
+/* ------------------------------------------------------------- layout ---- */
+
+.shell {
+    position: relative;
+    z-index: 1;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+.section {
+    padding: var(--s-9) 0;
+}
+
+.section-tight {
+    padding: var(--s-7) 0;
+}
+
+/* page 1b — colonne collante + flux */
+.split {
+    display: grid;
+    grid-template-columns: minmax(240px, 34%) 1fr;
+    gap: clamp(28px, 6vw, 96px);
+    align-items: start;
+}
+
+.split-aside {
+    position: sticky;
+    top: clamp(90px, 14vh, 140px);
+}
+
+.split-flow > * + * {
+    margin-top: var(--s-8);
+}

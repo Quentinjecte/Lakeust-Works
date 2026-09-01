@@ -1,0 +1,6 @@
+/* web.css — point d'entrée Vite pour les pages "Lakeust Web" autonomes
+   (carrefour, accueil, cinématiques Three.js/Theatre.js). Réexporte
+   pages/web.css, qui documente le détail (scope par classe body / préfixe
+   .wl-*) dans son propre en-tête. */
+
+@import './pages/web.css';

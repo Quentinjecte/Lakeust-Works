@@ -1,0 +1,77 @@
+/* typography.css — échelle de titres (.t-display/.t-h1..h3/.t-lead/.t-body),
+   étiquettes (.label/.label-accent/.num), petits séparateurs (.rule/.mark). */
+
+/* ---------------------------------------------------------------- type ---- */
+
+h1, h2, h3, h4 {
+    font-weight: 300;
+    margin: 0;
+    letter-spacing: -0.015em;
+    line-height: 1.06;
+}
+
+.t-display {
+    font-size: clamp(38px, 6.6vw, 92px);
+    font-weight: 200;
+}
+
+.t-h1 {
+    font-size: clamp(30px, 4.4vw, 60px);
+    font-weight: 200;
+}
+
+.t-h2 {
+    font-size: clamp(23px, 2.6vw, 36px);
+}
+
+.t-h3 {
+    font-size: clamp(17px, 1.5vw, 21px);
+    letter-spacing: 0;
+}
+
+.t-lead {
+    font-size: clamp(15px, 1.35vw, 19px);
+    color: var(--text-2);
+    line-height: 1.62;
+    max-width: 54ch;
+}
+
+.t-body {
+    color: var(--text-2);
+    max-width: 62ch;
+}
+
+    .t-body + .t-body {
+        margin-top: var(--s-4);
+    }
+
+.label {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: var(--track-label);
+    text-transform: uppercase;
+    color: var(--text-3);
+}
+
+.label-accent {
+    color: var(--accent);
+}
+
+.num {
+    font-variant-numeric: tabular-nums;
+}
+
+/* règle qui s'éteint aux extrémités */
+.rule {
+    height: 1px;
+    border: 0;
+    margin: 0;
+    background: linear-gradient(90deg, transparent, var(--line-2) 48px, var(--line-2) calc(100% - 48px), transparent);
+}
+
+.mark {
+    display: block;
+    width: 34px;
+    height: 1px;
+    background: var(--accent);
+}

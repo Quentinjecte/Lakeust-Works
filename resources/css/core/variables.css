@@ -1,0 +1,69 @@
+/* variables.css — bootstrap Tailwind (obligatoire : sans lui aucune classe
+   utilitaire Tailwind ne fonctionne nulle part sur le site) puis jetons du
+   design system Lakeust Works : fonds, texte, accent, lignes, échelle
+   d'espacement (--s-1..10), rayons/ombres/lueurs, police, easings/durées,
+   gouttière de page. Modifier une valeur ici la change partout (nav,
+   boutons, cartes, media, reveals...). Ne pas confondre avec les jetons
+   propres à pages/web.css (--space-* et --radius-*, volontairement
+   séparés — voir son en-tête). */
+
+@import 'tailwindcss';
+
+@source '../../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../../storage/framework/views/*.php';
+@source '../../**/*.blade.php';
+@source '../../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root {
+    /* fonds */
+    --bg: #05050a;
+    --bg-1: #0b0c14;
+    --bg-2: #12131d;
+    --surface: rgba(233, 233, 237, 0.035);
+    --surface-hi: rgba(233, 233, 237, 0.065);
+    /* texte */
+    --text: #e2ddd1;
+    --text-2: rgba(226, 221, 209, 0.62);
+    --text-3: rgba(226, 221, 209, 0.38);
+    /* accent */
+    --accent: #9184d9;
+    --accent-2: #b3a9e6;
+    --accent-dim: rgba(145, 132, 217, 0.42);
+    --accent-ghost: rgba(145, 132, 217, 0.12);
+    /* lignes */
+    --line: rgba(233, 233, 237, 0.10);
+    --line-2: rgba(233, 233, 237, 0.18);
+    /* espacements — échelle dense */
+    --s-1: 4px;
+    --s-2: 8px;
+    --s-3: 12px;
+    --s-4: 17px;
+    --s-5: 24px;
+    --s-6: 34px;
+    --s-7: 48px;
+    --s-8: 68px;
+    --s-9: 96px;
+    --s-10: 136px;
+    /* rayons, ombres, lueurs */
+    --r-1: 4px;
+    --r-2: 8px;
+    --r-3: 14px;
+    --shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+    --glow: 0 0 24px rgba(145, 132, 217, 0.28);
+    /* type */
+    --font: Inter, system-ui, -apple-system, sans-serif;
+    --track-label: 0.30em;
+    /* animation */
+    --ease: cubic-bezier(0.22, 0.61, 0.24, 1);
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --t-fast: 180ms;
+    --t-mid: 320ms;
+    --t-slow: 620ms;
+    --gutter: clamp(20px, 5vw, 68px);
+    --col: 132px;
+}

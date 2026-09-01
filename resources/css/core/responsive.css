@@ -1,0 +1,48 @@
+/* responsive.css — points de rupture qui corrigent des composants définis
+   ailleurs (layout, nav, drift, carousel). Importé en dernier dans app.css :
+   sans !important, une media query doit suivre sa règle de base dans la
+   cascade pour la corriger à spécificité égale. */
+
+@media (max-width: 900px) {
+    .split {
+        grid-template-columns: 1fr;
+    }
+
+    .split-aside {
+        position: static;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .drift-sticky {
+        height: auto;
+        padding: var(--s-8) 0;
+    }
+
+    .drift-track {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: var(--s-3);
+        transform: none !important;
+    }
+
+    .drift-item {
+        scroll-snap-align: center;
+    }
+}
+
+@media (max-width: 620px) {
+    .nav {
+        padding: var(--s-3) var(--gutter);
+    }
+
+    .nav-links .nav-link:not([data-keep]) {
+        display: none;
+    }
+
+    .carousel-viewport {
+        height: 320px;
+    }
+}
