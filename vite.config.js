@@ -25,6 +25,7 @@ export default defineConfig({
                 // ui — composants réutilisés en @vite direct sur une page (fiches
                 // projet studio + web), pas juste des imports d'une autre entrée
                 'resources/js/ui/carousel.js',
+                'resources/js/ui/orbital-preview.js',
 
                 // labs — un dossier par lab, engine + entrée de page
                 'resources/js/labs/catalogue/lab-catalogue.js',

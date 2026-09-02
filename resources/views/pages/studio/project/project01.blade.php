@@ -12,13 +12,12 @@
     @vite(['resources/css/app.css', 'resources/css/web.css', 'resources/js/ui/carousel.js'])
     @section('cat', 'Studio')
 
-    {{-- i18n : les accroches courtes déjà en anglais ("Hunt. Contain. Survive.",
-         "The mission doesn't go according to plan.", etc.) sont la signature
-         de cette page — laissées identiques dans les deux langues, jamais
-         wrapées en data-i18n. Seuls les paragraphes explicatifs français et
-         les libellés d'interface sont traduits. Les légendes de la galerie et
-         les libellés jour/nuit/brouillard (pilotés par pages/project.js)
-         restent en français pour l'instant — pas encore convertis. --}}
+    {{-- i18n : tout le texte visible est traduit (data-i18n) — y compris les
+         accroches courtes qui étaient auparavant laissées en anglais dans
+         les deux langues ("Hunt. Contain. Survive.", etc.). Seuls les noms
+         d'armes/munitions/items (noms propres) et les textes alt des images
+         (métadonnées d'accessibilité) restent en français quelle que soit
+         la langue, hors du périmètre visible traduit. --}}
 
     @php
         $img = fn ($name) => asset('images/jurassic-containment/' . $name);
@@ -107,7 +106,7 @@
                 <span class="mask-line"><h1 class="t-display">Jurassic Containment</h1></span>
             </div>
             <p class="t-lead" data-reveal="blur" data-reveal-delay="180" style="margin-top:var(--s-4);max-width:46ch;">
-                Hunt. Contain. Survive. <span data-i18n="project.hero.lead">Un jeu de chasse coopératif en première personne, où chaque mission vous confronte à des créatures préhistoriques imprévisibles.</span>
+                <span data-i18n="project.hero.tagline">Traquez. Confinez. Survivez.</span> <span data-i18n="project.hero.lead">Un jeu de chasse coopératif en première personne, où chaque mission vous confronte à des créatures préhistoriques imprévisibles.</span>
             </p>
             <div style="display:flex;flex-wrap:wrap;gap:var(--s-4);align-items:center;margin-top:var(--s-6);" data-reveal="stagger" data-reveal-delay="320">
                 <a class="btn" href="#projet"><span aria-hidden="true">▷</span> <span data-i18n="project.hero.cta.discover">Découvrir le projet</span> <span class="arrow" aria-hidden="true">→</span></a>
@@ -142,7 +141,7 @@
             </aside>
             <div class="split-flow">
                 <div>
-                    <span class="label" data-reveal="rise">The hunt has begun</span>
+                    <span class="label" data-reveal="rise" data-i18n="project.hunt.kicker">La chasse a commencé</span>
                     <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project.hunt.title">Traquer. Observer. Préparer. Contenir.</h2>
                     <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project.hunt.p1">
                         Jurassic Containment est un jeu coopératif de chasse en première personne. Rejoignez une
@@ -180,7 +179,7 @@
         <div class="wrap">
             <div style="max-width:60ch;margin:0 auto var(--s-8);text-align:center;">
                 <span class="label" data-reveal="rise">Gameplay</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);">Every hunt is different</h2>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project.gameplay.title">Chaque chasse est différente</h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project.gameplay.lead">
                     Votre objectif principal est simple : retrouver et neutraliser ou capturer le spécimen ciblé.
                     Mais une mission ne se résume jamais à une simple chasse.
@@ -209,9 +208,9 @@
             </div>
 
             <div style="max-width:60ch;margin:var(--s-8) auto 0;text-align:center;">
-                <h2 class="t-h2" data-reveal="mask" data-reveal-delay="420"><span class="mask-line"><span>The mission doesn't go according to plan.</span></span></h2>
-                <p class="t-body" data-reveal="blur" data-reveal-delay="680" style="margin:var(--s-4) auto 0;">
-                    You adapt.
+                <h2 class="t-h2" data-reveal="mask" data-reveal-delay="420"><span class="mask-line"><span data-i18n="project.gameplay.title2">La mission ne se déroule jamais comme prévu.</span></span></h2>
+                <p class="t-body" data-reveal="blur" data-reveal-delay="680" style="margin:var(--s-4) auto 0;" data-i18n="project.gameplay.adapt">
+                    Vous vous adaptez.
                 </p>
             </div>
         </div>
@@ -224,7 +223,7 @@
         <div class="wrap">
             <div style="max-width:60ch;">
                 <span class="label" data-reveal="rise" data-i18n="project.env.label">Environnement</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);">A world that doesn't wait</h2>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project.env.title">Un monde qui n'attend pas</h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project.env.lead">
                     Les opérations prennent place dans des environnements sauvages où les conditions peuvent
                     radicalement changer l'expérience de jeu.
@@ -255,7 +254,7 @@
         </div>
 
         <div class="wrap" style="margin-top:var(--s-7);text-align:center;">
-            <p class="t-lead" data-reveal="up">The environment is part of the hunt.</p>
+            <p class="t-lead" data-reveal="up" data-i18n="project.env.tagline">L'environnement fait partie de la chasse.</p>
         </div>
     </section>
 
@@ -268,9 +267,9 @@
             <div style="position:absolute;inset:0;background:linear-gradient(180deg, var(--bg) 0%, rgba(5,5,10,.55) 30%, var(--bg) 100%);"></div>
         </div>
         <div class="wrap" style="position:relative;max-width:64ch;text-align:center;margin-inline:auto;">
-            <span class="label" data-reveal="rise">Atmosphere</span>
+            <span class="label" data-reveal="rise" data-i18n="project.atmo.kicker">Atmosphère</span>
             <h2 class="t-h1" data-reveal="mask" style="margin-top:var(--s-3);">
-                <span class="mask-line"><span>You are not alone</span></span>
+                <span class="mask-line"><span data-i18n="project.atmo.title">Vous n'êtes pas seul</span></span>
             </h2>
             <p class="t-lead" data-reveal="blur" data-reveal-delay="160" style="margin-top:var(--s-5);" data-i18n="project.atmo.p1">
                 La forêt est silencieuse. Trop silencieuse.
@@ -288,8 +287,8 @@
     =================================================================== --}}
     <section class="section-tight" data-lab="corridor">
         <div class="wrap">
-            <span class="label" data-reveal="rise" style="display:block;margin-bottom:var(--s-3);">HQ</span>
-            <h2 class="t-h1" data-reveal="mask"><span class="mask-line"><span>Your operations. Your preparation.</span></span></h2>
+            <span class="label" data-reveal="rise" style="display:block;margin-bottom:var(--s-3);" data-i18n="project.hq.kicker">QG</span>
+            <h2 class="t-h1" data-reveal="mask"><span class="mask-line"><span data-i18n="project.hq.title">Vos opérations. Votre préparation.</span></span></h2>
         </div>
 
         <div data-corridor-stage style="position:relative;height:100vh;overflow:hidden;margin-top:var(--s-7);background:linear-gradient(180deg,var(--bg),var(--bg-1) 55%,var(--bg));perspective:900px;perspective-origin:50% 50%;">
@@ -326,7 +325,7 @@
         <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:center;">
             <div>
                 <span class="label" data-reveal="rise" data-i18n="project.prep.label">Préparation</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);">Prepare your team</h2>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project.prep.title">Préparez votre équipe</h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project.prep.p1">
                     Avant chaque mission, les joueurs retrouvent leur quartier général. C'est ici que vous
                     préparez votre prochaine opération, sélectionnez votre équipement, consultez les
@@ -337,8 +336,8 @@
                     mission et de votre rôle au sein de l'équipe. Le QG n'est pas simplement un menu — c'est
                     votre point de départ.
                 </p>
-                <p class="t-lead" data-reveal="up" data-reveal-delay="160" style="margin-top:var(--s-5);">
-                    Know your target. Prepare your equipment. Deploy.
+                <p class="t-lead" data-reveal="up" data-reveal-delay="160" style="margin-top:var(--s-5);" data-i18n="project.prep.tagline">
+                    Connaissez votre cible. Préparez votre équipement. Déployez-vous.
                 </p>
             </div>
             <div class="media media-4-3 media-hover" data-reveal="frame">
@@ -354,7 +353,7 @@
         <div class="wrap">
             <div style="max-width:60ch;margin-bottom:var(--s-7);">
                 <span class="label" data-reveal="rise">Arsenal</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);">Equip for the mission ahead</h2>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project.arsenal.title">Équipez-vous pour la mission à venir</h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project.arsenal.lead">
                     Chaque contractant compose son propre chargement avant le déploiement : arme principale,
                     munitions adaptées à la cible, gadgets de reconnaissance et consommables de survie.
@@ -386,8 +385,8 @@
                 <img src="{{ $img('hq-briefing.webp') }}" alt="Écran de briefing de mission">
             </div>
             <div style="order:1;">
-                <span class="label" data-reveal="rise">Mission system</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);">Choose your next target</h2>
+                <span class="label" data-reveal="rise" data-i18n="project.mission.kicker">Système de missions</span>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project.mission.title">Choisissez votre prochaine cible</h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project.mission.lead">
                     Les missions sont sélectionnées depuis le centre des opérations. Explorez les différentes
                     régions disponibles, identifiez les zones actives et consultez les informations de chaque
@@ -408,8 +407,8 @@
     =================================================================== --}}
     <section class="section-tight" style="text-align:center;">
         <div class="wrap" style="max-width:56ch;margin-inline:auto;">
-            <span class="label" data-reveal="rise">The dinosaurs</span>
-            <h2 class="t-h1" data-reveal="mask" style="margin-top:var(--s-3);"><span class="mask-line"><span>They are not just targets</span></span></h2>
+            <span class="label" data-reveal="rise" data-i18n="project.dinos.kicker">Les dinosaures</span>
+            <h2 class="t-h1" data-reveal="mask" style="margin-top:var(--s-3);"><span class="mask-line"><span data-i18n="project.dinos.title">Ce ne sont pas de simples cibles</span></span></h2>
             <p class="t-body" data-reveal="blur" data-reveal-delay="120" style="margin-top:var(--s-5);" data-i18n="project.dinos.lead">
                 Les spécimens rencontrés durant les opérations ne sont pas de simples ennemis. Ils peuvent se
                 déplacer, fuir, attaquer et réagir à votre présence. Votre approche doit donc évoluer en
@@ -425,21 +424,21 @@
                         <img src="{{ $img('dino-stegosaurus.webp') }}" alt="Stégosaure" style="width:100%;height:100%;object-fit:cover;object-position:47% 43%;">
                     </span>
                     <span class="label" data-i18n="project.dino.stegosaurus">Stégosaure</span>
-                    <span class="t-h3" data-strand-name style="font-weight:200;">Observe</span>
+                    <span class="t-h3" data-strand-name style="font-weight:200;" data-i18n="project.strand.observe">Observer</span>
                 </article>
                 <article data-strand style="position:absolute;left:50%;top:50%;translate:-50% -50%;width:clamp(190px,21vw,290px);display:flex;flex-direction:column;gap:var(--s-3);will-change:transform,filter;text-align:left;">
                     <span style="display:block;aspect-ratio:3/4;border:1px solid var(--line-2);overflow:hidden;">
                         <img src="{{ $img('dino-raptor.webp') }}" alt="Raptor" style="width:100%;height:100%;object-fit:cover;object-position:52% 54%;">
                     </span>
                     <span class="label">Raptor</span>
-                    <span class="t-h3" data-strand-name style="font-weight:200;">Track</span>
+                    <span class="t-h3" data-strand-name style="font-weight:200;" data-i18n="project.strand.track">Traquer</span>
                 </article>
                 <article data-strand style="position:absolute;left:50%;top:50%;translate:-50% -50%;width:clamp(190px,21vw,290px);display:flex;flex-direction:column;gap:var(--s-3);will-change:transform,filter;text-align:left;">
                     <span style="display:block;aspect-ratio:3/4;border:1px solid var(--line-2);overflow:hidden;">
                         <img src="{{ $img('dino-pachy.webp') }}" alt="Pachycéphalosaure" style="width:100%;height:100%;object-fit:cover;object-position:49% 47%;">
                     </span>
                     <span class="label" data-i18n="project.dino.pachy">Pachycéphalosaure</span>
-                    <span class="t-h3" data-strand-name style="font-weight:200;">Adapt</span>
+                    <span class="t-h3" data-strand-name style="font-weight:200;" data-i18n="project.strand.adapt">S'adapter</span>
                 </article>
             </div>
 
@@ -450,8 +449,8 @@
         </div>
 
         <div class="wrap" style="max-width:56ch;margin:var(--s-7) auto 0;">
-            <p class="t-lead" data-reveal="up">
-                Observe. Track. Adapt.
+            <p class="t-lead" data-reveal="up" data-i18n="project.dinos.tagline">
+                Observer. Traquer. S'adapter.
             </p>
         </div>
     </section>
@@ -465,8 +464,8 @@
                 <img src="{{ $img('hq-hangar-02.webp') }}" alt="Espace d'équipe du quartier général">
             </div>
             <div>
-                <span class="label" data-reveal="rise">Co-op</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);">Hunt together</h2>
+                <span class="label" data-reveal="rise" data-i18n="project.coop.kicker">Coopératif</span>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project.coop.title">Chassez ensemble</h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project.coop.p1">
                     Jouez en équipe et coordonnez vos actions pour accomplir votre mission. Chaque joueur peut
                     contribuer différemment à l'opération : exploration, soutien, combat, capture ou gestion de
@@ -476,8 +475,8 @@
                     Une bonne préparation peut faire la différence entre une mission réussie et une extraction
                     catastrophique.
                 </p>
-                <p class="t-lead" data-reveal="up" data-reveal-delay="160" style="margin-top:var(--s-5);">
-                    4 contractors. One mission. One extraction.
+                <p class="t-lead" data-reveal="up" data-reveal-delay="160" style="margin-top:var(--s-5);" data-i18n="project.coop.tagline">
+                    4 contractants. Une mission. Une extraction.
                 </p>
             </div>
         </div>
@@ -489,7 +488,7 @@
     <section class="section" style="text-align:center;">
         <div class="wrap" style="max-width:56ch;margin-inline:auto;">
             <span class="label" data-reveal="rise">Progression</span>
-            <h2 class="t-h1" data-reveal="mask" style="margin-top:var(--s-3);"><span class="mask-line"><span>From contractor to legend</span></span></h2>
+            <h2 class="t-h1" data-reveal="mask" style="margin-top:var(--s-3);"><span class="mask-line"><span data-i18n="project.progression.title">De contractant à légende</span></span></h2>
             <p class="t-body" data-reveal="blur" data-reveal-delay="120" style="margin-top:var(--s-5);" data-i18n="project.progression.p1">
                 Chaque opération contribue à votre progression. Gagnez de l'expérience, développez votre
                 réputation et débloquez progressivement de nouvelles possibilités pour votre équipement et vos
@@ -511,15 +510,15 @@
                 <img src="{{ $img('hq-range.webp') }}" alt="Centre de tir du quartier général">
             </div>
             <div style="order:1;">
-                <span class="label" data-reveal="rise">UI / Immersion</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);">The interface is part of the world</h2>
+                <span class="label" data-reveal="rise" data-i18n="project.ui.kicker">Interface / Immersion</span>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project.ui.title">L'interface fait partie de l'univers</h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project.ui.lead">
                     Dans Jurassic Containment, l'interface ne se contente pas d'afficher des informations. Elle
                     fait partie de l'univers. Du quartier général aux briefings de mission, chaque écran est
                     conçu comme un outil utilisé par les contractants de Lakeust BioGen.
                 </p>
-                <p class="t-lead" data-reveal="up" data-reveal-delay="120" style="margin-top:var(--s-5);">
-                    No ordinary menus. Operational systems.
+                <p class="t-lead" data-reveal="up" data-reveal-delay="120" style="margin-top:var(--s-5);" data-i18n="project.ui.tagline">
+                    Pas de menus ordinaires. Des systèmes opérationnels.
                 </p>
             </div>
         </div>
@@ -532,7 +531,7 @@
         <div class="wrap">
             <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s-4);margin-bottom:var(--s-5);">
                 <div data-reveal="mask">
-                    <span class="mask-line"><span class="label" style="display:block;margin-bottom:var(--s-3);">Field reports</span></span>
+                    <span class="mask-line"><span class="label" style="display:block;margin-bottom:var(--s-3);" data-i18n="project.gallery.kicker">Rapports de terrain</span></span>
                     <span class="mask-line"><h2 class="t-h2" data-i18n="project.gallery.title">Galerie</h2></span>
                 </div>
                 <span class="label" data-reveal="rise" data-i18n="project.gallery.hint">Glisser · flèches · ← →</span>
@@ -545,7 +544,7 @@
                     @foreach ($gallery as $n => $slide)
                         <figure class="carousel-slide">
                             <div class="media media-16-9"><img src="{{ $slide['src'] }}" alt="{{ $slide['cap'] }}"></div>
-                            <figcaption class="slide-caption label">{{ str_pad($n + 1, 2, '0', STR_PAD_LEFT) }} — {{ $slide['cat'] }} · {{ $slide['cap'] }}</figcaption>
+                            <figcaption class="slide-caption label" data-i18n="project.gallery.slide.{{ $n }}">{{ str_pad($n + 1, 2, '0', STR_PAD_LEFT) }} — {{ $slide['cat'] }} · {{ $slide['cap'] }}</figcaption>
                         </figure>
                     @endforeach
                 </div>
@@ -573,8 +572,8 @@
     =================================================================== --}}
     <section class="section-tight">
         <div class="wrap">
-            <span class="label" data-reveal="rise">Development</span>
-            <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);max-width:40ch;">Currently in development</h2>
+            <span class="label" data-reveal="rise" data-i18n="project.dev.kicker">Développement</span>
+            <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);max-width:40ch;" data-i18n="project.dev.title">Actuellement en développement</h2>
             <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);max-width:56ch;" data-i18n="project.dev.lead">
                 Jurassic Containment est actuellement en développement. Le projet évolue progressivement autour
                 de plusieurs axes :
@@ -599,10 +598,10 @@
             <hr class="rule" data-reveal="line" style="width:100%;">
             <div data-reveal="mask">
                 <span class="mask-line"><span class="label" style="display:block;margin-bottom:var(--s-3);" data-i18n="project.cta.kicker">Le monde n'est pas prêt. Votre équipe non plus.</span></span>
-                <span class="mask-line"><h2 class="t-h1">The next contract is waiting</h2></span>
+                <span class="mask-line"><h2 class="t-h1" data-i18n="project.cta.title">Le prochain contrat vous attend</h2></span>
             </div>
-            <p class="t-body" data-reveal="blur" data-reveal-delay="120">
-                Jurassic Containment is currently in development.
+            <p class="t-body" data-reveal="blur" data-reveal-delay="120" data-i18n="project.cta.status">
+                Jurassic Containment est actuellement en développement.
             </p>
             <div style="display:flex;flex-wrap:wrap;gap:var(--s-3);" data-reveal="stagger">
                 <a class="btn" href="{{ route('studio.works') }}"><span data-i18n="project.cta.allworks">Tous les travaux</span> <span class="arrow" aria-hidden="true">→</span></a>

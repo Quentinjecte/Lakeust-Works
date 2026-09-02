@@ -42,6 +42,9 @@
         </div>
     </div>
 
+    <!-- ==================================================================
+                                02 - STUDIO
+    =================================================================== -->
     <section id="studio" style="max-width:1240px;margin:0 auto;padding:calc(var(--space-8)*4) var(--space-8) calc(var(--space-8)*2)">
         <div style="margin-top:calc(var(--space-8)*3);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--divider);border-top:1px solid var(--divider);border-bottom:1px solid var(--divider)">
             <div style="background:var(--bg);padding:calc(var(--space-8)*1.5) var(--space-8)">
@@ -59,6 +62,9 @@
         </div>
     </section>
 
+    <!-- ==================================================================
+                                03 - SERVICES
+    =================================================================== -->
     <section id="services" style="border-top:1px solid var(--divider);background:linear-gradient(180deg,rgba(35,37,50,.34),transparent 60%)">
         <div style="max-width:1240px;margin:0 auto;padding:calc(var(--space-8)*4) var(--space-8)">
             <div data-reveal="rise" style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-8)">
@@ -89,6 +95,9 @@
         </div>
     </section>
 
+    <!-- ==================================================================
+                                04 - DEMOS
+    =================================================================== -->
     <section id="demos" style="max-width:1240px;margin:0 auto;padding:calc(var(--space-8)*4) var(--space-8)">
         <div data-reveal="rise" style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-6)">
             04 — <span class="i18n-fr">Démonstrations</span><span class="i18n-en">Demos</span>
@@ -133,6 +142,57 @@
         </div>
     </section>
 
+    <!-- ==================================================================
+                                05 - TRAVAUX
+    =================================================================== -->
+    <section id="travaux" style="max-width:1240px;margin:0 auto;padding:calc(var(--space-8)*4) var(--space-8)">
+        <div data-reveal="rise" style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-8)">
+            06 — <span class="i18n-fr">Réalisations</span><span class="i18n-en">Selected work</span>
+        </div>
+        <h2 data-reveal="rise" style="margin:0 0 calc(var(--space-8)*2.5);font-size:clamp(28px,3.6vw,54px);line-height:1.06;letter-spacing:-.025em;max-width:24ch">
+            <span class="i18n-fr">Ce qui tourne, pas ce qui est promis.</span><span class="i18n-en">What runs, not what is promised.</span>
+        </h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-8)">
+            <a data-reveal="rise" data-magnet="1" data-barba-prevent href="{{ route('studio.project01') }}" style="display:block;color:inherit;border-radius:var(--radius-lg);overflow:hidden;background:rgba(35,37,50,.6);box-shadow:var(--shadow-sm);transition:box-shadow .35s ease,transform .35s ease">
+                <div style="position:relative;aspect-ratio:4/3">
+                    <img src="{{ asset('images/jurassic-containment/hero-attack.webp') }}" alt="Jurassic Containment" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+                </div>
+                <div style="padding:var(--space-8)">
+                    <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-3)">Games · Unity 6</div>
+                    <div style="font-family:var(--font-heading);font-size:20px;letter-spacing:-.01em;margin-bottom:var(--space-3)">Jurassic Containment</div>
+                    <p style="margin:0;font-size:14px;line-height:1.6;color:var(--text-3);text-wrap:pretty"><span class="i18n-fr">Chasse coopérative en première personne — traquer et contenir des spécimens dangereux, en équipe.</span><span class="i18n-en">First-person co-op hunting — track and contain dangerous specimens as a team.</span></p>
+                </div>
+            </a>
+
+            {{-- Novum : la vraie bande-annonce, lue directement dans la fiche plutôt
+                 qu'une image fixe — le seul des trois projets qui en a une. --}}
+            <a data-reveal="rise" data-magnet="1" data-barba-prevent href="{{ route('studio.project02') }}" style="display:block;color:inherit;border-radius:var(--radius-lg);overflow:hidden;background:rgba(35,37,50,.6);box-shadow:var(--shadow-sm);transition:box-shadow .35s ease,transform .35s ease">
+                <div style="position:relative;aspect-ratio:4/3;background:#000">
+                    <video src="{{ asset('images/novum/Novum.mp4') }}" controls preload="metadata" playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+                </div>
+                <div style="padding:var(--space-8)">
+                    <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-3)">Games · Unity 6</div>
+                    <div style="font-family:var(--font-heading);font-size:20px;letter-spacing:-.01em;margin-bottom:var(--space-3)">Novum : la terre d'après</div>
+                    <p style="margin:0;font-size:14px;line-height:1.6;color:var(--text-3);text-wrap:pretty"><span class="i18n-fr">Survie vue depuis un bunker — ressources, systèmes vitaux, sorties risquées vers l'extérieur.</span><span class="i18n-en">Bunker-view survival — resources, life-support, risky trips outside.</span></p>
+                </div>
+            </a>
+
+            <a data-reveal="rise" data-magnet="1" href="https://rexignis40.itch.io/ankronic" target="_blank" rel="noopener" style="display:block;color:inherit;border-radius:var(--radius-lg);overflow:hidden;background:rgba(35,37,50,.6);box-shadow:var(--shadow-sm);transition:box-shadow .35s ease,transform .35s ease">
+                <div style="position:relative;aspect-ratio:4/3">
+                    <img src="{{ asset('images/ankronic/Ankronic.jpg') }}" alt="Ankronic" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+                </div>
+                <div style="padding:var(--space-8)">
+                    <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-3)">Games · Unity 2022</div>
+                    <div style="font-family:var(--font-heading);font-size:20px;letter-spacing:-.01em;margin-bottom:var(--space-3)">Ankronic</div>
+                    <p style="margin:0;font-size:14px;line-height:1.6;color:var(--text-3);text-wrap:pretty"><span class="i18n-fr">RTS où les époques se superposent sur la même carte — terminé, disponible sur itch.io.</span><span class="i18n-en">RTS where eras overlap on the same map — finished, available on itch.io.</span></p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ==================================================================
+                                06 - METHODE
+    =================================================================== -->
     {{-- dérive horizontale : le scroll vertical translate la piste (setupDrift, core/page-systems.js) --}}
     <section id="methode" class="drift" data-drift>
         <div class="drift-sticky" style="min-height:600px;background:var(--bg);border-top:1px solid var(--divider)">
@@ -160,33 +220,10 @@
         </div>
     </section>
 
-    <section id="travaux" style="max-width:1240px;margin:0 auto;padding:calc(var(--space-8)*4) var(--space-8)">
-        <div data-reveal="rise" style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-8)">
-            06 — <span class="i18n-fr">Réalisations</span><span class="i18n-en">Selected work</span>
-        </div>
-        <h2 data-reveal="rise" style="margin:0 0 calc(var(--space-8)*2.5);font-size:clamp(28px,3.6vw,54px);line-height:1.06;letter-spacing:-.025em;max-width:24ch">
-            <span class="i18n-fr">Ce qui tourne, pas ce qui est promis.</span><span class="i18n-en">What runs, not what is promised.</span>
-        </h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-8)">
-            @foreach ([
-                ['Web · WebGL', 'Portail orbital', 'Orbital portal', 'Navigation en temps réel : Three.js, shaders de lentille gravitationnelle, GSAP.', 'Real-time navigation: Three.js, gravitational-lensing shaders, GSAP.', 'Capture — portail orbital WebGL'],
-                ['Web · Laravel', 'Transitions de page', 'Page transitions', 'Navigation sans rechargement sur une base Laravel et Vite, transitions Barba.', 'No-reload navigation on a Laravel and Vite base, Barba transitions.', 'Capture — transitions de page'],
-                ['Games · Unity', 'Projet Unity', 'Unity project', 'Effets et shaders sous Unity — titre et détails à documenter.', 'Effects and shaders in Unity — title and details to be documented.', 'Capture — projet Unity (shader / VFX)'],
-            ] as $w)
-                <a data-reveal="rise" data-magnet="1" href="#contact" data-jump="contact" style="display:block;color:inherit;border-radius:var(--radius-lg);overflow:hidden;background:rgba(35,37,50,.6);box-shadow:var(--shadow-sm);transition:box-shadow .35s ease,transform .35s ease">
-                    <div style="position:relative;aspect-ratio:4/3">
-                        <div class="lw-ph"><span>{{ $w[5] }}</span></div>
-                    </div>
-                    <div style="padding:var(--space-8)">
-                        <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-3)">{{ $w[0] }}</div>
-                        <div style="font-family:var(--font-heading);font-size:20px;letter-spacing:-.01em;margin-bottom:var(--space-3)"><span class="i18n-fr">{{ $w[1] }}</span><span class="i18n-en">{{ $w[2] }}</span></div>
-                        <p style="margin:0;font-size:14px;line-height:1.6;color:var(--text-3);text-wrap:pretty"><span class="i18n-fr">{{ $w[3] }}</span><span class="i18n-en">{{ $w[4] }}</span></p>
-                    </div>
-                </a>
-            @endforeach
-        </div>
-    </section>
-
+    
+    <!-- ==================================================================
+                                07 - STACK
+    =================================================================== -->
     <section id="stack" style="border-top:1px solid var(--divider);background:linear-gradient(180deg,rgba(35,37,50,.3),transparent 70%)">
         <div style="max-width:1240px;margin:0 auto;padding:calc(var(--space-8)*4) var(--space-8)">
             <div data-reveal="rise" style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-300);margin-bottom:calc(var(--space-8)*2)">
@@ -196,15 +233,7 @@
                 <div>
                     <div data-reveal="rise" style="font-family:var(--font-heading);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-2);padding-bottom:var(--space-6);margin-bottom:var(--space-8);border-bottom:1px solid var(--divider)">Games</div>
                     <div data-reveal="rise" style="display:flex;flex-wrap:wrap;gap:var(--space-3)">
-                        @foreach (['Unity','C#','Shader Graph','HLSL','VFX Graph','URP','Blender'] as $t)
-                            <span class="tag tag-outline">{{ $t }}</span>
-                        @endforeach
-                    </div>
-                </div>
-                <div>
-                    <div data-reveal="rise" style="font-family:var(--font-heading);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-2);padding-bottom:var(--space-6);margin-bottom:var(--space-8);border-bottom:1px solid var(--divider)">Web</div>
-                    <div data-reveal="rise" style="display:flex;flex-wrap:wrap;gap:var(--space-3)">
-                        @foreach (['JavaScript','CSS','Three.js','GLSL','GSAP','Barba','Laravel','Blade','Vite'] as $t)
+                        @foreach (['Unity','C#','Shader Graph','HLSL','VFX Graph','URP','HDRP','UXML','USS','ECS/DOTS','Blender'] as $t)
                             <span class="tag tag-outline">{{ $t }}</span>
                         @endforeach
                     </div>
@@ -213,10 +242,13 @@
         </div>
     </section>
 
+    <!-- ==================================================================
+                                08 - CONTACT
+    =================================================================== -->
     <section id="contact" style="border-top:1px solid var(--divider)">
         <div style="max-width:1240px;margin:0 auto;padding:calc(var(--space-8)*4) var(--space-8)">
             <div data-reveal="rise" style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-8)">
-                08 — <span class="i18n-fr">Contact &amp; devis</span><span class="i18n-en">Contact &amp; quotes</span>
+                08 — <span class="i18n-fr">Contact</span><span class="i18n-en">Contact</span>
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:calc(var(--space-8)*3);align-items:start">
                 <div>
@@ -227,10 +259,10 @@
                         <span class="i18n-fr">Jeu, site, effet précis à produire : décrivez le besoin, on répond avec un périmètre et un prix.</span>
                         <span class="i18n-en">A game, a site, one specific effect: describe the need and we answer with a scope and a price.</span>
                     </p>
-                    <div data-reveal="rise" style="font-size:20px;font-family:var(--font-heading);color:var(--accent-300)">contact@lakeust.works</div>
-                    <div style="margin-top:var(--space-3);font-size:12px;color:var(--text-4)"><span class="i18n-fr">Adresse à confirmer</span><span class="i18n-en">Address to confirm</span></div>
+                    <div data-reveal="rise" style="font-size:20px;font-family:var(--font-heading);color:var(--accent-300)">lakeustworks@gmail.com</div>
+                    <!--<div style="margin-top:var(--space-3);font-size:12px;color:var(--text-4)"><span class="i18n-fr">Adresse à confirmer</span><span class="i18n-en">Address to confirm</span></div>-->
                 </div>
-                <form data-reveal="rise" data-lw-form style="display:flex;flex-direction:column;gap:var(--space-6);padding:calc(var(--space-8)*1.5);border-radius:var(--radius-lg);background:rgba(35,37,50,.6);box-shadow:var(--shadow-sm)">
+                <!--<form data-reveal="rise" data-lw-form style="display:flex;flex-direction:column;gap:var(--space-6);padding:calc(var(--space-8)*1.5);border-radius:var(--radius-lg);background:rgba(35,37,50,.6);box-shadow:var(--shadow-sm)">
                     <div class="field">
                         <label for="lw-name"><span class="i18n-fr">Nom</span><span class="i18n-en">Name</span></label>
                         <input class="input" id="lw-name" type="text" required>
@@ -245,7 +277,7 @@
                     </div>
                     <button class="btn btn-primary btn-block" type="submit" data-magnet="1"><span class="i18n-fr">Envoyer</span><span class="i18n-en">Send</span></button>
                     <div data-lw-form-note style="font-size:12px;color:var(--text-4);text-align:center">Démonstration — le formulaire n'envoie rien pour l'instant.</div>
-                </form>
+                </form>-->
             </div>
         </div>
     </section>

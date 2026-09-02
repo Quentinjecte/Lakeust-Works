@@ -10,6 +10,18 @@ import { Chevron } from './chevron.js';
 const root = document.querySelector('[data-cvm-root]');
 if (root) boot(root);
 
+/* Retour depuis une page externe restaurée par le bfcache : pagehide (voir
+   fin de boot()) a déjà appelé ch.destroy(), qui retire le <svg> portant les
+   clipPath référencés par chaque bande (clip-path: url(#id)) — une fois ce
+   <svg> hors document, la référence ne résout plus rien et la bande se
+   retrouve clippée à une zone vide : plus rien à cliquer dessus, même si le
+   href est toujours là. Un simple ch.measure() ne recrée pas le <svg> (ça
+   n'arrive que dans le constructeur) : il faut rejouer boot() en entier,
+   même mécanisme que welcome-lakeust.js et home.js. */
+if (root) {
+  addEventListener('pageshow', e => { if (e.persisted) boot(root); });
+}
+
 function boot(root) {
   const stage = root.querySelector('[data-stage]');
   const bands = Array.from(root.querySelectorAll('[data-band]'));
@@ -42,11 +54,6 @@ function boot(root) {
   stage.addEventListener('focusin', onMove);
   stage.addEventListener('mouseleave', onOut);
   stage.addEventListener('click', onClick);
-
-  /* Retour depuis une page externe restaurée par le bfcache : la géométrie
-     dépend des dimensions du stage au moment du montage, à recalculer si
-     elles ont changé pendant l'absence (même leçon que welcome-lakeust.js). */
-  addEventListener('pageshow', e => { if (e.persisted) ch.measure(); });
 
   addEventListener('pagehide', () => {
     ch.destroy();

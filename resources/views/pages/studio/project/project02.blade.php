@@ -79,13 +79,27 @@
         /* Extraits choisis du lore fourni, dans l'ordre chronologique du
            journal — la colonne vertébrale narrative de cette fiche. */
         $journal = [
-            ['n' => 'J +5', 'fr' => "Une unité de reconnaissance est envoyée à l'extérieur. Depuis leur départ : plus rien. Aucun signal, aucune transmission. Dernier contact."],
-            ['n' => 'J +8', 'fr' => "La lumière est réapparue cette nuit, plus proche. Des traces étranges près du périmètre — comme si quelque chose avait glissé, ou rampé. Aucune trace de l'unité disparue."],
-            ['n' => 'J +365', 'fr' => "Un an aujourd'hui. Pour la première fois depuis longtemps, une vraie nouvelle : le générateur secondaire a redémarré seul, sans intervention. Personne ne comprend comment."],
-            ['n' => 'J +1000', 'fr' => "Un nouveau marquage est apparu sur une porte du module de maintenance — gravé dans le métal, sans outil identifié. Il ne correspond à aucune langue connue."],
-            ['n' => 'J +2000', 'fr' => "Une silhouette humanoïde, immobile à l'horizon. Deux drones envoyés en reconnaissance reviennent endommagés avant d'avoir franchi cinquante mètres. La forme n'a pas bougé. Mais elle nous observe."],
-            ['n' => 'J +2200', 'fr' => "Une brèche s'ouvre dans le blindage. Après l'engagement, une créature immense est repérée à la limite de la brèche — elle porte le badge de l'unité disparue sept ans plus tôt."],
-            ['n' => 'J +2500', 'fr' => "Sept ans après l'impact. La porte du bunker grince. Le ciel est dégagé, calme, comme si rien ne s'était passé. « Ce journal s'arrête ici. À partir de maintenant, c'est ton équipe et toi qui jouez. »"],
+            ['n' => 'J +5', 'i18n' => 'project02.journal.0',
+                'fr' => "Une unité de reconnaissance est envoyée à l'extérieur. Depuis leur départ : plus rien. Aucun signal, aucune transmission. Dernier contact.",
+                'en' => "A recon unit is sent outside. Since they left: nothing. No signal, no transmission. Last contact."],
+            ['n' => 'J +8', 'i18n' => 'project02.journal.1',
+                'fr' => "La lumière est réapparue cette nuit, plus proche. Des traces étranges près du périmètre — comme si quelque chose avait glissé, ou rampé. Aucune trace de l'unité disparue.",
+                'en' => "The light came back tonight, closer. Strange marks near the perimeter — as if something had slid, or crawled. No trace of the missing unit."],
+            ['n' => 'J +365', 'i18n' => 'project02.journal.2',
+                'fr' => "Un an aujourd'hui. Pour la première fois depuis longtemps, une vraie nouvelle : le générateur secondaire a redémarré seul, sans intervention. Personne ne comprend comment.",
+                'en' => "One year today. For the first time in a long while, real news: the backup generator restarted on its own, with no intervention. No one understands how."],
+            ['n' => 'J +1000', 'i18n' => 'project02.journal.3',
+                'fr' => "Un nouveau marquage est apparu sur une porte du module de maintenance — gravé dans le métal, sans outil identifié. Il ne correspond à aucune langue connue.",
+                'en' => "A new mark has appeared on a maintenance module door — carved into the metal, with no identified tool. It matches no known language."],
+            ['n' => 'J +2000', 'i18n' => 'project02.journal.4',
+                'fr' => "Une silhouette humanoïde, immobile à l'horizon. Deux drones envoyés en reconnaissance reviennent endommagés avant d'avoir franchi cinquante mètres. La forme n'a pas bougé. Mais elle nous observe.",
+                'en' => "A humanoid shape, motionless on the horizon. Two drones sent to scout return damaged before covering fifty meters. The shape hasn't moved. But it's watching us."],
+            ['n' => 'J +2200', 'i18n' => 'project02.journal.5',
+                'fr' => "Une brèche s'ouvre dans le blindage. Après l'engagement, une créature immense est repérée à la limite de la brèche — elle porte le badge de l'unité disparue sept ans plus tôt.",
+                'en' => "A breach opens in the armor plating. After the engagement, an immense creature is spotted at the edge of the breach — it's wearing the badge of the unit that vanished seven years earlier."],
+            ['n' => 'J +2500', 'i18n' => 'project02.journal.6',
+                'fr' => "Sept ans après l'impact. La porte du bunker grince. Le ciel est dégagé, calme, comme si rien ne s'était passé. « Ce journal s'arrête ici. À partir de maintenant, c'est ton équipe et toi qui jouez. »",
+                'en' => "Seven years after the impact. The bunker door creaks open. The sky is clear, calm, as if nothing had happened. \"This journal ends here. From now on, it's you and your team playing.\""],
         ];
 
         $nav = [
@@ -147,7 +161,7 @@
             </aside>
             <div class="split-flow">
                 <div>
-                    <span class="label" data-reveal="rise">The world after</span>
+                    <span class="label" data-reveal="rise" data-i18n="project02.hunt.kicker">Le monde d'après</span>
                     <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project02.hunt.title">Survivre. Attendre. Comprendre. Sortir.</h2>
                     <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project02.hunt.p1">
                         Novum est un jeu de survie vu depuis un bunker. Après l'impact d'une météorite aux
@@ -185,7 +199,7 @@
         <div class="wrap">
             <div style="max-width:60ch;margin:0 auto var(--s-8);text-align:center;">
                 <span class="label" data-reveal="rise">Gameplay</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);">Every silence hides something</h2>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project02.gameplay.title">Chaque silence cache quelque chose</h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project02.gameplay.lead">
                     L'objectif immédiat est simple : tenir. Mais tenir demande de sortir — chercher des
                     ressources, réparer un système, comprendre une anomalie — et chaque sortie est un risque.
@@ -214,9 +228,9 @@
             </div>
 
             <div style="max-width:60ch;margin:var(--s-8) auto 0;text-align:center;">
-                <h2 class="t-h2" data-reveal="mask" data-reveal-delay="420"><span class="mask-line"><span>Nothing on paper explains it.</span></span></h2>
-                <p class="t-body" data-reveal="blur" data-reveal-delay="680" style="margin:var(--s-4) auto 0;">
-                    You keep watch.
+                <h2 class="t-h2" data-reveal="mask" data-reveal-delay="420"><span class="mask-line"><span data-i18n="project02.gameplay.title2">Rien sur le papier ne l'explique.</span></span></h2>
+                <p class="t-body" data-reveal="blur" data-reveal-delay="680" style="margin:var(--s-4) auto 0;" data-i18n="project02.gameplay.watch">
+                    Vous montez la garde.
                 </p>
             </div>
         </div>
@@ -230,7 +244,7 @@
         <div class="wrap">
             <div style="max-width:60ch;">
                 <span class="label" data-reveal="rise" data-i18n="project02.env.label">Environnement</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);">A world that waits</h2>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project02.env.title">Un monde qui attend</h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project02.env.lead">
                     Dehors, le jour et la nuit se succèdent sur un monde redevenu respirable — mais jamais
                     tout à fait vide.
@@ -261,7 +275,7 @@
         </div>
 
         <div class="wrap" style="margin-top:var(--s-7);text-align:center;">
-            <p class="t-lead" data-reveal="up">The silence outside never really changed.</p>
+            <p class="t-lead" data-reveal="up" data-i18n="project02.env.tagline">Le silence dehors n'a jamais vraiment changé.</p>
         </div>
     </section>
 
@@ -274,9 +288,9 @@
             <div style="position:absolute;inset:0;background:linear-gradient(180deg, var(--bg) 0%, rgba(5,5,10,.55) 30%, var(--bg) 100%);"></div>
         </div>
         <div class="wrap" style="position:relative;max-width:64ch;text-align:center;margin-inline:auto;">
-            <span class="label" data-reveal="rise">Atmosphere</span>
+            <span class="label" data-reveal="rise" data-i18n="project.atmo.kicker">Atmosphère</span>
             <h2 class="t-h1" data-reveal="mask" style="margin-top:var(--s-3);">
-                <span class="mask-line"><span>You are not alone anymore</span></span>
+                <span class="mask-line"><span data-i18n="project02.atmo.title">Vous n'êtes plus seul</span></span>
             </h2>
             <p class="t-lead" data-reveal="blur" data-reveal-delay="160" style="margin-top:var(--s-5);" data-i18n="project02.atmo.p1">
                 Une lumière pâle réapparaît la nuit, toujours plus proche. Personne ne veut en parler
@@ -298,7 +312,7 @@
     <section class="section-tight" id="journal">
         <div class="wrap">
             <span class="label" data-reveal="rise" style="display:block;margin-bottom:var(--s-3);">Journal</span>
-            <h2 class="t-h1" data-reveal="mask"><span class="mask-line"><span>Seven years, one bunker.</span></span></h2>
+            <h2 class="t-h1" data-reveal="mask"><span class="mask-line"><span data-i18n="project02.journal.title">Sept ans, un bunker.</span></span></h2>
             <p class="t-body" data-reveal="blur" style="margin-top:var(--s-4);max-width:60ch;" data-i18n="project02.journal.lead">
                 Le monde de Novum se raconte moins en captures qu'en notes de journal — celles tenues par
                 l'équipe du bunker, jour après jour, jusqu'à la sortie.
@@ -308,7 +322,7 @@
                 @foreach ($journal as $entry)
                     <div style="display:grid;grid-template-columns:minmax(90px,120px) minmax(0,1fr);gap:var(--s-5);padding:var(--s-5) 0;border-bottom:1px solid var(--line);align-items:baseline;">
                         <span class="label label-accent" style="font-family:var(--font-heading);font-size:13px;letter-spacing:.16em;">{{ $entry['n'] }}</span>
-                        <p class="t-body" style="margin:0;font-size:14.5px;line-height:1.75;color:var(--text-2);">{{ $entry['fr'] }}</p>
+                        <p class="t-body" style="margin:0;font-size:14.5px;line-height:1.75;color:var(--text-2);" data-i18n="{{ $entry['i18n'] }}">{{ $entry['fr'] }}</p>
                     </div>
                 @endforeach
             </div>
@@ -324,7 +338,7 @@
         <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:center;">
             <div>
                 <span class="label" data-reveal="rise" data-i18n="project02.prep.label">Le bunker</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);">Home is what still works</h2>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project02.prep.title">Le foyer, c'est ce qui fonctionne encore</h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project02.prep.p1">
                     Recyclage d'air, générateur, éclairage de secours : le bunker n'est pas un décor, c'est un
                     système qu'il faut entretenir. Une panne n'est jamais juste cosmétique.
@@ -333,8 +347,8 @@
                     Le craft médical — herbes cultivées, cachets, vaccins — occupe une place centrale : soigner
                     l'équipe compte autant que l'armer pour une sortie.
                 </p>
-                <p class="t-lead" data-reveal="up" data-reveal-delay="160" style="margin-top:var(--s-5);">
-                    Keep the lights on. Keep the team alive.
+                <p class="t-lead" data-reveal="up" data-reveal-delay="160" style="margin-top:var(--s-5);" data-i18n="project02.prep.tagline">
+                    Gardez les lumières allumées. Gardez l'équipe en vie.
                 </p>
             </div>
             <div class="media media-4-3 media-hover" data-reveal="frame">
@@ -350,7 +364,7 @@
         <div class="wrap">
             <div style="max-width:60ch;margin-bottom:var(--s-7);">
                 <span class="label" data-reveal="rise">Arsenal</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);">Equip for what's outside</h2>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project02.arsenal.title">Équipez-vous pour l'extérieur</h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project02.arsenal.lead">
                     Une arme, des modifications adaptées à la sortie prévue, et un kit médical — l'équipement se
                     pense pour revenir, pas seulement pour partir.
@@ -382,8 +396,8 @@
                 <img src="{{ $img('Vaccine_Blue.png') }}" alt="Vaccin de synthèse, ressource rare" style="object-fit:contain;padding:var(--s-6);">
             </div>
             <div style="order:1;">
-                <span class="label" data-reveal="rise">Survival systems</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);">Every log is a decision</h2>
+                <span class="label" data-reveal="rise" data-i18n="project02.mission.kicker">Systèmes de survie</span>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project02.mission.title">Chaque entrée est une décision</h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project02.mission.lead">
                     Le journal de bord n'est pas un simple récap narratif : il consigne l'état du bunker,
                     guide les priorités, et révèle progressivement ce qui se passe dehors.
@@ -405,8 +419,8 @@
     =================================================================== --}}
     <section class="section-tight" style="text-align:center;">
         <div class="wrap" style="max-width:56ch;margin-inline:auto;">
-            <span class="label" data-reveal="rise">What's out there</span>
-            <h2 class="t-h1" data-reveal="mask" style="margin-top:var(--s-3);"><span class="mask-line"><span>It watches. It doesn't approach.</span></span></h2>
+            <span class="label" data-reveal="rise" data-i18n="project02.threat.kicker">Ce qui rôde dehors</span>
+            <h2 class="t-h1" data-reveal="mask" style="margin-top:var(--s-3);"><span class="mask-line"><span data-i18n="project02.threat.title">Ça observe. Ça n'approche pas.</span></span></h2>
             <p class="t-body" data-reveal="blur" data-reveal-delay="120" style="margin-top:var(--s-5);" data-i18n="project02.threat.lead">
                 Une silhouette humanoïde, immobile à l'horizon — trop loin pour être identifiée, trop régulière
                 pour être un hasard. Les drones envoyés en reconnaissance reviennent endommagés avant d'avoir
@@ -424,8 +438,8 @@
         </div>
 
         <div class="wrap" style="max-width:56ch;margin:var(--s-7) auto 0;">
-            <p class="t-lead" data-reveal="up">
-                Observe. Wait. Don't look away.
+            <p class="t-lead" data-reveal="up" data-i18n="project02.threat.tagline">
+                Observer. Attendre. Ne pas détourner le regard.
             </p>
         </div>
     </section>
@@ -439,8 +453,8 @@
                 <img src="{{ $img('jour.png') }}" alt="Vue extérieure depuis le périmètre du bunker">
             </div>
             <div>
-                <span class="label" data-reveal="rise">The bunker's team</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);">Nobody keeps the log alone</h2>
+                <span class="label" data-reveal="rise" data-i18n="project02.coop.kicker">L'équipe du bunker</span>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project02.coop.title">Personne ne tient le journal seul</h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project02.coop.p1">
                     Ingénieurs, scientifiques, section de sécurité : chacun tient son rôle dans le bunker, et
                     chaque décision extérieure se discute en équipe avant d'être prise.
@@ -449,8 +463,8 @@
                     Le silence pèse différemment sur chacun. Certains cessent d'écrire. D'autres continuent —
                     parce que c'est ce qu'ils savent faire : observer, noter, comprendre.
                 </p>
-                <p class="t-lead" data-reveal="up" data-reveal-delay="160" style="margin-top:var(--s-5);">
-                    One bunker. One log. Seven years.
+                <p class="t-lead" data-reveal="up" data-reveal-delay="160" style="margin-top:var(--s-5);" data-i18n="project02.coop.tagline">
+                    Un bunker. Un journal. Sept ans.
                 </p>
             </div>
         </div>
@@ -478,7 +492,7 @@
         <div class="wrap">
             <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s-4);margin-bottom:var(--s-5);">
                 <div data-reveal="mask">
-                    <span class="mask-line"><span class="label" style="display:block;margin-bottom:var(--s-3);">Field reports</span></span>
+                    <span class="mask-line"><span class="label" style="display:block;margin-bottom:var(--s-3);" data-i18n="project.gallery.kicker">Rapports de terrain</span></span>
                     <span class="mask-line"><h2 class="t-h2" data-i18n="project.gallery.title">Galerie</h2></span>
                 </div>
                 <span class="label" data-reveal="rise" data-i18n="project.gallery.hint">Glisser · flèches · ← →</span>
@@ -489,7 +503,7 @@
                     @foreach ($gallery as $n => $slide)
                         <figure class="carousel-slide">
                             <div class="media media-16-9"><img src="{{ $slide['src'] }}" alt="{{ $slide['cap'] }}"></div>
-                            <figcaption class="slide-caption label">{{ str_pad($n + 1, 2, '0', STR_PAD_LEFT) }} — {{ $slide['cat'] }} · {{ $slide['cap'] }}</figcaption>
+                            <figcaption class="slide-caption label" data-i18n="project02.gallery.slide.{{ $n }}">{{ str_pad($n + 1, 2, '0', STR_PAD_LEFT) }} — {{ $slide['cat'] }} · {{ $slide['cap'] }}</figcaption>
                         </figure>
                     @endforeach
                 </div>
@@ -517,8 +531,8 @@
     =================================================================== --}}
     <section class="section-tight">
         <div class="wrap">
-            <span class="label" data-reveal="rise">Development</span>
-            <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);max-width:40ch;">Currently in pre-production</h2>
+            <span class="label" data-reveal="rise" data-i18n="project.dev.kicker">Développement</span>
+            <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);max-width:40ch;" data-i18n="project02.dev.title">Actuellement en pré-production</h2>
             <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);max-width:56ch;" data-i18n="project02.dev.lead">
                 Novum : la terre d'après est en phase de cadrage. Le projet avance autour de plusieurs axes :
             </p>
@@ -542,10 +556,10 @@
             <hr class="rule" data-reveal="line" style="width:100%;">
             <div data-reveal="mask">
                 <span class="mask-line"><span class="label" style="display:block;margin-bottom:var(--s-3);" data-i18n="project02.cta.kicker">Le monde est calme. Ça ne veut rien dire.</span></span>
-                <span class="mask-line"><h2 class="t-h1">The door is about to open</h2></span>
+                <span class="mask-line"><h2 class="t-h1" data-i18n="project02.cta.title">La porte est sur le point de s'ouvrir</h2></span>
             </div>
-            <p class="t-body" data-reveal="blur" data-reveal-delay="120">
-                Novum : la terre d'après is currently in pre-production.
+            <p class="t-body" data-reveal="blur" data-reveal-delay="120" data-i18n="project02.cta.status">
+                Novum : la terre d'après est actuellement en pré-production.
             </p>
             <div style="display:flex;flex-wrap:wrap;gap:var(--s-3);" data-reveal="stagger">
                 <a class="btn" href="{{ route('studio.works') }}"><span data-i18n="project.cta.allworks">Tous les travaux</span> <span class="arrow" aria-hidden="true">→</span></a>

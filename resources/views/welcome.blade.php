@@ -10,6 +10,7 @@
     <meta http-equiv="Cache-Control" content="no-store" />
     <title>Lakeust Works</title>
 
+    <link rel="icon" href="{{ asset('images/Icon_Lakeust_nobg.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -37,7 +38,7 @@
             ],
         ];
         $img = [
-            'QR' => asset('images/team/QR.jpg'),
+            'QR' => asset('images/team/QR.png'),
             'AL' => asset('images/team/AL.jfif'),
             'LC' => asset('images/team/LC.jpg'),
             'CS' => asset('images/team/CS.png'),
@@ -54,6 +55,8 @@
             <span style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--text-2);">Lakeust Works</span>
         </a>
         <div style="flex:1"></div>
+        <a  href="{{ route('web.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Lakeust Web</a>
+        <a  href="{{ route('studio.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Lakeust Studio</a>
         <div class="wl-lang" data-lang-switch></div>
     </nav>
 
@@ -66,7 +69,7 @@
             </div>
             <h1 class="textured" data-hero="1" style="margin:0;font-size:clamp(44px,8.4vw,132px);line-height:.94;letter-spacing:-.03em;font-weight:500;text-shadow:0 0 90px rgba(232,222,198,.28)">LAKEUST WORKS</h1>
             <div data-hero="1" style="width:min(560px,80vw);height:1px;margin:var(--space-8) 0;background:linear-gradient(90deg,transparent,var(--accent-700) 48px,var(--accent-700) calc(100% - 48px),transparent)"></div>
-            <p data-hero="1" style="margin:0;max-width:640px;font-size:clamp(15px,1.5vw,19px);line-height:1.6;color:var(--text-2);text-wrap:pretty">
+            <p data-hero="1" style="margin:0;max-width:720px;font-size:clamp(15px,1.5vw,19px);line-height:1.6;color:var(--text-2);text-wrap:pretty">
                 <span class="i18n-fr">Deux pôles, un même atelier. Jeu vidéo Unity — effets, shaders. Web — CSS, JS.</span>
                 <span class="i18n-en">Two divisions, one workshop. Unity games — effects, shaders. Web — CSS, JS.</span>
             </p>
@@ -258,7 +261,7 @@
                 </div>
                 <div  style="display:flex;flex-direction:column;gap:var(--space-6); justify-content:center;">
                     <div class="card-title" style="font-size:22px">Confused Slime</div>
-                    <div class="card-meta" style="color:var(--text-3);margin-top:var(--space-3)"><span class="i18n-fr">Studio de jeu vidéo — co-fondé avec Lakeust Works</span><span class="i18n-en">Game studio — co-founded with Lakeust Works</span></div>
+                    <div class="card-meta" style="color:var(--text-3);margin-top:var(--space-3)"><span class="i18n-fr">Studio de jeu vidéo — co-fondé avec Arno Labourdette</span><span class="i18n-en">Game studio — co-founded with Arno Labourdette</span></div>
                     <p style="margin:var(--space-5) 0 0;font-size:14px;line-height:1.65;color:var(--text-3);max-width:52ch">
                         <span class="i18n-fr">Aide les développeurs indépendants (jeu, web) et les monteurs vidéo à concrétiser leurs projets.</span>
                         <span class="i18n-en">Helps indie developers (games, web) and video editors bring their projects to life.</span>
@@ -320,8 +323,9 @@
     </section>-->
 
     <footer style="border-top:1px solid var(--line);">
-        <div class="wrap" style="padding:var(--s-6) var(--gutter);display:flex;flex-wrap:wrap;gap:var(--s-6);justify-content:space-between;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-3);">
+        <div class="wrap" style="padding:var(--s-6) var(--gutter);display:flex;flex-wrap:wrap;gap:var(--s-6);justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-3);">
             <span>Lakeust Works — {{ date('Y') }}</span>
+            <a href="{{ route('legal') }}" data-barba-prevent style="color:inherit;text-decoration:none;letter-spacing:inherit;text-transform:inherit;"><span class="i18n-fr">Mentions légales</span><span class="i18n-en">Legal notice</span></a>
             <span><span class="i18n-fr">Aiguillage</span><span class="i18n-en">Switchboard</span> · {{ str_pad(count($branches), 2, '0', STR_PAD_LEFT) }}</span>
         </div>
     </footer>

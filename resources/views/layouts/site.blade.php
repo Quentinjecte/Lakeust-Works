@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'Lakeust Works -- Web')</title>
-    <link rel="icon" href="{{ asset('images/Icon_Lakeust.png') }}">
+    <link rel="icon" href="{{ asset('images/Icon_Lakeust_nobg.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -109,6 +109,9 @@
                     <a class="link-inline" href="{{ route($item['route']) }}" data-i18n="{{ $item['i18n'] }}" @if (!empty($item['external'])) data-barba-prevent @endif></a>
                 @endunless
             @endforeach
+            @unless (request()->routeIs('legal'))
+                <a class="link-inline" href="{{ route('legal') }}" data-i18n="footer.legal"></a>
+            @endunless
         </div>
     </div>
 </footer>

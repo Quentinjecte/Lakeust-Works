@@ -185,8 +185,8 @@ body.page-home .gradient3 { background: linear-gradient(180deg, #e0dc0b 0%, #bc8
 
 .textured {
     font-family: 'Lakeust', sans-serif;
-    background: url("/public/textures/texture_police.png");
-    /*background-color: transparent;*/
+    background: url("/public/textures/metal/gold_metal.jpg");
+    color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
 }

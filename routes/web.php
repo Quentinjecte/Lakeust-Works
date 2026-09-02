@@ -49,6 +49,10 @@ Route::get('/web-lab', function () {
     return view('pages.web.lab');
 })->name('web.lab');
 
+Route::get('/mentions-legales', function () {
+    return view('pages.legal');
+})->name('legal');
+
 
 
 //======================
