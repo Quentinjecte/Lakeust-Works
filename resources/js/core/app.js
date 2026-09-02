@@ -29,3 +29,10 @@ document.querySelectorAll('.page-in').forEach(el => {
    le contenu déjà présent au premier chargement (voir bootPageSystems) :
    pas besoin d'un initPage(document) séparé ici. */
 initBarba();
+
+document.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+        // La page revient depuis le BFCache → on force un reload
+        window.location.reload();
+    }
+});

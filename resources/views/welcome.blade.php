@@ -7,6 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-store" />
     <title>Lakeust Works</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,9 +44,9 @@
         ];
     @endphp
 </head>
-<body class="page-welcome">
+<body class="pageshow page-welcome nocursor">
 
-<div class="wl-page nocursor" data-wl-root data-lang="fr" style="background:var(--bg-1);color:var(--text);font-family:var(--font);min-height:100vh;position:relative;">
+<div class="wl-page " data-wl-root data-lang="fr" style="background:var(--bg-1);color:var(--text);font-family:var(--font);min-height:100vh;position:relative;">
 
     <nav class="wl-nav">
         <a href="#top" style="display:flex;align-items:center;gap:var(--s-3);flex:none;color:inherit;text-decoration:none;">

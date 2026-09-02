@@ -13,6 +13,16 @@ gsap.registerPlugin(ScrollTrigger);
 const root = document.querySelector('[data-lang]');
 if (root) boot();
 
+/* Retour arrière depuis une page externe : le navigateur restaure ce
+   document depuis le bfcache au lieu de le recharger — mais boot() a déjà
+   tourné une fois, et pagehide (voir fin de boot()) a déjà coupé le rAF du
+   hero, retiré le curseur personnalisé et tué les ScrollTrigger au moment de
+   quitter la page. Sans ce ré-amorçage, tout ça reste mort jusqu'à un F5 —
+   même mécanisme que welcome-lakeust.js pour l'orbite. */
+if (root) {
+  addEventListener('pageshow', e => { if (e.persisted) boot(); });
+}
+
 function boot() {
   let dead = false;
   let raf = 0, craf = 0;
