@@ -141,7 +141,7 @@
     =================================================================== -->
     <section id="travaux" style="max-width:1240px;margin:0 auto;padding:calc(var(--space-8)*4) var(--space-8)">
         <div data-reveal="rise" style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-8)">
-            06 — <span class="i18n-fr">Réalisations</span><span class="i18n-en">Selected work</span>
+            05 — <span class="i18n-fr">Réalisations</span><span class="i18n-en">Selected work</span>
         </div>
         <h2 data-reveal="rise" style="margin:0 0 calc(var(--space-8)*2.5);font-size:clamp(28px,3.6vw,54px);line-height:1.06;letter-spacing:-.025em;max-width:24ch">
             <span class="i18n-fr">Ce qui tourne, pas ce qui est promis.</span><span class="i18n-en">What runs, not what is promised.</span>
@@ -181,7 +181,7 @@
                 </div>
                 <div style="padding:var(--space-8)">
                     <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-3)">Web · Sample</div>
-                    <div style="font-family:var(--font-heading);font-size:20px;letter-spacing:-.01em;margin-bottom:var(--space-3)"><span class="i18n-fr">Custome Animation</span><span class="i18n-en">Animation Custom</span></div>
+                    <div style="font-family:var(--font-heading);font-size:20px;letter-spacing:-.01em;margin-bottom:var(--space-3)"><span class="i18n-fr">Animation Custom</span><span class="i18n-en">Animation Custom</span></div>
                     <p style="margin:0;font-size:14px;line-height:1.6;color:var(--text-3);text-wrap:pretty"><span class="i18n-fr">Animation Js, CSS et autre — titre et détails à documenter.</span><span class="i18n-en">Animation Js, CSS and other — title and details to be documented.</span></p>
                 </div>
             </a>
@@ -196,7 +196,7 @@
         <div class="drift-sticky" style="min-height:600px;background:var(--bg);border-top:1px solid var(--divider)">
             <div class="drift-head" style="max-width:1240px;margin:0 auto;width:100%;padding:0 var(--space-8) calc(var(--space-8)*2)">
                 <div style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-300)">
-                    05 — <span class="i18n-fr">Notre méthode</span><span class="i18n-en">Our process</span>
+                    06 — <span class="i18n-fr">Notre méthode</span><span class="i18n-en">Our process</span>
                 </div>
             </div>
             <div class="drift-track" style="padding:0 var(--space-8)">
