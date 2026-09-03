@@ -65,15 +65,38 @@
             ]],
         ];
 
+        /* Trois spécimens de flore mutée, chacun lié à un élément extrême —
+           images générées fournies directement pour Aranox (glace) et Icarus
+           (feu, ex-"Icanox"), Electa (électrique) réutilise son asset existant. */
+        $flore = [
+            ['nom' => 'Aranox', 'i18n' => 'project02.flore.aranox', 'img' => $img('Aranox.png'),
+                'element' => ['fr' => 'Glace', 'en' => 'Ice'],
+                'fr' => "Ses feuilles cristallines restent gelées même en plein été — elle capte la chaleur ambiante pour alimenter un noyau de glace qui ne fond jamais. Là où elle pousse, le sol reste anormalement froid sur plusieurs mètres.",
+                'en' => "Its crystalline leaves stay frozen even in midsummer — it draws ambient heat to feed a core of ice that never melts. Wherever it grows, the ground stays abnormally cold for several meters around it."],
+            ['nom' => 'Icarus', 'i18n' => 'project02.flore.icarus', 'img' => $img('Icarus.png'),
+                'element' => ['fr' => 'Feu', 'en' => 'Fire'],
+                'fr' => "Une combustion interne continue anime ses feuilles sans jamais les consumer — une réaction chimique que personne n'a encore réussi à expliquer. Sa chaleur repousse les prédateurs, mais attire tout aussi sûrement les curieux.",
+                'en' => "A continuous internal combustion animates its leaves without ever consuming them — a chemical reaction no one has managed to explain yet. Its heat keeps predators away, but just as surely draws in the curious."],
+            ['nom' => 'Electa', 'i18n' => 'project02.flore.electa', 'img' => $img('Plante Electa.png'),
+                'element' => ['fr' => 'Électrique', 'en' => 'Electric'],
+                'fr' => "Un léger crépitement accompagne chacun de ses mouvements : elle accumule une charge électrique qu'elle relâche par décharges courtes, sans logique apparente. Approcher sans précaution revient à s'exposer à une décharge bien réelle.",
+                'en' => "A faint crackle accompanies its every movement: it stores an electrical charge it releases in short, seemingly random bursts. Approaching it without care means exposing yourself to a very real shock."],
+        ];
+
         $gallery = [
             ['src' => $img('jour.png'), 'cap' => 'Extérieur — jour', 'cat' => 'ENVIRONMENT'],
             ['src' => $img('nuit.png'), 'cap' => 'Extérieur — nuit', 'cat' => 'ENVIRONMENT'],
             ['src' => $img('invasion-zombie-1.png'), 'cap' => 'Menace en approche', 'cat' => 'THREAT'],
             ['src' => $img('invasion-zombie-2.png'), 'cap' => 'Menace — vue rapprochée', 'cat' => 'THREAT'],
             ['src' => $img('Plante Electa.png'), 'cap' => 'Flore mutée — Electa', 'cat' => 'FIELD'],
-            ['src' => $img('plante aranox.png'), 'cap' => 'Flore mutée — Aranox', 'cat' => 'FIELD'],
-            ['src' => $img('plante icanox.png'), 'cap' => 'Flore mutée — Icanox', 'cat' => 'FIELD'],
-            ['src' => $img('background.png'), 'cap' => 'Vue d\'ensemble', 'cat' => 'ENVIRONMENT'],
+            ['src' => $img('Aranox.png'), 'cap' => 'Flore mutée — Aranox', 'cat' => 'FIELD'],
+            ['src' => $img('Icarus.png'), 'cap' => 'Flore mutée — Icarus', 'cat' => 'FIELD'],
+            ['src' => $img('sortie-bunker.jpg'), 'cap' => 'Sortie — camp de ravitaillement', 'cat' => 'FIELD'],
+            ['src' => $img('arme-modification-ui.jpg'), 'cap' => "Modification d'arme — interface", 'cat' => 'SYSTEMS'],
+            ['src' => $img('arme-modifiee-test.jpg'), 'cap' => 'Arme modifiée — essai au tir', 'cat' => 'SYSTEMS'],
+            ['src' => $img('confrontation-rapprochee.jpg'), 'cap' => 'Confrontation rapprochée', 'cat' => 'THREAT'],
+            ['src' => $img('vigie-distance.jpg'), 'cap' => 'Vigie à distance', 'cat' => 'THREAT'],
+            ['src' => $img('background&title.png'), 'cap' => 'Titre', 'cat' => 'TITLE'],
         ];
 
         /* Extraits choisis du lore fourni, dans l'ordre chronologique du
@@ -445,6 +468,38 @@
     </section>
 
     {{-- ==================================================================
+         FLORE MUTÉE — trois spécimens, chacun adapté à un extrême
+    =================================================================== --}}
+    <section class="section" id="flore">
+        <div class="wrap">
+            <div style="max-width:60ch;margin-bottom:var(--s-7);">
+                <span class="label" data-reveal="rise" data-i18n="project02.flore.kicker">Flore mutée</span>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project02.flore.title">Trois extrêmes, trois adaptations</h2>
+                <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project02.flore.lead">
+                    Chaque spécimen documenté vit une propriété unique liée à un phénomène que rien n'explique
+                    encore — une adaptation à des conditions que la vie ne devrait pas pouvoir supporter.
+                </p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--s-6);" data-reveal="stagger">
+                @foreach ($flore as $plante)
+                    <div style="display:flex;flex-direction:column;gap:var(--s-4);border-radius:var(--radius-lg,14px);overflow:hidden;background:rgba(35,37,50,.6);box-shadow:var(--shadow-sm);">
+                        <div class="media media-4-3">
+                            <img src="{{ $plante['img'] }}" alt="{{ $plante['nom'] }}">
+                        </div>
+                        <div style="padding:0 var(--s-6) var(--s-6);">
+                            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:var(--s-3);">
+                                <span style="font-size:20px;letter-spacing:-.01em;">{{ $plante['nom'] }}</span>
+                                <span class="tag tag-accent" data-i18n="{{ $plante['i18n'] }}.element">{{ $plante['element']['fr'] }}</span>
+                            </div>
+                            <p class="t-body" style="margin:0;font-size:14px;line-height:1.65;color:var(--text-3);" data-i18n="{{ $plante['i18n'] }}.desc">{{ $plante['fr'] }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- ==================================================================
          L'ÉQUIPE DU BUNKER — remplace "Co-op"
     =================================================================== --}}
     <section class="section">
@@ -454,7 +509,7 @@
             </div>
             <div>
                 <span class="label" data-reveal="rise" data-i18n="project02.coop.kicker">L'équipe du bunker</span>
-                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project02.coop.title">Personne ne tient le journal seul</h2>
+                <h2 class="t-h2" data-reveal="rise" style="margin-top:var(--s-2);" data-i18n="project02.coop.title"></h2>
                 <p class="t-body" data-reveal="blur" style="margin-top:var(--s-3);" data-i18n="project02.coop.p1">
                     Ingénieurs, scientifiques, section de sécurité : chacun tient son rôle dans le bunker, et
                     chaque décision extérieure se discute en équipe avant d'être prise.

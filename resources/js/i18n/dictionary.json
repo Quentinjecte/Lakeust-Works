@@ -1868,8 +1868,8 @@
     "en": "06 — FIELD · Mutated flora — Aranox"
   },
   "project02.gallery.slide.6": {
-    "fr": "07 — FIELD · Flore mutée — Icanox",
-    "en": "07 — FIELD · Mutated flora — Icanox"
+    "fr": "07 — FIELD · Flore mutée — Icarus",
+    "en": "07 — FIELD · Mutated flora — Icarus"
   },
   "project02.gallery.slide.7": {
     "fr": "08 — ENVIRONMENT · Vue d'ensemble",
@@ -2130,5 +2130,61 @@
   "footer.legal": {
     "fr": "Mentions légales",
     "en": "Legal notice"
+  },
+  "project02.gallery.slide.8": {
+    "fr": "09 — FIELD · Sortie — camp de ravitaillement",
+    "en": "09 — FIELD · Excursion — supply camp"
+  },
+  "project02.gallery.slide.9": {
+    "fr": "10 — SYSTEMS · Modification d'arme — interface",
+    "en": "10 — SYSTEMS · Weapon modification — interface"
+  },
+  "project02.gallery.slide.10": {
+    "fr": "11 — SYSTEMS · Arme modifiée — essai au tir",
+    "en": "11 — SYSTEMS · Modified weapon — test firing"
+  },
+  "project02.gallery.slide.11": {
+    "fr": "12 — THREAT · Confrontation rapprochée",
+    "en": "12 — THREAT · Close encounter"
+  },
+  "project02.gallery.slide.12": {
+    "fr": "13 — THREAT · Vigie à distance",
+    "en": "13 — THREAT · Long-range watch"
+  },
+  "project02.flore.kicker": {
+    "fr": "Flore mutée",
+    "en": "Mutated flora"
+  },
+  "project02.flore.title": {
+    "fr": "Trois extrêmes, trois adaptations",
+    "en": "Three extremes, three adaptations"
+  },
+  "project02.flore.lead": {
+    "fr": "Chaque spécimen documenté vit une propriété unique liée à un phénomène que rien n'explique encore — une adaptation à des conditions que la vie ne devrait pas pouvoir supporter.",
+    "en": "Every documented specimen carries a unique property tied to a phenomenon no one can explain yet — an adaptation to conditions life shouldn't be able to withstand."
+  },
+  "project02.flore.aranox.element": {
+    "fr": "Glace",
+    "en": "Ice"
+  },
+  "project02.flore.aranox.desc": {
+    "fr": "Ses feuilles cristallines restent gelées même en plein été — elle capte la chaleur ambiante pour alimenter un noyau de glace qui ne fond jamais. Là où elle pousse, le sol reste anormalement froid sur plusieurs mètres.",
+    "en": "Its crystalline leaves stay frozen even in midsummer — it draws ambient heat to feed a core of ice that never melts. Wherever it grows, the ground stays abnormally cold for several meters around it."
+  },
+  "project02.flore.icarus.element": {
+    "fr": "Feu",
+    "en": "Fire"
+  },
+  "project02.flore.icarus.desc": {
+    "fr": "Une combustion interne continue anime ses feuilles sans jamais les consumer — une réaction chimique que personne n'a encore réussi à expliquer. Sa chaleur repousse les prédateurs, mais attire tout aussi sûrement les curieux.",
+    "en": "A continuous internal combustion animates its leaves without ever consuming them — a chemical reaction no one has managed to explain yet. Its heat keeps predators away, but just as surely draws in the curious."
+  },
+  "project02.flore.electa.element": {
+    "fr": "Électrique",
+    "en": "Electric"
+  },
+  "project02.flore.electa.desc": {
+    "fr": "Un léger crépitement accompagne chacun de ses mouvements : elle accumule une charge électrique qu'elle relâche par décharges courtes, sans logique apparente. Approcher sans précaution revient à s'exposer à une décharge bien réelle.",
+    "en": "A faint crackle accompanies its every movement: it stores an electrical charge it releases in short, seemingly random bursts. Approaching it without care means exposing yourself to a very real shock."
   }
 }
