@@ -100,16 +100,24 @@
         <div data-reveal="rise">
             <h2 class="t-h3">Données personnelles &amp; Cookies</h2>
             <p class="t-body" style="margin-top:var(--s-3);">
-                Le site n'utilise aucun cookie publicitaire, ni outil de mesure d'audience.
+                Le site n'utilise aucun cookie publicitaire ni traceur intersites, et ne revend ni ne partage
+                aucune donnée avec des tiers à des fins commerciales.
             </p>
             <p class="t-body" style="margin-top:var(--s-3);">Le site peut utiliser :</p>
             <ul class="t-body" style="margin:var(--s-3) 0 0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;">
                 <li>un cookie technique de session généré automatiquement par Laravel (sécurité, gestion CSRF)</li>
                 <li>un stockage localStorage pour mémoriser la préférence de langue (FR/EN)</li>
+                <li>
+                    <a class="link-inline" href="https://www.goatcounter.com" target="_blank" rel="noopener">GoatCounter</a>,
+                    un outil de mesure d'audience respectueux de la vie privée : aucun cookie, aucun
+                    identifiant persistant, adresses IP anonymisées et non conservées. Seul le nombre de
+                    visites et les pages consultées sont mesurés, jamais qui les consulte.
+                </li>
             </ul>
             <p class="t-body" style="margin-top:var(--s-3);">
-                Ces éléments sont strictement nécessaires au fonctionnement du site et exemptés de
-                consentement selon le RGPD.
+                Ces éléments sont strictement nécessaires au fonctionnement du site ou exemptés de
+                consentement selon le RGPD (voir la
+                <a class="link-inline" href="https://www.goatcounter.com/privacy" target="_blank" rel="noopener">politique de confidentialité de GoatCounter</a>).
             </p>
         </div>
 

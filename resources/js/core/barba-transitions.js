@@ -231,5 +231,14 @@ export function initBarba() {
     data.next.container.classList.remove('page-in');
   });
 
-  barba.hooks.afterEnter(data => bootPageSystems(data.next.container, data.next.namespace));
+  barba.hooks.afterEnter(data => {
+    bootPageSystems(data.next.container, data.next.namespace);
+    /* GoatCounter (partials/analytics.blade.php) compte déjà le tout premier
+       chargement via son propre onload — jamais rejoué ici, seulement pour
+       les transitions Barba qui suivent (aucun rechargement réel donc aucun
+       nouveau ping sans cet appel manuel). */
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: location.pathname });
+    }
+  });
 }

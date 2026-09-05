@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+    @include('partials.analytics')
 
     @vite(['resources/css/app.css', 'resources/css/web.css', 'resources/js/pages/welcome-lakeust.js', 'resources/js/labs/chevron/chevron-lab.js'
     , 'resources/js/three/blackhole.js', 'resources/js/pages/home.js'])
