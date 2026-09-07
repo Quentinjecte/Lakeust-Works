@@ -23,8 +23,11 @@
     @endphp
  </head>
 
+   {{-- padding-top en max(19vh, 100px) : voir web/about.blade.php pour le
+        détail — la nav fixe (opaque, ~73px) peut passer au-dessus de 19vh
+        seul sur un viewport court, cachant le titre derrière la barre. --}}
    <section id="top" style="position:relative;min-height:640px;overflow:hidden;background:#07080e">
-        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:19vh var(--space-8) 0;pointer-events:none">
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:max(19vh, 100px) var(--space-8) 0;pointer-events:none">
             <h1 class="textured gradient2" data-hero="1" style="margin:0;font-size:clamp(44px,8.4vw,132px);line-height:.94;letter-spacing:-.03em;font-weight:500;text-shadow:0 0 90px rgba(232,222,198,.28)">LAKEUST STUDIO</h1>
             <div data-hero="1" style="width:min(560px,80vw);height:1px;margin:var(--space-8) 0;background:linear-gradient(90deg,transparent,var(--accent-700) 48px,var(--accent-700) calc(100% - 48px),transparent)"></div>
         </div>
@@ -73,7 +76,7 @@
             <h2 data-reveal="rise" style="margin:0 0 calc(var(--space-8)*2.5);font-size:clamp(28px,3.6vw,54px);line-height:1.06;letter-spacing:-.025em;max-width:22ch">
                 <span class="i18n-fr">Deux pôles, la même exigence.</span><span class="i18n-en">Two divisions, one standard.</span>
             </h2>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--space-8)">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-8)">
                 <div data-reveal="rise" data-magnet="1" style="padding:calc(var(--space-8)*1.6);border-radius:var(--radius-lg);background:rgba(35,37,50,.7);box-shadow:var(--shadow-sm);transition:box-shadow .35s ease">
                     <div style="display:flex;align-items:baseline;gap:var(--space-4);margin-bottom:var(--space-8)">
                         <span style="font-family:var(--font-heading);font-size:clamp(26px,3vw,38px);letter-spacing:-.02em;color:var(--text-hi)">Games</span>
@@ -84,7 +87,7 @@
                         <span class="i18n-fr">Jeu vidéo Unity : gameplay, effets et shaders. De la mécanique jouable au rendu final.</span>
                         <span class="i18n-en">Unity games: gameplay, effects and shaders. From playable mechanics to final render.</span>
                     </p>
-                    <ul class="multi">
+                    <ul class="grid sm:grid-cols-2 md:grid-cols-3">
                         <li style="display:flex;gap:var(--space-4);font-size:14px;color:var(--text-2)"><span style="color:var(--accent-300)">—</span><span class="i18n-fr">Gameplay Unity, C#</span><span class="i18n-en">Unity gameplay, C#</span></li>
                         <li style="display:flex;gap:var(--space-4);font-size:14px;color:var(--text-2)"><span style="color:var(--accent-300)">—</span><span class="i18n-fr">Shaders — Shader Graph, HLSL</span><span class="i18n-en">Shaders — Shader Graph, HLSL</span></li>
                         <li style="display:flex;gap:var(--space-4);font-size:14px;color:var(--text-2)"><span style="color:var(--accent-300)">—</span><span class="i18n-fr">Effets et VFX</span><span class="i18n-en">Effects and VFX</span></li>
@@ -105,7 +108,7 @@
         <h2 data-reveal="rise" style="margin:0 0 calc(var(--space-8)*2.5);font-size:clamp(28px,3.6vw,54px);line-height:1.06;letter-spacing:-.025em;max-width:26ch">
             <span class="i18n-fr">Quatre systèmes, du premier pas à la maîtrise.</span><span class="i18n-en">Four systems, from first step to mastery.</span>
         </h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:calc(var(--space-8)*1.5)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:calc(var(--space-8)*1.5)">
             @foreach ([
                 ['day-night-cycle', 'Cycle jour / nuit', 'Day / night cycle', 'Débutant', 'Beginner',
                     'Shader Graph · Matériau galaxie',
@@ -229,7 +232,7 @@
             <div data-reveal="rise" style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-300);margin-bottom:calc(var(--space-8)*2)">
                 07 — <span class="i18n-fr">Technologies</span><span class="i18n-en">Technologies</span>
             </div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:calc(var(--space-8)*3)">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:calc(var(--space-8)*3)">
                 <div>
                     <div data-reveal="rise" style="font-family:var(--font-heading);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-2);padding-bottom:var(--space-6);margin-bottom:var(--space-8);border-bottom:1px solid var(--divider)">Games</div>
                     <div data-reveal="rise" style="display:flex;flex-wrap:wrap;gap:var(--space-3)">
@@ -250,7 +253,7 @@
             <div data-reveal="rise" style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-8)">
                 08 — <span class="i18n-fr">Contact</span><span class="i18n-en">Contact</span>
             </div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:calc(var(--space-8)*3);align-items:start">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:calc(var(--space-8)*3);align-items:start">
                 <div>
                     <h2 data-reveal="rise" style="margin:0 0 var(--space-8);font-size:clamp(28px,3.6vw,54px);line-height:1.06;letter-spacing:-.025em;max-width:18ch">
                         <span class="i18n-fr">Parlez-nous du projet.</span><span class="i18n-en">Tell us about the project.</span>

@@ -174,6 +174,7 @@ function boot() {
     await wait(740);
     hole.getAnimations().forEach(a => a.cancel());
     hole.style.width = '132%';
+    hole.style.opacity = '0';
     ring.getAnimations().forEach(a => a.cancel());
     ring.style.opacity = '0';
     ring.style.width = '132%';

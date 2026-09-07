@@ -74,8 +74,13 @@ function setRail() {
   if (labCountEl) labCountEl.textContent = label(current) + ' / 15';
 }
 
+/* trigger:false : ces écrans ne défilent pas au sens classique (voir l'en-tête
+   du fichier — le scroll ne fait que changer "current", jamais la position du
+   document), donc le scrollTrigger par défaut de charsIn ("top 88%", basé sur
+   la position dans le viewport) n'a pas de signal fiable à observer ici et
+   laissait les titres bloqués à opacity:0. */
 function chars(sec) {
-  sec.querySelectorAll('[data-chars]').forEach(el => M.charsIn(el, { delay: 0.1 }));
+  sec.querySelectorAll('[data-chars]').forEach(el => M.charsIn(el, { delay: 0.1, trigger: false }));
 }
 
 const SETUPS = [

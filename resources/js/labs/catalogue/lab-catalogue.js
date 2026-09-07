@@ -15,7 +15,12 @@ if (sec) {
     M.mountScreen(sec, [
       r => M.reveals(r),
       r => M.converge(r),
-      r => r.querySelectorAll('[data-chars]').forEach(el => M.charsIn(el, { delay: 0.1 }))
+      /* trigger:false : ce titre est le tout premier contenu de la page (pas
+         du contenu profond dans un scroll) — le scrollTrigger par défaut de
+         charsIn ("top 88%") ne se déclenche pas de façon fiable quand
+         l'élément est déjà proche du haut du document au chargement, ce qui
+         laissait le titre bloqué à opacity:0 en permanence. */
+      r => r.querySelectorAll('[data-chars]').forEach(el => M.charsIn(el, { delay: 0.1, trigger: false }))
     ]);
   });
 }

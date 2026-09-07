@@ -55,24 +55,27 @@
         <div class="sm:hidden">
             <div class="wl-nav">
                 <!-- Mobile menu button-->
-                <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
-                    <span class="absolute -inset-0.5"></span>
-                    <span class="sr-only">Open main menu</span>
+                <div class="w-screen">
+                    <div class="flex justify-around">
+                        <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+                            <span class="absolute -inset-0.5"></span>
+                            <span class="sr-only">Open main menu</span>
 
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
-                        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+                                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
 
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
-                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+                                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
 
-                <a href="#top" style="display:flex;align-items:center;gap:var(--s-3);flex:none;color:inherit;text-decoration:none;">
-                    <span style="display:block;width:18px;height:1px;background:linear-gradient(90deg,transparent,var(--line-2));"></span>
-                    <span style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--text-2);">Lakeust Works</span>
-                </a>
-
+                        <a href="#top" style="display:flex;align-items:center;gap:var(--s-3);flex:none;color:inherit;text-decoration:none;">
+                            <span style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--text-2);">Lakeust Works</span>
+                        </a>
+                        <div class="wl-lang" data-lang-switch></div>
+                    </div>
+                </div>
                 {{-- Ancré au bar mobile lui-même (position:fixed du .wl-nav sert de
                      containing block) : "top-full" colle le panneau juste sous la
                      barre, sur toute sa largeur, quelle que soit sa hauteur réelle —
@@ -130,7 +133,7 @@
                 <span class="i18n-en">Two divisions, one workshop. Unity games — effects, shaders. Web — CSS, JS.</span>
             </p>
         </div>
-        <div style="position:absolute;left:50%;bottom:var(--space-8);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:var(--space-2);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--text-3);animation:lw-cue 2.4s ease-in-out infinite">
+        <div style="position:absolute;left:50%;right:50%;bottom:var(--space-8);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:var(--space-2);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--text-3);animation:lw-cue 2.4s ease-in-out infinite">
             <span class="i18n-fr">Défiler</span><span class="i18n-en">Scroll</span>
             <span style="width:1px;height:34px;background:linear-gradient(180deg,rgba(226,221,209,.4),transparent)"></span>
         </div>
@@ -268,7 +271,7 @@
                     <span class="i18n-fr">Un atelier technique, deux terrains.</span><span class="i18n-en">One technical workshop, two grounds.</span>
                 </h2>
             </div>
-            <div  class="w-xs" style="display:flex;flex-direction:column;gap:var(--space-6);max-width:52ch">
+            <div class="xs:w-[30ch] sm:w-[52ch]" style="display:flex;flex-direction:column;gap:var(--space-6);max-width:52ch">
                 <p data-reveal="rise" style="margin:0;font-size:clamp(14px,3.6vw,17px); line-height:1.65;color:var(--text-2);text-wrap:pretty">
                     <span class="i18n-fr">Lakeust Works développe des jeux vidéo sous Unity et des interfaces web. Le travail est le même dans les deux cas : comprendre le besoin, écrire le code, livrer quelque chose qui tient.</span>
                     <span class="i18n-en">Lakeust Works builds Unity games and web interfaces. The work is the same in both cases: understand the need, write the code, ship something that holds.</span>
@@ -300,7 +303,7 @@
         <div data-reveal="rise" style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-300);margin-bottom:calc(var(--space-8)*2)">
             02 — <span class="i18n-fr">Le fondateur</span><span class="i18n-en">The founder</span>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:calc(var(--space-8)*3);align-items:center">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:calc(var(--space-8)*3);align-items:center">
             <div data-reveal="rise" style="position:relative;aspect-ratio:4/5;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-md)">
                 <img src="{{ $img['QR'] }}" alt="Quentin Renaud" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
             </div>

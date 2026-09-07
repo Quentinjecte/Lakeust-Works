@@ -118,7 +118,8 @@
     <!-- ==================================================================
          À LA UNE 
     =================================================================== -->
-    <section id="alaune" style="position:relative;min-height:100vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:calc(var(--space-8)*3);padding:calc(var(--space-8)*5) var(--space-8) calc(var(--space-8)*4)">
+
+    <section id="alaune" data-split="1" style="position:relative;min-height:100vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:calc(var(--space-8)*3);padding:calc(var(--space-8)*5) var(--space-8) calc(var(--space-8)*4)">
         <div style="max-width:56ch">
             <div data-reveal="rise" style="display:flex;align-items:center;gap:var(--space-4);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent-300)">
                 <span class="i18n-fr">À la une</span><span class="i18n-en">Featured</span>

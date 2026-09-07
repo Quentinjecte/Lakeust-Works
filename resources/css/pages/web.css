@@ -35,7 +35,7 @@ body.page-welcome { margin: 0; padding: 0; background: var(--bg-1); }
 .wl-nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 80;
     display: flex; align-items: center; gap: var(--s-5);
-    padding: var(--s-4) var(--gutter);
+    padding: 10px 0px 10px 0;
     backdrop-filter: blur(14px);
     background: color-mix(in srgb, var(--bg-1) 66%, transparent);
     border-bottom: 1px solid var(--line);

@@ -20,8 +20,13 @@
     @endphp
  </head>
 
+   {{-- padding-top en max(19vh, 100px) : la nav (.nav, nav.css) est fixed
+        avec un fond opaque (~73px de haut) — en dessous de ~526px de haut
+        de viewport, 19vh seul (ex: 71px à 375x375) passe sous cette hauteur
+        et le titre se retrouve caché derrière la barre. 100px garde toujours
+        une marge, sans changer le rendu desktop où 19vh domine déjà. --}}
    <section id="top" style="position:relative;min-height:640px;overflow:hidden;background:#07080e">
-        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:19vh var(--space-8) 0;pointer-events:none">
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:max(19vh, 100px) var(--space-8) 0;pointer-events:none">
             <h1 class="textured gradient2" data-hero="1" style="margin:0;font-size:clamp(44px,8.4vw,132px);line-height:.94;letter-spacing:-.03em;font-weight:500;text-shadow:0 0 90px rgba(232,222,198,.28)">LAKEUST WEB</h1>
             <div data-hero="1" style="width:min(560px,80vw);height:1px;margin:var(--space-8) 0;background:linear-gradient(90deg,transparent,var(--accent-700) 48px,var(--accent-700) calc(100% - 48px),transparent)"></div>
         </div>
@@ -70,7 +75,7 @@
             <h2 data-reveal="rise" style="margin:0 0 calc(var(--space-8)*2.5);font-size:clamp(28px,3.6vw,54px);line-height:1.06;letter-spacing:-.025em;max-width:22ch">
                 <span class="i18n-fr">La même exigence.</span><span class="i18n-en">One standard.</span>
             </h2>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--space-8)">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-8)">
                 <div data-reveal="rise" data-magnet="1" style="padding:calc(var(--space-8)*1.6);border-radius:var(--radius-lg);background:rgba(35,37,50,.7);box-shadow:var(--shadow-sm);transition:box-shadow .35s ease">
                     <div style="display:flex;align-items:baseline;gap:var(--space-4);margin-bottom:var(--space-8)">
                         <span style="font-family:var(--font-heading);font-size:clamp(26px,3vw,38px);letter-spacing:-.02em;color:var(--text-hi)">Web</span>
@@ -81,7 +86,7 @@
                         <span class="i18n-fr">Sites et interfaces sur mesure : intégration précise, animation, interactions qui répondent.</span>
                         <span class="i18n-en">Custom sites and interfaces: precise integration, animation, interactions that respond.</span>
                     </p>
-                    <ul class="multi">
+                    <ul class="grid sm:grid-cols-2 md:grid-cols-3">
                         <li style="display:flex;gap:var(--space-4);font-size:14px;color:var(--text-2)"><span style="color:var(--accent-300)">—</span><span class="i18n-fr">Intégration CSS</span><span class="i18n-en">CSS integration</span></li>
                         <li style="display:flex;gap:var(--space-4);font-size:14px;color:var(--text-2)"><span style="color:var(--accent-300)">—</span><span class="i18n-fr">JavaScript</span><span class="i18n-en">JavaScript</span></li>
                         <li style="display:flex;gap:var(--space-4);font-size:14px;color:var(--text-2)"><span style="color:var(--accent-300)">—</span><span class="i18n-fr">Animation et transitions</span><span class="i18n-en">Animation and transitions</span></li>
