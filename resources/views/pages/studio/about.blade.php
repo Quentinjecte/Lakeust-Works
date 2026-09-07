@@ -108,7 +108,7 @@
         <h2 data-reveal="rise" style="margin:0 0 calc(var(--space-8)*2.5);font-size:clamp(28px,3.6vw,54px);line-height:1.06;letter-spacing:-.025em;max-width:26ch">
             <span class="i18n-fr">Quatre systèmes, du premier pas à la maîtrise.</span><span class="i18n-en">Four systems, from first step to mastery.</span>
         </h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:calc(var(--space-8)*1.5)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,560px));gap:calc(var(--space-8)*1.5)">
             @foreach ([
                 ['day-night-cycle', 'Cycle jour / nuit', 'Day / night cycle', 'Débutant', 'Beginner',
                     'Shader Graph · Matériau galaxie',
