@@ -20,6 +20,7 @@
     , 'resources/js/three/blackhole.js', 'resources/js/pages/home.js'])
 
     @php
+        $isPhone = (bool) preg_match('/android|iphone|ipod|windows phone|blackberry|bb10|mobi/i', request()->header('User-Agent', ''));
         $branches = [
             [
                 'label' => 'Lakeust Web',
@@ -48,24 +49,78 @@
 </head>
 <body class="pageshow page-welcome nocursor">
 
-<div class="wl-page " data-wl-root data-lang="fr" style="background:var(--bg-1);color:var(--text);font-family:var(--font);min-height:100vh;position:relative;">
+<div class="wl-page" data-wl-root data-lang="fr" style="background:var(--bg-1);color:var(--text);font-family:var(--font);min-height:100vh;position:relative;">
 
-    <nav class="wl-nav">
-        <a href="#top" style="display:flex;align-items:center;gap:var(--s-3);flex:none;color:inherit;text-decoration:none;">
-            <span style="display:block;width:18px;height:1px;background:linear-gradient(90deg,transparent,var(--line-2));"></span>
-            <span style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--text-2);">Lakeust Works</span>
-        </a>
-        <div style="flex:1"></div>
-        <a  href="{{ route('web.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Lakeust Web</a>
-        <a  href="{{ route('studio.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Lakeust Studio</a>
-        <div class="wl-lang" data-lang-switch></div>
+    <nav>
+        <div class="sm:hidden">
+            <div class="wl-nav">
+                <!-- Mobile menu button-->
+                <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+                    <span class="absolute -inset-0.5"></span>
+                    <span class="sr-only">Open main menu</span>
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+                        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <a href="#top" style="display:flex;align-items:center;gap:var(--s-3);flex:none;color:inherit;text-decoration:none;">
+                    <span style="display:block;width:18px;height:1px;background:linear-gradient(90deg,transparent,var(--line-2));"></span>
+                    <span style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--text-2);">Lakeust Works</span>
+                </a>
+
+                {{-- Ancré au bar mobile lui-même (position:fixed du .wl-nav sert de
+                     containing block) : "top-full" colle le panneau juste sous la
+                     barre, sur toute sa largeur, quelle que soit sa hauteur réelle —
+                     pas de valeur magique à recaler si le bar change un jour. Posé
+                     en sibling ici plutôt qu'à la fin de <nav> (où il tombait dans
+                     le flux normal du document, donc au-dessus de #top et détaché
+                     visuellement de la barre). --}}
+                <el-disclosure id="mobile-menu" hidden class="absolute inset-x-0 top-full border-t border-[var(--line)] backdrop-blur-[14px]" style="background:color-mix(in srgb, var(--bg-1) 92%, transparent);">
+                    <div class="flex flex-col" style="padding:var(--s-3) var(--gutter);gap:2px;">
+                        <a href="{{ route('web.about') }}" class="rounded-md" style="padding:10px 4px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-2);">Lakeust Web</a>
+                        <a href="{{ route('studio.about') }}" class="rounded-md" style="padding:10px 4px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-2);">Lakeust Studio</a>
+                    </div>
+                </el-disclosure>
+            </div>
+        </div>
+
+        <div class="hidden sm:block">
+            <div class="wl-nav">
+                <a href="#top" style="display:flex;align-items:center;gap:var(--s-3);flex:none;color:inherit;text-decoration:none;">
+                    <span style="display:block;width:18px;height:1px;background:linear-gradient(90deg,transparent,var(--line-2));"></span>
+                    <span style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--text-2);">Lakeust Works</span>
+                </a>
+
+                <div style="flex:1"></div>
+
+                <a href="{{ route('web.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Lakeust Web</a>
+                <a href="{{ route('studio.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Lakeust Studio</a>
+
+                <div class="wl-lang" data-lang-switch></div>
+            </div>
+        </div>
     </nav>
 
-    <section id="top" style="position:relative;height:100vh;min-height:640px;overflow:hidden;background:#07080e">
-        <black-hole-stage drive="external" quality="auto" disk-palette="ember" duration="1" style="position:absolute;left:-8%;top:-8%;width:116%;height:152%"></black-hole-stage>
+
+    <section id="top" class="sm:h-auto h-screen" style="position:relative;min-height:640px;overflow:hidden;background:#07080e">
+        <div class="hidden sm:block">
+            <black-hole-stage drive="external" quality="auto" disk-palette="ember" duration="1" style="position:absolute;left:-8%;top:-8%;width:116%;height:152%"></black-hole-stage>
+        </div>
         <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 46%, transparent 22%, color-mix(in srgb, #07080e 78%, transparent) 78%);pointer-events:none"></div>
         <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:19vh var(--space-8) 0;pointer-events:none">
-            <div data-hero="1" style="font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-8)">
+            {{-- letter-spacing dans .hero-eyebrow (pages/web.css), pas en style
+                 inline : à .36em fixe, ce tracking sur du 11px poussait le
+                 texte sur 2 lignes sous ~500px (le tracking ajoute de la
+                 largeur par caractère, indépendamment du viewport — un clamp()
+                 basé sur vw ne marchait pas non plus, la courbe devait rester
+                 quasi plate jusqu'au tablette puis remonter, ce que vw seul ne
+                 fait pas). Une media query classique reste plus prévisible ici. --}}
+            <div data-hero="1" class="hero-eyebrow" style="font-size:11px;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-8)">
                 <span class="i18n-fr">Studio de développement · Unity &amp; Web</span><span class="i18n-en">Development studio · Unity &amp; Web</span>
             </div>
             <h1 class="textured" data-hero="1" style="margin:0;font-size:clamp(44px,8.4vw,132px);line-height:.94;letter-spacing:-.03em;font-weight:500;text-shadow:0 0 90px rgba(232,222,198,.28)">LAKEUST WORKS</h1>
@@ -93,9 +148,63 @@
         </div>
     </div>
 
-    <section data-cvm-root style="background:#0b0c14;color:#e2ddd1;font-family:Inter,system-ui,sans-serif;min-height:150vh;display:flex;flex-direction:column">
+    {{-- Hauteurs en classes Tailwind (pas dans le style inline) : la géométrie
+         du chevron (chevron.js) se recalcule automatiquement via ResizeObserver
+         dès que ce conteneur change de taille — il suffit d'ajuster les
+         valeurs ci-dessous par breakpoint, rien d'autre à toucher. Sur mobile
+         "flex:1" étirait le stage sur toute la hauteur du parent quel que soit
+         min-height (un flex:1 seul enfant remplit toujours l'espace dispo) —
+         d'où le "flex-none h-[...]" qui fixe une vraie hauteur au lieu d'un
+         simple plancher ; sm: restaure le comportement desktop (grow + min-h). --}}
+    {{-- Téléphone : pas de hover, donc pas de chevron interactif — juste des
+         bandes horizontales empilées, mêmes libellés/couleurs/liens que les
+         bandes desktop ci-dessous. Le wrapper "hidden sm:contents" bascule
+         proprement sans toucher au display:flex inline de data-cvm-root (même
+         pattern que la nav : display:contents n'a pas de conflit de cascade). --}}
+    {{-- display en classe Tailwind (pas en style inline) : un display inline
+         sur ce même élément battrait toujours "sm:hidden" (l'inline gagne
+         quel que soit le media query de la classe), donc la pile resterait
+         visible même en desktop. --}}
+    <div class="flex flex-col sm:hidden" style="gap:1px;background:#0b0c14;">
+        <a href="{{ route('web.about') }}" style="display:flex;flex-direction:column;gap:6px;padding:26px var(--gutter);background:linear-gradient(90deg, #423a6a 0%, #5d5294 72%, #796cbf 100%);color:inherit;text-decoration:none;">
+            <span style="display:flex;align-items:center;gap:14px;">
+                <span style="font-weight:300;font-size:24px;letter-spacing:.02em;color:#f3f5fe;">Lakeust Web</span>
+                <svg width="34" height="10" viewBox="0 0 44 12" fill="none" style="flex:none"><path d="M1 6 H41" stroke="#e7e5fe" stroke-width="1.4" stroke-linecap="round" opacity="0.55"></path><path d="M35.5 1.5 L42.5 6 L35.5 10.5" stroke="#e7e5fe" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
+            <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#cfd3e5;">three.js · GSAP · WebGL</span>
+        </a>
 
-        <div data-stage data-screen-label="Chevron" style="position:relative;flex:1;min-height:640px;overflow:hidden;background-color:#0b0c14;background-image:radial-gradient(46% 38% at 50% 12%, rgba(145,132,217,.16) 0%, transparent 72%)">
+        <a href="{{ route('studio.about') }}" style="display:flex;flex-direction:column;gap:6px;padding:26px var(--gutter);background:linear-gradient(90deg, #75798c 10%, #595d6c 62%, #3f424d 100%);color:inherit;text-decoration:none;">
+            <span style="display:flex;align-items:center;gap:14px;">
+                <span style="font-weight:300;font-size:24px;letter-spacing:.02em;color:#f3f5fe;">Lakeust Studio</span>
+                <svg width="34" height="10" viewBox="0 0 44 12" fill="none" style="flex:none"><path d="M1 6 H41" stroke="#e7e5fe" stroke-width="1.4" stroke-linecap="round" opacity="0.55"></path><path d="M35.5 1.5 L42.5 6 L35.5 10.5" stroke="#e7e5fe" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
+            <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#cfd3e5;">Unity · C# · shaders</span>
+        </a>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:22px var(--gutter);background:linear-gradient(90deg, #423a6a 0%, #2b2741 100%);">
+            <span style="font-weight:300;font-size:19px;letter-spacing:.02em;color:#e4e7f5;">Troisième versant</span>
+            <span class="tag tag-outline" style="flex:none;font-size:10px;letter-spacing:.2em;text-transform:uppercase">à venir</span>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:22px var(--gutter);background:linear-gradient(90deg, #3f424d 0%, #292b31 100%);">
+            <span class="tag tag-outline" style="flex:none;font-size:10px;letter-spacing:.2em;text-transform:uppercase">à venir</span>
+            <span style="font-weight:300;font-size:19px;letter-spacing:.02em;color:#cfd3e5;">Quatrième versant</span>
+        </div>
+    </div>
+
+    {{-- Hauteurs en classes Tailwind (pas dans le style inline) : la géométrie
+         du chevron (chevron.js) se recalcule automatiquement via ResizeObserver
+         dès que ce conteneur change de taille — il suffit d'ajuster les
+         valeurs ci-dessous par breakpoint, rien d'autre à toucher. Sur mobile
+         "flex:1" étirait le stage sur toute la hauteur du parent quel que soit
+         min-height (un flex:1 seul enfant remplit toujours l'espace dispo) —
+         d'où le "flex-none h-[...]" qui fixe une vraie hauteur au lieu d'un
+         simple plancher ; sm: restaure le comportement desktop (grow + min-h). --}}
+    <div class="hidden sm:contents">
+    <section data-cvm-root class=" sm:min-h-screen" style="background:#0b0c14;color:#e2ddd1;font-family:Inter,system-ui,sans-serif;display:flex;flex-direction:column">
+
+        <div data-stage data-screen-label="Chevron" class="h-[450px] flex-none sm:h-auto sm:flex-1 sm:min-h-[640px]" style="position:relative;overflow:hidden;background-color:#0b0c14;background-image:radial-gradient(46% 38% at 50% 12%, rgba(145,132,217,.16) 0%, transparent 72%)">
 
             {{-- Bande 0 — Lakeust Web, seule branche déjà construite --}}
             <a data-band data-tone="#5d5294" href="{{ route('web.about') }}" style="position:absolute;inset:0;display:block;color:inherit;transition:opacity .4s ease">
@@ -146,24 +255,25 @@
             </a>
         </div>
     </section>
+    </div>
 
 
-    <section id="studio" style="max-width:1240px;margin:0 auto;padding:calc(var(--space-8)*4) var(--space-8) calc(var(--space-8)*2)">
+    <section id="studio"  style="max-width:1240px;margin:0 auto;padding:calc(var(--space-8)*4) var(--space-8) calc(var(--space-8)*2)">
         <div data-reveal="rise" style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-8)">
             01 — <span class="i18n-fr">Qui sommes-nous</span><span class="i18n-en">Who we are</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:calc(var(--space-8)*3);align-items:start">
             <div>
-                <h2 data-reveal="rise" style="margin:0 0 var(--space-8);font-size:clamp(28px,3.6vw,54px);line-height:1.06;letter-spacing:-.025em">
+                <h2 data-reveal="rise" style="margin:0 0 var(--space-8);font-size:clamp(24px,3.6vw,54px);line-height:1.06;letter-spacing:-.025em">
                     <span class="i18n-fr">Un atelier technique, deux terrains.</span><span class="i18n-en">One technical workshop, two grounds.</span>
                 </h2>
             </div>
-            <div style="display:flex;flex-direction:column;gap:var(--space-6);max-width:52ch">
-                <p data-reveal="rise" style="margin:0;font-size:17px;line-height:1.65;color:var(--text-2);text-wrap:pretty">
+            <div  class="w-xs" style="display:flex;flex-direction:column;gap:var(--space-6);max-width:52ch">
+                <p data-reveal="rise" style="margin:0;font-size:clamp(14px,3.6vw,17px); line-height:1.65;color:var(--text-2);text-wrap:pretty">
                     <span class="i18n-fr">Lakeust Works développe des jeux vidéo sous Unity et des interfaces web. Le travail est le même dans les deux cas : comprendre le besoin, écrire le code, livrer quelque chose qui tient.</span>
                     <span class="i18n-en">Lakeust Works builds Unity games and web interfaces. The work is the same in both cases: understand the need, write the code, ship something that holds.</span>
                 </p>
-                <p data-reveal="rise" style="margin:0;font-size:15px;line-height:1.7;color:var(--text-3);text-wrap:pretty">
+                <p data-reveal="rise" style="margin:0;font-size:clamp(14px,3.6vw,17px);;line-height:1.7;color:var(--text-3);text-wrap:pretty">
                     <span class="i18n-fr">Pas de sous-traitance en cascade, pas d'intermédiaire. Le code est écrit ici, du shader à l'intégration.</span>
                     <span class="i18n-en">No cascading subcontracting, no middleman. The code is written here, from the shader to the integration.</span>
                 </p>
@@ -332,4 +442,5 @@
     </footer>
 </div>
 </body>
+ <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 </html>

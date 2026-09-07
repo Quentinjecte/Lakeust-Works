@@ -23,6 +23,15 @@ body.page-welcome { margin: 0; padding: 0; background: var(--bg-1); }
 @keyframes wl-cue { 0%, 100% { transform: translateY(0); opacity: .35 } 50% { transform: translateY(7px); opacity: .9 } }
 @keyframes wl-ring { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
 
+/* Eyebrow au-dessus du H1 du hero : à .36em fixe le tracking pousse ce texte
+   (11px) sur 2 lignes dès qu'on descend sous ~500px de large — la largeur
+   ajoutée par le tracking ne dépend pas du viewport, contrairement au texte
+   lui-même, donc un clamp() en vw ne suit pas la bonne courbe ici. */
+.hero-eyebrow { letter-spacing: .36em; }
+@media (max-width: 640px) {
+    .hero-eyebrow { letter-spacing: .05em; }
+}
+
 .wl-nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 80;
     display: flex; align-items: center; gap: var(--s-5);

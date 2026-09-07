@@ -23,7 +23,7 @@ function isect(p1, d1, p2, d2) {
   const den = d1[0] * d2[1] - d1[1] * d2[0];
   if (Math.abs(den) < 1e-9) return [p1[0], p1[1]];
   const s = ((p2[0] - p1[0]) * d2[1] - (p2[1] - p1[1]) * d2[0]) / den;
-  return [p1[0] + d1[0] * s, p1[1] + d1[1] * s];
+    return [p1[0] + d1[0] * s, p1[1] + d1[1] * s];
 }
 
 export class Chevron {
@@ -32,7 +32,7 @@ export class Chevron {
     this.bands = bands;
     this.o = Object.assign({
       apexX: 0.5, apexY: 0.06, arm: 18,
-      thickRatio: 0.2, minThick: 92, maxThick: 560, gap: 0,
+      thickRatio: 0.2, minThick: 35, maxThick: 250, gap: 0,
       push: 0.2, dim: 0.42, tileRatio: 0.5, labelPos: 0.34,
       edgeOff: 'rgba(145,132,217,.26)',
       edgeOn: 'rgba(182,172,234,.78)',

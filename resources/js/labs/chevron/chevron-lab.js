@@ -28,8 +28,8 @@ function boot(root) {
   const tileSlide = 80;
 
   const ch = new Chevron(stage, bands, {
-    apexX: 0.38, apexY: -0.1, arm: 18,
-    thickRatio: 1, gap: 10, push: 0.2, dim: 0.9,
+      apexX: 0.38, apexY: -0.1, arm: 18,
+      thickRatio: 1, gap: 10, push: 0.2, dim: 0.9,
     onState(band, i, s) {
       if (!band._tiles) return;
       const dx = (band._apexSign || 1) * tileSlide;
