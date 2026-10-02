@@ -425,10 +425,10 @@
                         <span class="i18n-fr">Un jeu, un site, un effet précis&nbsp;: décris le besoin, la réponse arrive avec un périmètre et un prix.</span>
                         <span class="i18n-en">A game, a site, one specific effect: describe the need and the answer comes with a scope and a price.</span>
                     </p>
-                    <div class="t-h3" style="color:var(--accent);">contact@lakeust.works</div>
+                    <div class="t-h3" style="color:var(--accent);">lakeustworks@gmail.com</div>
                 </div>
                 <div style="display:flex;gap:var(--s-4);justify-content:flex-start;" data-reveal="rise" data-reveal-delay="80">
-                    <a class="btn btn-primary" href="mailto:contact@lakeust.works">
+                    <a class="btn btn-primary" href="mailto:lakeustworks@gmail.com">
                         <span class="i18n-fr">Écrire</span><span class="i18n-en">Write</span>
                     </a>
                 </div>

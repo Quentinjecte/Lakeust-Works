@@ -17,6 +17,15 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Le site est pensé (et vérifié) jusqu'à 1920px (16:9 1080p) — au-delà,
+       les sections en pleine largeur sans max-width (grilles, héros) qui
+       n'utilisent que du padding continuent de s'étirer avec le viewport,
+       sans plafond, et finissent disproportionnées sur un écran 2K/4K.
+       S'ajoutent (n'écrasent pas) aux breakpoints Tailwind par défaut
+       (sm/md/lg/xl/2xl=1536px) : sm:/md:/.../3xl:/4xl: restent tous utilisables. */
+    --breakpoint-3xl: 1920px;
+    --breakpoint-4xl: 2560px;
 }
 
 :root {

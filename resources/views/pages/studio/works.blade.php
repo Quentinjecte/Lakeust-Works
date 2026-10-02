@@ -119,7 +119,14 @@
          À LA UNE 
     =================================================================== -->
 
-    <section id="alaune" data-split="1" style="position:relative;min-height:100vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:calc(var(--space-8)*3);padding:calc(var(--space-8)*5) var(--space-8) calc(var(--space-8)*4)">
+    {{-- 3xl:max-w-[1900px] 3xl:mx-auto : la grille (minmax(0,1fr)/(0,1.05fr))
+         n'a que du padding, pas de plafond — au-delà de 1920px les deux
+         colonnes continuent de s'étirer avec le viewport (mesuré : 1807px +
+         1897px à 3840px de large) alors que le contenu réel (titre, texte en
+         ch) reste étroit, laissant un vide disproportionné. Plafonné à partir
+         de 1920px seulement (breakpoint 3xl défini dans variables.css) : rien
+         ne change jusque-là (site vérifié correct jusqu'à 1920px/16:9 1080p). --}}
+    <section id="alaune" data-split="1" class="3xl:max-w-[1900px] 3xl:mx-auto" style="position:relative;min-height:100vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:calc(var(--space-8)*3);padding:calc(var(--space-8)*5) var(--space-8) calc(var(--space-8)*4)">
         <div style="max-width:56ch">
             <div data-reveal="rise" style="display:flex;align-items:center;gap:var(--space-4);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent-300)">
                 <span class="i18n-fr">À la une</span><span class="i18n-en">Featured</span>
