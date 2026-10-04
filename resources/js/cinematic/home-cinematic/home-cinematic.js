@@ -193,7 +193,8 @@ export async function createCinematic({ stage, root, studio = false, onPhase, on
     core = mod && typeof mod.getProject === 'function' ? mod
       : (mod && mod.default && typeof mod.default.getProject === 'function' ? mod.default : null);
     if (!core) throw new Error('exports @theatre/core introuvables');
-    if (studio) {
+    /* DEV dans la condition elle-même : éliminé au build, studio non livré */
+    if (import.meta.env.DEV && studio) {
       const smod = await import('@theatre/studio');
       const st = smod.default && smod.default.initialize ? smod.default
         : (smod.initialize ? smod : (smod.default && smod.default.default) || null);
@@ -374,7 +375,7 @@ export async function bootPage() {
   booted = true;
   const root = document.querySelector('[data-wc-root]') || document.body;
   const q = s => root.querySelector(s);
-  const useStudio = new URLSearchParams(location.search).has('studio');
+  const useStudio = import.meta.env.DEV && new URLSearchParams(location.search).has('studio');
 
   let stage, cine;
   try {

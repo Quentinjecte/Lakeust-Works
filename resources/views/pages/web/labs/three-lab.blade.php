@@ -5,12 +5,10 @@
     @vite(['resources/css/lab.css', 'resources/js/labs/three/three-lab.js'])
 
     @php
-        /* Les liens ?studio disparaissent au lieu de casser la page si la
-           route cinématique correspondante n'existe pas sous ce nom. */
         $scenes = [
-            'welcome' => ['n' => '02', 'title' => 'Welcome cinématique', 'studioRoute' => 'blackhole.cinematic', 'studioUrl' => '/blackhole-cinematic'],
-            'forest'  => ['n' => '03', 'title' => 'Forêt',               'studioRoute' => 'forest.cinematic',  'studioUrl' => '/forest-cinematic'],
-            'orbital' => ['n' => '04', 'title' => 'Orbitale',            'studioRoute' => 'home.cinematic',    'studioUrl' => '/home-cinematic'],
+            'welcome' => ['n' => '02', 'title' => 'Welcome cinématique'],
+            'forest'  => ['n' => '03', 'title' => 'Forêt'],
+            'orbital' => ['n' => '04', 'title' => 'Orbitale'],
         ];
         $rail = [
             ['n' => 'X',  'title' => 'Catalogue'],
@@ -203,9 +201,6 @@
                     <span data-tl-hud="phase">—</span>
                     <input type="range" min="0" max="100" value="0" data-tl-scrub aria-label="position dans la timeline">
                     <button type="button" data-tl-quality>LOW</button>
-                    @if (Route::has($scenes['welcome']['studioRoute']))
-                        <a href="{{ $scenes['welcome']['studioUrl'] }}?studio" target="_blank" rel="noopener">?studio</a>
-                    @endif
                 </div>
                 <div style="display:flex;gap:10px;flex-wrap:wrap">
                     <button type="button" data-tl-phase-jump="0" class="btn">approche</button>
@@ -238,9 +233,6 @@
                     <span data-tl-hud="phase">—</span>
                     <input type="range" min="0" max="100" value="0" data-tl-scrub aria-label="position dans la timeline">
                     <button type="button" data-tl-quality>LOW</button>
-                    @if (Route::has($scenes['forest']['studioRoute']))
-                        <a href="{{ $scenes['forest']['studioUrl'] }}?studio" target="_blank" rel="noopener">?studio</a>
-                    @endif
                 </div>
                 <div style="display:flex;gap:10px;flex-wrap:wrap">
                     <button type="button" data-tl-phase-jump="0" class="btn">départ</button>
@@ -273,9 +265,6 @@
                     <span data-tl-hud="phase">—</span>
                     <input type="range" min="0" max="100" value="0" data-tl-scrub aria-label="position dans la timeline">
                     <button type="button" data-tl-quality>LOW</button>
-                    @if (Route::has($scenes['orbital']['studioRoute']))
-                        <a href="{{ $scenes['orbital']['studioUrl'] }}?studio" target="_blank" rel="noopener">?studio</a>
-                    @endif
                 </div>
                 <div style="display:flex;gap:10px;flex-wrap:wrap">
                     <button type="button" data-tl-phase-jump="0" class="btn">orbite</button>

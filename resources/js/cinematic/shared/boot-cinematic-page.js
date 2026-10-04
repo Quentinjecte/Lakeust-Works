@@ -29,7 +29,9 @@ export function bootCinematicPage({
   async function boot() {
     const root = document.querySelector('[data-wc-root]') || document.body;
     const stage = await waitForStage();
-    const studio = new URLSearchParams(location.search).has('studio');
+    /* éditeur Theatre.js : dev uniquement (en build, DEV vaut false et le
+       chunk @theatre/studio n'est même pas émis — voir shot-driven-cinematic.js) */
+    const studio = import.meta.env.DEV && new URLSearchParams(location.search).has('studio');
 
     const cine = await createCinematic({
       stage, root, studio,

@@ -37,7 +37,9 @@ export async function createShotDrivenCinematic({
   const api0 = (core && core.getProject) ? core : core.default;
   const { getProject, types } = api0;
 
-  if (studio) {
+  /* import.meta.env.DEV dans la condition elle-même : Vite le remplace par
+     false au build, le bloc est éliminé et @theatre/studio n'est pas livré */
+  if (import.meta.env.DEV && studio) {
     const sm = await import('@theatre/studio');
     const st = (sm.default && sm.default.initialize) ? sm.default
       : (sm.default && sm.default.default) ? sm.default.default : sm;
