@@ -5,6 +5,7 @@
 
 @extends('layouts.site')
 @section('title', 'Animation Lab — Lakeust Works')
+@section('description', "Animation Lab : neuf concepts d'entrée à l'écran en GSAP, rejoués au passage dans le viewport.")
 @section('content')
 <head>
     @vite(['resources/css/lab.css', 'resources/css/labs/animation-lab.css', 'resources/js/labs/animation/animation-lab.js'])

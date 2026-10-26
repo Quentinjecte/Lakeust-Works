@@ -1,5 +1,6 @@
 @extends('layouts.site')
 @section('title', 'Laboratoire — Lakeust Studio')
+@section('description', "Laboratoire Lakeust Studio : effets visuels Unity (VFX Graph, Shader Graph) et systèmes C# (détection, placement sur grille, ECS/DOTS).")
 @section('content')
 <head>
     @vite(['resources/css/lab.css', 'resources/js/labs/catalogue/lab-catalogue.js'])

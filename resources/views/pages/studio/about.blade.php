@@ -1,6 +1,7 @@
 @extends('layouts.site')
 
-@section('title', 'À propos — Lakeust Works')
+@section('title', 'Lakeust Studio — Jeux Unity, shaders et VFX')
+@section('description', "Lakeust Studio : développement de jeux vidéo Unity — gameplay C#, shaders, VFX, ECS/DOTS et optimisation. Démonstrations vidéo et réalisations.")
 
 @section('content')
 <head>
@@ -51,16 +52,16 @@
     <section id="studio" style="max-width:1240px;margin:0 auto;padding:calc(var(--space-8)*4) var(--space-8) calc(var(--space-8)*2)">
         <div style="margin-top:calc(var(--space-8)*3);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--divider);border-top:1px solid var(--divider);border-bottom:1px solid var(--divider)">
             <div style="background:var(--bg);padding:calc(var(--space-8)*1.5) var(--space-8)">
-                <div data-count="2021" data-plain="1" style="font-family:var(--font-heading);font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--text-hi)">2020</div>
+                <div data-count="2022" data-plain="1" style="font-family:var(--font-heading);font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--text-hi)">2022</div>
                 <div style="margin-top:var(--space-4);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-3)"><span class="i18n-fr">Depuis</span><span class="i18n-en">Since</span></div>
             </div>
             <div style="background:var(--bg);padding:calc(var(--space-8)*1.5) var(--space-8)">
-                <div data-count="5" style="font-family:var(--font-heading);font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--text-hi)">5</div>
+                <div data-count="4" style="font-family:var(--font-heading);font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--text-hi)">4</div>
                 <div style="margin-top:var(--space-4);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-3)"><span class="i18n-fr">Ans de pratique</span><span class="i18n-en">Years of practice</span></div>
             </div>
             <div style="background:var(--bg);padding:calc(var(--space-8)*1.5) var(--space-8)">
-                <div data-count="4" style="font-family:var(--font-heading);font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--text-hi)">4</div>
-                <div style="margin-top:var(--space-4);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-3)"><span class="i18n-fr">Jeu Créer</span><span class="i18n-en">Games Created</span></div>
+                <div data-count="3" style="font-family:var(--font-heading);font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--text-hi)">3</div>
+                <div style="margin-top:var(--space-4);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-3)"><span class="i18n-fr">Jeux créés</span><span class="i18n-en">Games created</span></div>
             </div>
         </div>
     </section>

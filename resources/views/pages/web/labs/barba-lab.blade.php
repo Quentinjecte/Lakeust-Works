@@ -6,6 +6,7 @@
 
 @extends('layouts.site')
 @section('title', 'Barba Lab — Lakeust Works')
+@section('description', "Barba Lab : le système de transitions de page du site (corridor, rideau, épingle), documenté en dix scènes autonomes.")
 @section('content')
 <head>
     @vite(['resources/css/lab.css', 'resources/js/labs/barba/barba-lab.js'])

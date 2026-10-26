@@ -1,6 +1,7 @@
 @extends('layouts.site')
 
 @section('title', 'Jurassic Containment — Lakeust Works')
+@section('description', "Jurassic Containment : jeu coopératif de chasse en première personne sous Unity 6 — traquer et contenir des spécimens dangereux, en équipe.")
 
 @section('content')
 <head>

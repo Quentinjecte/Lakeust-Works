@@ -5,6 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'Lakeust Works -- Web')</title>
+    {{-- SEO / partage : chaque page déclare @section('description', ...) à côté
+         de son @section('title', ...). 'canonical' n'est à surcharger que pour
+         une page qui en duplique une autre (voir pages/web/project.blade.php). --}}
+    <meta name="description" content="@yield('description', 'Lakeust Works — studio indépendant : jeux Unity, shaders, VFX, sites web et expériences WebGL.')">
+    <link rel="canonical" href="@yield('canonical', url()->current())">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lakeust Works">
+    <meta property="og:title" content="@yield('title', 'Lakeust Works')">
+    <meta property="og:description" content="@yield('description', 'Lakeust Works — studio indépendant : jeux Unity, shaders, VFX, sites web et expériences WebGL.')">
+    <meta property="og:url" content="@yield('canonical', url()->current())">
+    <meta property="og:image" content="{{ asset('images/Icon_Lakeust.png') }}">
+    <meta name="twitter:card" content="summary">
     <link rel="icon" href="{{ asset('images/Icon_Lakeust_nobg.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

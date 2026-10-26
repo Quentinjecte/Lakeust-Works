@@ -1,5 +1,6 @@
 @extends('layouts.site')
 @section('title', 'Laboratoire — Lakeust Web')
+@section('description', "Laboratoire Lakeust Web : Barba, scroll, Three.js, animation et carousel — des mécaniques d'interaction isolées et rejouables.")
 @section('content')
 <head>
     @vite(['resources/css/lab.css', 'resources/js/labs/catalogue/lab-catalogue.js'])

@@ -9,6 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Cache-Control" content="no-store" />
     <title>Lakeust Works</title>
+    <meta name="description" content="Lakeust Works — studio indépendant de développement. Deux pôles : Lakeust Studio (jeux Unity, shaders, VFX) et Lakeust Web (WebGL, animation, interfaces).">
+    <link rel="canonical" href="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lakeust Works">
+    <meta property="og:title" content="Lakeust Works">
+    <meta property="og:description" content="Studio indépendant de développement : jeux Unity, shaders, VFX, sites web et expériences WebGL.">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('images/Icon_Lakeust.png') }}">
+    <meta name="twitter:card" content="summary">
 
     <link rel="icon" href="{{ asset('images/Icon_Lakeust_nobg.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">

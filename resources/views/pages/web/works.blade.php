@@ -1,5 +1,6 @@
 @extends('layouts.site')
 @section('title', 'Travaux — Lakeust Works')
+@section('description', "Travaux de Lakeust Web : sélection de projets et archive — sites, animations et expériences WebGL.")
 @section('content')
 <head>
 

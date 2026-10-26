@@ -4,6 +4,7 @@
 
 @extends('layouts.site')
 @section('title', 'Scroll Lab — Lakeust Works')
+@section('description', "Scroll Lab : quinze mécaniques de scroll indépendantes — panneaux, parallaxe, progression, révélations, corridor.")
 @section('content')
 <head>
     @vite(['resources/css/lab.css', 'resources/js/labs/scroll/scroll-lab.js'])

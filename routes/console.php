@@ -51,9 +51,10 @@ Artisan::command('export:static {--out=dist}', function () {
 
     // Assets réels (images, vidéos, GLB, textures, build/ Vite compilé...).
     File::copyDirectory(public_path(), $out);
-    // Artefacts serveur PHP sans objet sur un hébergeur statique.
+    // Artefacts serveur PHP sans objet sur un hébergeur statique
+    // (robots.txt reste : un hébergeur statique le sert tel quel).
     File::delete(array_filter([
-        $out.'/index.php', $out.'/.htaccess', $out.'/hot', $out.'/robots.txt',
+        $out.'/index.php', $out.'/.htaccess', $out.'/hot',
     ], fn ($f) => File::exists($f)));
 
     File::put($out.'/.nojekyll', '');

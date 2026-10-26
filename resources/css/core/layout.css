@@ -10,6 +10,12 @@
 .shell {
     position: relative;
     z-index: 1;
+    /* Les révélations "converge" (reveals.css) démarrent décalées de 56px
+       hors de leur colonne : sans ça, elles élargissent la page tant
+       qu'elles n'ont pas été révélées. clip (et non hidden) ne crée pas de
+       conteneur de scroll — position:sticky des .drift/.split-aside reste
+       valide — et ne touche que l'axe X. */
+    overflow-x: clip;
 }
 
 .wrap {

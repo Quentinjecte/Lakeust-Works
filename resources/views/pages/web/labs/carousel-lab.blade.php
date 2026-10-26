@@ -11,6 +11,7 @@
 
 @extends('layouts.site')
 @section('title', 'Carousel Lab — Lakeust Works')
+@section('description', "Carousel Lab : une seule valeur pilote six dispositions spatiales et deux transitions par post-traitement, en WebGL.")
 @section('content')
 <head>
     @vite(['resources/css/lab.css', 'resources/js/labs/carousel/carousel-lab.js'])

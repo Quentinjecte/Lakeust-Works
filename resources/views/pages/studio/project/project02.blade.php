@@ -1,6 +1,7 @@
 @extends('layouts.site')
 
 @section('title', "Novum : la terre d'après — Lakeust Works")
+@section('description', "Novum : la terre d'après — jeu de survie sous Unity 6 vu depuis un bunker : ressources, systèmes vitaux et sorties risquées vers l'extérieur.")
 
 @section('content')
 <head>

@@ -1,6 +1,8 @@
 @extends('layouts.site')
 
-@section('title', 'Jurassic Containment — Lakeust Works')
+@section('title', 'Jurassic Containment — Lakeust Web')
+@section('description', "Fiche projet Lakeust Web : Jurassic Containment, jeu coopératif de chasse en première personne sous Unity 6.")
+@section('canonical', route('studio.project01'))
 
 @section('content')
 <head>

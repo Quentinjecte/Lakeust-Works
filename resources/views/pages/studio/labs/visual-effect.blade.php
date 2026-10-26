@@ -4,6 +4,7 @@
 
 @extends('layouts.site')
 @section('title', 'Visual Effect Lab — Lakeust Works')
+@section('description', "Quatre effets Unity en vidéo : trou noir, dissolution, radar de détection et faisceau à particules, construits avec VFX Graph et Shader Graph.")
 @section('cat', 'Studio')
 
 @section('content')

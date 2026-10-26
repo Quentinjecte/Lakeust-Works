@@ -5,6 +5,7 @@
 
 @extends('layouts.site')
 @section('title', 'C# Code Lab — Lakeust Works')
+@section('description', "Trois systèmes Unity en C# : détection et ciblage, placement sur grille, performance ECS/DOTS avec Burst — vidéo et extrait de code.")
 @section('cat', 'Studio')
 
 @section('content')

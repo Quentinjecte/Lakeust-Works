@@ -1,6 +1,7 @@
 @extends('layouts.site')
 
 @section('title', 'Nos Jeux — Lakeust Works')
+@section('description', "Les jeux de Lakeust Studio : Jurassic Containment (FPS coopératif), Ankronic (RTS) et Novum (survie). Moteur, statut et fiches détaillées.")
 @section('cat', 'Studio')
 
 @section('content')
@@ -194,7 +195,7 @@
         </div>
         <div data-reveal="converge" style="display:flex;flex-direction:column">
             @foreach ($games as $g)
-                <a href="#{{ $g['id'] }}" class="nj-cat-row" style="display:grid;grid-template-columns:52px minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr) auto;gap:var(--space-6);align-items:baseline;padding:var(--space-6) 0;border-bottom:1px solid var(--divider);color:inherit"
+                <a href="#{{ $g['id'] }}" class="nj-cat-row" style="display:grid;grid-template-columns:52px minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr) auto;gap:var(--space-6);align-items:baseline;padding:var(--space-6) 0;border-bottom:1px solid var(--divider);color:inherit">
                     <span style="font-family:var(--font-heading);font-size:11px;letter-spacing:.2em;color:var(--accent-300)">{{ $g['n'] }}</span>
                     <span style="font-size:18px;color:var(--text-hi)">{{ $g['titre'] }}</span>
                     <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3)">{{ $g['moteur'] }}</span>

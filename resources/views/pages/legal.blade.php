@@ -1,6 +1,7 @@
 @extends('layouts.site')
 
 @section('title', 'Mentions légales — Lakeust Works')
+@section('description', "Mentions légales du site Lakeust Works : éditeur, hébergement et données personnelles.")
 @section('cat', 'Legals')
 
 @section('content')
