@@ -24,3 +24,6 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Modèles 3D en clair (sources) : jamais publiés, seuls les .lwm chiffrés de public/models/ le sont (php artisan models:protect)
+/resources/models

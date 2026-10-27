@@ -4,11 +4,10 @@
      barba-transitions.js), et prolonge la réflexion vers des techniques que
      le site n'utilise pas encore (05, 08, 09, 10 — marquées comme telles). -->
 
-@extends('layouts.site')
+@extends('pages.web.subsite')
 @section('title', 'Barba Lab — Lakeust Works')
 @section('description', "Barba Lab : le système de transitions de page du site (corridor, rideau, épingle), documenté en dix scènes autonomes.")
-@section('content')
-<head>
+@section('sub-content')
     @vite(['resources/css/lab.css', 'resources/js/labs/barba/barba-lab.js'])
 
     @php
@@ -93,7 +92,6 @@
                 'portfolio' => "Non appliqué : le choix actuel (page à part) est plus simple et suffisant."],
         ];
     @endphp
-</head>
 
 <div data-blab-root style="position:relative;min-height:100vh;background:#05050a">
 

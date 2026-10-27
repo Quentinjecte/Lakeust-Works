@@ -21,6 +21,8 @@ export default defineConfig({
                 // pages — entrées JS propres à une page "Lakeust Web" autonome
                 'resources/js/pages/home.js',
                 'resources/js/pages/welcome-lakeust.js',
+                'resources/js/pages/arts-models.js',      // Arts · Modèles 3D (importe ui/model-viewer.js)
+                'resources/css/arts.css',
 
                 // ui — composants réutilisés en @vite direct sur une page (fiches
                 // projet studio + web), pas juste des imports d'une autre entrée

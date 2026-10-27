@@ -1,0 +1,404 @@
+/* web-theme.css — identité visuelle de Lakeust Web, volontairement distincte
+   de Lakeust Studio (DA "présentation de jeu" : titre métal doré, cartes
+   sombres). Web = couleur électrique, formes géométriques, mouvement continu.
+
+   Tout est scopé par .theme-web (classe posée sur le <div> racine du contenu
+   de chaque page Web, pas sur <body> : Barba ne remplace que <main>, une
+   classe de page y survit) ou par un préfixe .web-* / .g-* — aucune règle ici
+   n'atteint le Studio ni l'accueil.
+
+   Animations : uniquement transform/opacity (compositeur), aucun filter
+   animé ; le repli prefers-reduced-motion global (core/reset.css) les fige. */
+
+.theme-web {
+    --web-1: #8b7bff; /* violet */
+    --web-2: #4ee0ff; /* cyan */
+    --web-3: #ff5fa2; /* rose */
+    --web-4: #ffb86b; /* ambre */
+    --web-5: #7be3a0; /* vert (5e lab : Carousel) */
+    --web-grad: linear-gradient(100deg, var(--web-1), var(--web-2) 50%, var(--web-3));
+
+    /* Redéfinit les jetons déjà lus par les vues : les numéros de section
+       (--accent-300) passent au cyan, filets et chiffres (--accent-600/700)
+       au violet saturé, sans toucher une seule ligne de balisage. */
+    --accent: var(--web-1);
+    --accent-200: #d6fbff;
+    --accent-300: #6fe6ff;
+    --accent-600: rgba(139, 123, 255, .7);
+    --accent-700: rgba(139, 123, 255, .55);
+}
+
+/* ====================================================================== hero */
+
+.web-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: max(640px, 92vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* max(…,110px) : la nav fixe (~73px) ne doit jamais couvrir le titre. */
+    padding: max(14vh, 110px) var(--space-8) 96px;
+    background: #06070f;
+}
+
+.web-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* nappes de couleur qui dérivent lentement */
+.web-blob {
+    position: absolute;
+    width: 62vmax;
+    height: 62vmax;
+    border-radius: 50%;
+    will-change: transform;
+}
+.web-blob.b1 { left: -22vmax; top: -30vmax; background: radial-gradient(closest-side, rgba(139, 123, 255, .62), transparent); animation: web-drift-a 24s ease-in-out infinite alternate; }
+.web-blob.b2 { right: -26vmax; top: -16vmax; background: radial-gradient(closest-side, rgba(78, 224, 255, .38), transparent); animation: web-drift-b 28s ease-in-out infinite alternate; }
+.web-blob.b3 { left: 18vw; bottom: -42vmax; background: radial-gradient(closest-side, rgba(255, 95, 162, .38), transparent); animation: web-drift-c 32s ease-in-out infinite alternate; }
+
+@keyframes web-drift-a { to { transform: translate3d(14vmax, 10vmax, 0) scale(1.15); } }
+@keyframes web-drift-b { to { transform: translate3d(-12vmax, 14vmax, 0) scale(.9); } }
+@keyframes web-drift-c { to { transform: translate3d(-16vmax, -8vmax, 0) scale(1.2); } }
+
+/* sol en perspective : le décalage d'un pas de grille boucle sans à-coup */
+.web-floor {
+    position: absolute;
+    left: -40%;
+    right: -40%;
+    bottom: 0;
+    height: 52%;
+    perspective: 520px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to top, #000 8%, transparent 88%);
+    mask-image: linear-gradient(to top, #000 8%, transparent 88%);
+}
+.web-floor::before {
+    content: "";
+    position: absolute;
+    inset: -100% 0 0 0;
+    transform-origin: 50% 100%;
+    transform: rotateX(64deg);
+    background-image:
+        linear-gradient(rgba(78, 224, 255, .38) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 123, 255, .38) 1px, transparent 1px);
+    background-size: 64px 64px;
+    animation: web-floor 3.2s linear infinite;
+}
+@keyframes web-floor { to { transform: rotateX(64deg) translateY(64px); } }
+
+/* formes flottantes */
+.web-shape { position: absolute; will-change: transform; }
+.web-shape svg { display: block; width: 100%; height: 100%; overflow: visible; }
+
+.web-shape.sh-ring   { width: clamp(120px, 15vw, 230px); aspect-ratio: 1; left: 7%;  top: 24%; animation: web-float 9s ease-in-out infinite alternate; }
+.web-shape.sh-ring .r1 { transform-box: fill-box; transform-origin: center; animation: web-spin 28s linear infinite; }
+.web-shape.sh-ring .r2 { transform-box: fill-box; transform-origin: center; animation: web-spin 18s linear infinite reverse; }
+.web-shape.tri    { width: clamp(60px, 7vw, 110px);   aspect-ratio: 1; right: 10%; top: 30%; animation: web-float 7s ease-in-out -2s infinite alternate; }
+.web-shape.tri svg { animation: web-spin 22s linear infinite; }
+.web-shape.dots   { width: clamp(70px, 8vw, 120px);   aspect-ratio: 1; right: 20%; bottom: 26%; animation: web-float 11s ease-in-out -4s infinite alternate; }
+.web-shape.plus   { width: 34px; aspect-ratio: 1; left: 24%; bottom: 30%; animation: web-float 8s ease-in-out -1s infinite alternate; }
+.web-shape.plus svg { animation: web-spin 12s linear infinite; }
+
+.web-shape.cube { right: 6%; bottom: 34%; width: 70px; height: 70px; perspective: 700px; animation: web-float 10s ease-in-out -3s infinite alternate; }
+.web-cube { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; animation: web-cube 16s linear infinite; }
+.web-cube i { position: absolute; inset: 0; border: 1.5px solid rgba(78, 224, 255, .75); background: rgba(78, 224, 255, .06); }
+.web-cube i:nth-child(1) { transform: translateZ(35px); }
+.web-cube i:nth-child(2) { transform: rotateY(90deg) translateZ(35px); }
+.web-cube i:nth-child(3) { transform: rotateY(180deg) translateZ(35px); }
+.web-cube i:nth-child(4) { transform: rotateY(-90deg) translateZ(35px); }
+.web-cube i:nth-child(5) { transform: rotateX(90deg) translateZ(35px); }
+.web-cube i:nth-child(6) { transform: rotateX(-90deg) translateZ(35px); }
+@keyframes web-cube { to { transform: rotateX(360deg) rotateY(360deg); } }
+
+@keyframes web-float { to { transform: translate3d(0, -22px, 0) rotate(6deg); } }
+@keyframes web-spin  { to { transform: rotate(360deg); } }
+
+/* pastilles techno */
+.web-chip {
+    position: absolute;
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 999px;
+    background: rgba(10, 12, 26, .62);
+    font: 500 11px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    letter-spacing: .06em;
+    color: var(--web-2);
+    white-space: nowrap;
+    animation: web-float 6s ease-in-out infinite alternate;
+}
+.web-chip.c1 { left: 11%; top: 58%; color: var(--web-2); animation-delay: -1s; }
+.web-chip.c2 { left: 30%; top: 20%; color: var(--web-3); animation-delay: -3s; }
+.web-chip.c3 { right: 26%; top: 17%; color: var(--web-4); animation-delay: -2s; }
+.web-chip.c4 { right: 3%; top: 47%; color: var(--web-1); animation-delay: -4s; }
+.web-chip.c5 { left: 22%; bottom: 20%; color: var(--web-4); animation-delay: -5s; }
+.web-chip.c6 { right: 30%; bottom: 14%; color: var(--web-2); animation-delay: -2.5s; }
+
+/* contenu du hero */
+.web-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    color: var(--web-2);
+    margin-bottom: var(--space-8);
+}
+.web-eyebrow::before {
+    content: "";
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--web-3);
+    box-shadow: 0 0 0 0 rgba(255, 95, 162, .6);
+    animation: web-pulse 2.2s ease-out infinite;
+}
+@keyframes web-pulse { to { box-shadow: 0 0 0 14px rgba(255, 95, 162, 0); } }
+
+.web-title {
+    margin: 0;
+    font-family: 'Lakeust', sans-serif;
+    font-size: clamp(44px, 8.4vw, 132px);
+    line-height: .94;
+    letter-spacing: -.03em;
+    font-weight: 500;
+    background: linear-gradient(100deg, var(--web-1), var(--web-2), var(--web-3), var(--web-1));
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: web-shift 10s linear infinite;
+}
+@keyframes web-shift { to { background-position: -300% 0; } }
+
+.web-lead {
+    margin: var(--space-8) 0 0;
+    max-width: 52ch;
+    font-size: clamp(15px, 1.5vw, 19px);
+    line-height: 1.6;
+    color: var(--text-2);
+    text-wrap: pretty;
+}
+
+.web-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-4); margin-top: calc(var(--space-8) * 1.4); }
+.web-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #07080e;
+    background: var(--web-grad);
+    background-size: 160% 100%;
+    transition: transform .3s var(--ease-out), background-position .5s var(--ease), box-shadow .3s ease;
+}
+.web-btn:hover { transform: translateY(-2px); background-position: 100% 0; box-shadow: 0 10px 34px rgba(139, 123, 255, .45); color: #07080e; }
+.web-btn.ghost { color: var(--text); background: transparent; border: 1px solid rgba(255, 255, 255, .22); }
+.web-btn.ghost:hover { border-color: var(--web-2); color: var(--web-2); box-shadow: 0 0 0 1px var(--web-2) inset; }
+
+.web-hero .web-cue {
+    position: absolute; left: 50%; bottom: 28px; margin-left: -.5px;
+    width: 1px; height: 38px;
+    background: linear-gradient(180deg, var(--web-2), transparent);
+    animation: lw-cue 2.4s ease-in-out infinite;
+}
+
+/* sous 760px : on garde nappes + sol + titre, on retire les formes qui
+   chargeraient l'écran et passeraient sous le texte */
+@media (max-width: 760px) {
+    .web-chip, .web-shape.cube, .web-shape.tri, .web-shape.dots, .web-shape.plus { display: none; }
+    .web-shape.sh-ring { left: -12%; top: 8%; opacity: .55; }
+    .web-hero { min-height: max(600px, 88vh); }
+}
+
+/* ===================================================== séparateur / bandeau */
+
+.theme-web .web-band {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-image: var(--web-grad) 1;
+    background: linear-gradient(90deg, rgba(139, 123, 255, .10), rgba(78, 224, 255, .06), rgba(255, 95, 162, .10));
+}
+.theme-web .web-band .web-dot { color: var(--web-3); }
+
+/* ======================================================================= stats */
+
+.theme-web .web-stat {
+    background: var(--web-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ====================================================================== cartes */
+
+.theme-web .web-card {
+    --c: var(--web-1);
+    position: relative;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(160deg, rgba(139, 123, 255, .08), rgba(14, 16, 32, .78) 55%);
+    box-shadow: 0 0 0 1px rgba(233, 233, 237, .09);
+    transition: transform .4s var(--ease-out), box-shadow .4s ease;
+}
+/* liseré dégradé qui apparaît au survol */
+.theme-web .web-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--c), var(--web-2), var(--web-3));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    opacity: 0;
+    transition: opacity .4s ease;
+    pointer-events: none;
+}
+.theme-web .web-card:hover { transform: translateY(-5px); box-shadow: 0 18px 50px color-mix(in srgb, var(--c) 28%, transparent); }
+.theme-web .web-card:hover::before { opacity: 1; }
+
+/* ========================================================================= tags */
+
+.theme-web .tag-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    border: 1px solid var(--t, var(--web-1));
+    border-radius: 999px;
+    font-size: 11px;
+    letter-spacing: .06em;
+    color: var(--t, var(--web-1));
+    background: color-mix(in srgb, var(--t, var(--web-1)) 9%, transparent);
+    transition: transform .25s var(--ease-out), background .25s ease;
+}
+.theme-web .tag-outline:hover { transform: translateY(-2px); background: color-mix(in srgb, var(--t, var(--web-1)) 22%, transparent); }
+.theme-web .tag-outline:nth-child(4n+1) { --t: var(--web-1); }
+.theme-web .tag-outline:nth-child(4n+2) { --t: var(--web-2); }
+.theme-web .tag-outline:nth-child(4n+3) { --t: var(--web-3); }
+.theme-web .tag-outline:nth-child(4n+4) { --t: var(--web-4); }
+
+/* ============================================ glyphes : une forme par techno */
+/* Remplace les rectangles vides : chaque lab a sa mini-animation, dans la
+   couleur --c de sa carte. .web-glyph--fill remplit un cadre déjà dimensionné
+   (cartes "Réalisations"), sinon c'est une vignette de 104px. */
+
+.web-glyph {
+    --c: var(--web-1);
+    position: relative;
+    height: 104px;
+    overflow: hidden;
+    border-radius: 10px;
+    container-type: inline-size;
+    border: 1px solid color-mix(in srgb, var(--c) 32%, transparent);
+    background:
+        radial-gradient(120% 120% at 18% 0%, color-mix(in srgb, var(--c) 30%, transparent), transparent 68%),
+        rgba(255, 255, 255, .02);
+}
+.web-glyph--fill { position: absolute; inset: 0; height: auto; border-radius: 0; border: 0; }
+.web-glyph i, .web-glyph b { position: absolute; display: block; }
+
+/* scroll : barres qui défilent */
+.g-scroll i { left: 22%; right: 22%; height: 7px; top: 50%; border-radius: 4px; background: var(--c); opacity: 0; animation: g-scroll 3.4s var(--ease) infinite; }
+.g-scroll i:nth-child(2) { left: 30%; right: 14%; animation-delay: .35s; }
+.g-scroll i:nth-child(3) { left: 14%; right: 38%; animation-delay: .7s; }
+.g-scroll i:nth-child(4) { left: 26%; right: 26%; animation-delay: 1.05s; }
+@keyframes g-scroll {
+    0%   { transform: translateY(46px); opacity: 0; }
+    20%  { opacity: .9; }
+    80%  { opacity: .9; }
+    100% { transform: translateY(-46px); opacity: 0; }
+}
+
+/* animation : balle qui rebondit d'un bord à l'autre, avec écrasement */
+.g-anim b { left: 10%; top: 50%; width: 18px; height: 18px; margin-top: -9px; border-radius: 50%; background: var(--c); box-shadow: 0 0 22px var(--c); animation: g-anim 2.4s cubic-bezier(.7, 0, .3, 1) infinite alternate; }
+.g-anim i { left: 10%; right: 10%; top: 50%; height: 1px; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--c) 55%, transparent), transparent); }
+@keyframes g-anim {
+    0%   { transform: translateX(0) scale(1, 1); }
+    8%   { transform: translateX(0) scale(1.3, .75); }
+    50%  { transform: translateX(40cqw) scale(1.5, .7); }
+    100% { transform: translateX(78cqw) scale(1, 1); }
+}
+
+/* barba : deux rideaux qui se ferment puis s'ouvrent */
+.g-barba i { top: 0; bottom: 0; width: 50%; background: color-mix(in srgb, var(--c) 78%, transparent); animation: g-barba 3.6s var(--ease) infinite; }
+.g-barba i:nth-child(1) { left: 0;  transform-origin: 0 50%; }
+.g-barba i:nth-child(2) { right: 0; transform-origin: 100% 50%; }
+.g-barba b { left: 50%; top: 18%; bottom: 18%; width: 1px; background: var(--c); opacity: .6; }
+@keyframes g-barba { 0%, 100% { transform: scaleX(0); } 35%, 65% { transform: scaleX(1); } }
+
+/* three : sphère filaire (trois anneaux en 3D) */
+.g-three { perspective: 360px; }
+.g-three b { left: 50%; top: 50%; width: 0; height: 0; transform-style: preserve-3d; animation: g-orbit 9s linear infinite; }
+.g-three i { left: -30px; top: -30px; width: 60px; height: 60px; border: 1.5px solid var(--c); border-radius: 50%; }
+.g-three i:nth-child(1) { transform: rotateY(0deg); }
+.g-three i:nth-child(2) { transform: rotateY(60deg); }
+.g-three i:nth-child(3) { transform: rotateY(120deg); }
+@keyframes g-orbit { to { transform: rotateX(360deg) rotateY(360deg); } }
+
+/* dans un cadre plein (cartes Réalisations), tout est un peu plus grand */
+.web-glyph--fill.g-three i { left: -48px; top: -48px; width: 96px; height: 96px; }
+.web-glyph--fill.g-anim b { width: 26px; height: 26px; margin-top: -13px; }
+.web-glyph--fill.g-scroll i { height: 10px; }
+
+/* carousel : cartes qui défilent en boucle, la centrale au premier plan */
+.g-carousel i { top: 19%; left: calc(50% - 12cqw); width: 24cqw; height: 62%; border-radius: 8px; border: 1px solid var(--c); background: color-mix(in srgb, var(--c) 22%, transparent); opacity: 0; animation: g-car 6s linear infinite; }
+.g-carousel i:nth-child(2) { animation-delay: -1.5s; }
+.g-carousel i:nth-child(3) { animation-delay: -3s; }
+.g-carousel i:nth-child(4) { animation-delay: -4.5s; }
+@keyframes g-car {
+    0%   { transform: translateX(-70cqw) scale(.7);  opacity: 0; }
+    25%  { transform: translateX(-34cqw) scale(.78); opacity: .55; }
+    50%  { transform: translateX(0) scale(1);        opacity: 1; }
+    75%  { transform: translateX(34cqw) scale(.78);  opacity: .55; }
+    100% { transform: translateX(70cqw) scale(.7);   opacity: 0; }
+}
+
+/* ============================================ page Laboratoire (web.lab) ==== */
+/* Le catalogue réutilise le hero (.web-hero) en version courte, puis une grille
+   de cartes .web-card : chaque lab a sa forme animée (.web-glyph) et sa couleur
+   (--c). Le .lab-sec est affiché d'office : lab.css le masque tant que le JS n'a
+   pas posé .is-active, ce qui laissait la page vide sans JavaScript. */
+
+.theme-web .lab-sec.web-lab { display: block; }
+
+.web-hero--lab { min-height: max(420px, 56vh); padding-bottom: 72px; }
+.web-hero--lab .web-title { font-size: clamp(40px, 7vw, 104px); text-transform: uppercase; }
+.web-hero--lab .web-lead { margin-top: var(--space-6); }
+
+.web-lab-wrap { max-width: 1240px; margin: 0 auto; padding: calc(var(--space-8) * 2) var(--space-8) calc(var(--space-8) * 4); }
+
+.web-lab-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-4); margin-bottom: calc(var(--space-8) * 1.4); padding-bottom: var(--space-6); border-bottom: 1px solid transparent; border-image: var(--web-grad) 1; }
+.web-lab-head .k { font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--accent-300); }
+.web-lab-head .s { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--text-3); }
+
+.web-lab-grid { display: grid; gap: var(--space-8); grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+
+.web-lab-card { display: flex; flex-direction: column; gap: 14px; padding: 22px 22px 24px; color: inherit; text-decoration: none; }
+.web-lab-card:hover { color: inherit; }
+.web-lab-card .web-glyph { height: 132px; }
+.web-lab-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 4px; }
+.web-lab-n { font: 500 11px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .2em; color: var(--c); }
+.web-lab-card .tag { border-color: color-mix(in srgb, var(--c) 55%, transparent); color: var(--c); }
+.web-lab-title { margin: 0; font-family: var(--font-heading); font-size: 24px; font-weight: 400; letter-spacing: -.015em; color: var(--text-hi); }
+.web-lab-stack { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-4); }
+.web-lab-desc { margin: 0; font-size: 14px; line-height: 1.65; color: var(--text-3); text-wrap: pretty; }
+.web-lab-open { margin-top: auto; padding-top: 6px; display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--c); }
+.web-lab-open i { font-style: normal; transition: transform .3s var(--ease-out); }
+.web-lab-card:hover .web-lab-open i { transform: translateX(6px); }
+
+@media (max-width: 760px) {
+    .web-lab-wrap { padding-left: var(--space-6); padding-right: var(--space-6); }
+}
+
+/* hero court : la croix du hero principal tomberait sous le titre */
+.web-hero--lab .web-shape.plus { left: 12%; bottom: 16%; }
+.web-hero--lab .web-shape.cube { right: 8%; bottom: auto; top: 26%; }

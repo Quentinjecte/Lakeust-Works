@@ -9,11 +9,10 @@
      layout partagé, pas de Barba) : son propre en-tête + rail + barre de
      progression suffisent.-->
 
-@extends('layouts.site')
+@extends('pages.web.subsite')
 @section('title', 'Carousel Lab — Lakeust Works')
 @section('description', "Carousel Lab : une seule valeur pilote six dispositions spatiales et deux transitions par post-traitement, en WebGL.")
-@section('content')
-<head>
+@section('sub-content')
     @vite(['resources/css/lab.css', 'resources/js/labs/carousel/carousel-lab.js'])
 
     @php
@@ -109,7 +108,6 @@
             'portfolio' => "Moyen — effet de profondeur marqué, à réserver à un nombre restreint de plans."],
         ];
     @endphp
-</head>
 
 
 

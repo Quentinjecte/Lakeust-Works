@@ -3,11 +3,10 @@
     les neuf concepts se jouent à l'entrée du bloc dans le viewport
     (IntersectionObserver), pas au défilement continu.-->
 
-@extends('layouts.site')
+@extends('pages.web.subsite')
 @section('title', 'Animation Lab — Lakeust Works')
 @section('description', "Animation Lab : neuf concepts d'entrée à l'écran en GSAP, rejoués au passage dans le viewport.")
-@section('content')
-<head>
+@section('sub-content')
     @vite(['resources/css/lab.css', 'resources/css/labs/animation-lab.css', 'resources/js/labs/animation/animation-lab.js'])
 
     @php
@@ -35,7 +34,7 @@
             'portfolio' => "Moyen : lisible et technique, mais à réserver à un contexte qui assume le vocabulaire « erreur/signal »."],
         ['n' => '05', 'name' => 'Wireframe', 'i18n' => 'animation.cat.5', 'tech' => 'CSS 3D · 12 arêtes · aplatissement',
             'desc' => "Un volume filaire (12 arêtes, perspective CSS) s'aplatit progressivement jusqu'à se confondre avec le plan du cadre.",
-            'vu' => "Une boîte 3D en fil de fer qui perd sa profondeur et devient un rectangle plat.",
+            'vu' => "Une boîte 3D en Maillage qui perd sa profondeur et devient un rectangle plat.",
             'cout' => "Moyen — la 3D CSS est peu coûteuse, mais sensible aux erreurs de perspective sur petits écrans.",
             'portfolio' => "Fort pour une section qui parle de structure ou d'architecture — le concept illustre littéralement l'idée."],
         ['n' => '06', 'name' => 'Particle Assembly', 'i18n' => 'animation.cat.6', 'tech' => 'Canvas · glyphes échantillonnés',
@@ -84,7 +83,6 @@
         ],
     ];
     @endphp
-</head>
 
 {{-- Dix scènes, une visible à la fois (voir .lab-sec / .is-active) : les neuf
      premières rejouent un concept d'animation d'entrée de section porté depuis

@@ -2,11 +2,10 @@
     les quinze mécaniques. Doit rester synchronisé avec ORDER dans
     resources/js/labs/scroll/scroll-lab.js. -->
 
-@extends('layouts.site')
+@extends('pages.web.subsite')
 @section('title', 'Scroll Lab — Lakeust Works')
 @section('description', "Scroll Lab : quinze mécaniques de scroll indépendantes — panneaux, parallaxe, progression, révélations, corridor.")
-@section('content')
-<head>
+@section('sub-content')
     @vite(['resources/css/lab.css', 'resources/js/labs/scroll/scroll-lab.js'])
 
 
@@ -128,7 +127,6 @@
                 'use' => 'Fort : galerie photo ou séquence de références.'],
         ];
     @endphp
-</head>
 
 <div data-lab-root style="position:relative;min-height:100vh;background:#05050a">
 

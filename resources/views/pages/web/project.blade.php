@@ -1,17 +1,16 @@
-@extends('layouts.site')
+@extends('pages.web.subsite')
 
 @section('title', 'Jurassic Containment — Lakeust Web')
 @section('description', "Fiche projet Lakeust Web : Jurassic Containment, jeu coopératif de chasse en première personne sous Unity 6.")
 @section('canonical', route('studio.project01'))
 
-@section('content')
-<head>
+@section('sub-content')
     {{-- resources/js/pages/project.js n'est plus une entrée Vite statique :
          Barba l'importe à la demande en entrant dans le namespace "project",
          quel que soit le point d'entrée de la session (voir
          resources/js/core/barba-transitions.js). --}}
 
-    @vite(['resources/css/app.css', 'resources/css/web.css', 'resources/js/ui/carousel.js'])
+    @vite(['resources/js/ui/carousel.js'])
 
     {{-- i18n : les accroches courtes déjà en anglais ("Hunt. Contain. Survive.",
          "The mission doesn't go according to plan.", etc.) sont la signature
@@ -83,13 +82,7 @@
             ['src' => $img('env-day-04.webp'), 'cap' => 'Terrain — exploration', 'cat' => 'FIELD'],
         ];
 
-        $nav = [
-            ['route' => 'web.about',   'i18n' => 'nav.about', 'keep' => true],
-            ['route' => 'web.works',   'i18n' => 'nav.works',  'keep' => true],
-            ['route' => 'web.lab',     'i18n' => 'nav.lab', 'keep' => false, 'external' => true],
-        ];
     @endphp
-</head>
 
     {{-- ==================================================================
          HERO

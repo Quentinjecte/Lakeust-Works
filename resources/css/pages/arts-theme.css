@@ -1,0 +1,355 @@
+/* arts-theme.css — identité visuelle de « Lakeust Arts » et page À propos de la
+   branche (pages/arts/about.blade.php). Importé par css/arts.css.
+
+   Même démarche que web-theme.css pour le Web, avec un langage visuel qui lui
+   est propre : là où le Web est électrique (violet/cyan/rose, ressorts et
+   bascules), Arts est un ATELIER 3D — métaux chauds (or, cuivre, corail), une
+   touche de turquoise comme les lignes d'un Maillage, et les codes d'un
+   viewport : turntable, projecteur, annotations, gizmo d'axes, équerres de
+   sélection, passage Maillage -> plein.
+
+   Tout est scopé par .ar (enveloppe posée par pages/arts/subsite.blade.php) ou
+   par un préfixe .ar-* / .ar-about-* : rien ici n'atteint le Studio, le Web ni
+   l'accueil. Animations : transform/opacity uniquement (compositeur) ; le repli
+   prefers-reduced-motion global (core/reset.css) les fige.
+
+   ATTENTION à l'ordre : arts.css importe ce fichier EN TÊTE, ses propres règles
+   passent donc après. Pour surcharger une classe de arts.css (.ar-btn, .ar-lead,
+   .ar-eyebrow…), préfixer le sélecteur par .ar ou par le bloc parent (spécificité
+   plus forte), faute de quoi la règle de arts.css l'emporte. */
+
+:root {
+    --ar-copper: #e0914f;
+    --ar-coral: #f0705a;
+    --ar-teal: #5fd0c9;
+    --ar-bronze: #8a6a3a;
+    --ar-grad: linear-gradient(100deg, #e8c26a, #e0914f 55%, #f0705a);
+}
+
+/* Redéfinit les jetons déjà lus par les composants communs : numéros de section,
+   filets, soulignements passent à l'or, sans toucher au balisage. */
+.ar {
+    --accent: #e8c26a;
+    --accent-200: #fff1c9;
+    --accent-300: #e8c26a;
+    --accent-600: rgba(232, 194, 106, .65);
+    --accent-700: rgba(232, 194, 106, .45);
+}
+
+/* ===================================================================== sections */
+
+.ar-sec { max-width: 1240px; margin: 0 auto; padding: calc(var(--space-8) * 4) var(--space-8); }
+.ar-kicker {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--ar-gold);
+    margin-bottom: var(--space-6);
+}
+.ar-kicker::after { content: ""; flex: none; width: 64px; height: 1px; background: linear-gradient(90deg, var(--ar-gold), transparent); }
+.ar-h2 {
+    margin: 0 0 calc(var(--space-8) * 2.2); max-width: 24ch;
+    font-size: clamp(28px, 3.6vw, 54px); line-height: 1.06; letter-spacing: -.025em; font-weight: 500; color: var(--text-hi);
+}
+.ar-services { border-top: 1px solid var(--ar-line); background: linear-gradient(180deg, rgba(232, 194, 106, .045), transparent 60%); }
+
+/* bouton plein : dégradé du thème (surcharge .ar-btn de arts.css, d'où le préfixe .ar) */
+.ar .ar-btn--solid {
+    color: #17140a; border-color: transparent;
+    background: var(--ar-grad); background-size: 170% 100%;
+    transition: background-position .5s ease, transform .3s var(--ease-out), box-shadow .3s ease;
+}
+.ar .ar-btn--solid:hover { color: #17140a; background: var(--ar-grad); background-size: 170% 100%; background-position: 100% 0; transform: translateY(-2px); box-shadow: 0 10px 34px rgba(232, 194, 106, .35); }
+
+/* ========================================================================== hero */
+
+.ar-about-hero {
+    position: relative; isolation: isolate; overflow: hidden;
+    min-height: max(720px, 94vh);
+    display: flex; align-items: center;
+    /* max(…, 108px) : la nav fixe (~73px) ne doit jamais couvrir le haut du hero */
+    padding: max(13vh, 108px) var(--space-8) 96px;
+    background: #07080b;
+}
+.ar-about-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+
+/* projecteur : un cône de lumière chaude qui balance lentement */
+.ar-spot {
+    position: absolute; left: 50%; top: -26%; width: 150%; height: 140%;
+    transform: translateX(-50%); transform-origin: 50% 0;
+    background: conic-gradient(from 158deg at 50% 0%, transparent 0deg, rgba(232, 194, 106, .15) 22deg, transparent 44deg, transparent 360deg);
+    -webkit-mask-image: linear-gradient(#000 0%, transparent 78%);
+            mask-image: linear-gradient(#000 0%, transparent 78%);
+    animation: ar-sway 14s ease-in-out infinite alternate;
+}
+/* halos d'ambiance : or derrière la vitrine, cuivre en bas à gauche, une pointe de turquoise */
+.ar-glow { position: absolute; border-radius: 50%; will-change: transform; }
+.ar-glow.g1 { left: 46%; top: 8%; width: 66vmin; height: 66vmin; background: radial-gradient(closest-side, rgba(232, 194, 106, .20), transparent); animation: ar-breathe 9s ease-in-out infinite alternate; }
+.ar-glow.g2 { left: -14vmin; bottom: -26vmin; width: 60vmin; height: 60vmin; background: radial-gradient(closest-side, rgba(224, 145, 79, .22), transparent); animation: ar-drift-a 26s ease-in-out infinite alternate; }
+.ar-glow.g3 { right: -18vmin; top: -20vmin; width: 54vmin; height: 54vmin; background: radial-gradient(closest-side, rgba(95, 208, 201, .12), transparent); animation: ar-drift-b 30s ease-in-out infinite alternate; }
+
+/* poussière dorée dans le faisceau */
+.ar-mote {
+    position: absolute; bottom: -12px; left: var(--x); width: var(--s); height: var(--s);
+    border-radius: 50%; background: #ffe9b0; opacity: 0;
+    box-shadow: 0 0 8px 1px rgba(232, 194, 106, .7);
+    animation: ar-mote var(--t) linear infinite; animation-delay: var(--d);
+}
+
+/* le texte passe devant le modèle (.ar-showcase, z-index 0) */
+.ar-about-inner {
+    position: relative; z-index: 1; width: 100%; max-width: 1400px; margin: 0 auto;
+    align-self: stretch; display: flex; flex-direction: column; align-items: flex-start;
+}
+/* le titre au centre de la hauteur, l'accroche et les boutons en pied de hero (sous le modèle) */
+.ar-about-head { margin: auto 0; width: 100%; }
+.ar-about-foot { width: 100%; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-6); }
+
+/* repère de sommet devant l'accroche (un losange, comme un vertex sélectionné) */
+.ar-about-inner .ar-eyebrow { display: inline-flex; align-items: center; gap: 14px; margin-bottom: var(--space-6); }
+.ar-about-inner .ar-eyebrow::before { content: ""; flex: none; width: 8px; height: 8px; transform: rotate(45deg); background: var(--ar-gold); box-shadow: 0 0 0 4px rgba(232, 194, 106, .18); }
+
+/* titre : métal poli qui accroche la lumière (reflet qui balaie) — ni la texture dorée
+   fixe du Studio, ni le dégradé cyclique du Web. Sur UNE ligne et pleine largeur : la taille
+   suit la fenêtre (vw) jusqu'à la largeur du bloc (1400px) */
+.ar-about-title {
+    margin: 0; font-family: 'Lakeust', sans-serif; white-space: nowrap;
+    font-size: clamp(30px, 11.4vw, 176px); line-height: .9; letter-spacing: -.03em; font-weight: 500; text-transform: uppercase;
+    background: linear-gradient(105deg, #7a5b30 0%, #e8c26a 30%, #fff4cf 46%, #e8c26a 58%, #c88a4e 78%, #7a5b30 100%);
+    background-size: 260% 100%; background-position: 100% 0;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: ar-shine 7s ease-in-out infinite;
+}
+.ar-about-title span { display: block; }
+
+.ar-about-inner .ar-lead { margin: 0; max-width: 46ch; text-align: left; }
+.ar-cta { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+
+.ar-about-hero .ar-cue {
+    position: absolute; left: 50%; bottom: 26px; width: 1px; height: 38px; margin-left: -.5px;
+    background: linear-gradient(180deg, var(--ar-gold), transparent);
+    animation: lw-cue 2.4s ease-in-out infinite;
+}
+
+/* =============================================================== modèle en fond */
+
+/* Le modèle 3D est DERRIÈRE le titre (z-index 0 ; .ar-about-inner est à 1), centré sur lui ; il
+   laisse en bas la bande de l'accroche et des boutons (bottom). Purement décoratif :
+   pointer-events: none -> aucun glisser, aucune molette (la page défile normalement par-dessus),
+   aucun toucher ; il tourne seul. */
+.ar-showcase { position: absolute; inset: 0 0 8%; z-index: 0; pointer-events: none; }
+
+/* le visualiseur est transparent : le projecteur et les halos derrière se voient à travers */
+.ar-showcase .lwmv { position: absolute; inset: 0; background: none; }
+.ar-showcase .lwmv::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(closest-side at 50% 52%, color-mix(in srgb, var(--c) 26%, transparent), transparent 72%);
+}
+.ar-showcase .lwmv-stage { z-index: 1; }
+
+/* ======================================================================= bandeau */
+
+.ar-band {
+    overflow: hidden; padding: var(--space-4) 0;
+    border-top: 1px solid transparent; border-bottom: 1px solid transparent; border-image: var(--ar-grad) 1;
+    background: linear-gradient(90deg, rgba(232, 194, 106, .08), rgba(224, 145, 79, .05), rgba(240, 112, 90, .08));
+}
+.ar-band .row { display: flex; width: max-content; animation: lw-marquee 38s linear infinite; font-family: var(--font-heading); font-size: 12px; letter-spacing: .28em; text-transform: uppercase; color: var(--text-2); }
+.ar-band .set { display: flex; gap: var(--space-8); padding-right: var(--space-8); }
+.ar-band .dot { color: var(--ar-copper); }
+
+/* ======================================================================== chiffres */
+
+.ar-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--ar-line); border-top: 1px solid var(--ar-line); border-bottom: 1px solid var(--ar-line); }
+.ar-stats > div { background: var(--bg); padding: calc(var(--space-8) * 1.5) var(--space-8); }
+.ar-stat {
+    font-family: var(--font-heading); font-size: clamp(36px, 4.4vw, 64px); line-height: 1.05; letter-spacing: -.03em;
+    background: var(--ar-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.ar-stat-l { margin-top: var(--space-4); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--text-3); }
+
+/* ================================================================ disciplines */
+
+/* 4 colonnes, puis 2, puis 1 : un auto-fit laisserait la 4e carte seule sur sa ligne entre ~1000 et ~1100px */
+.ar-discs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-8); }
+.ar-disc {
+    --c: var(--ar-gold);
+    position: relative; display: flex; flex-direction: column; gap: 14px; padding: 20px 20px 24px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(165deg, color-mix(in srgb, var(--c) 8%, transparent), rgba(14, 13, 16, .82) 58%);
+    box-shadow: 0 0 0 1px var(--ar-line);
+    transition: transform .4s var(--ease-out), box-shadow .4s ease;
+}
+.ar-disc:hover { transform: translateY(-5px); box-shadow: 0 0 0 1px color-mix(in srgb, var(--c) 55%, transparent), 0 20px 50px color-mix(in srgb, var(--c) 18%, transparent); }
+/* équerres de sélection, comme la boîte englobante d'un objet dans un viewport 3D */
+.ar-disc::before, .ar-disc::after {
+    content: ""; position: absolute; width: 14px; height: 14px; border: 0 solid var(--c); opacity: .35; pointer-events: none;
+    transition: opacity .3s, width .3s var(--ease-out), height .3s var(--ease-out);
+}
+.ar-disc::before { top: 9px; left: 9px; border-top-width: 1px; border-left-width: 1px; }
+.ar-disc::after { bottom: 9px; right: 9px; border-bottom-width: 1px; border-right-width: 1px; }
+.ar-disc:hover::before, .ar-disc:hover::after { opacity: 1; width: 24px; height: 24px; }
+.ar-disc h3 { margin: 6px 0 0; font-family: var(--font-heading); font-size: 21px; font-weight: 500; letter-spacing: -.01em; color: var(--text-hi); }
+.ar-disc p { margin: 0; font-size: 14px; line-height: 1.65; color: var(--text-3); text-wrap: pretty; }
+.ar-disc .ar-badges { margin-top: auto; padding-top: 6px; }
+
+/* ----- formes animées (partials/arts-glyph.blade.php) ------------------------- */
+.ar-glyph {
+    --c: var(--ar-gold);
+    position: relative; height: 150px; overflow: hidden; border-radius: 10px;
+    border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+    background: radial-gradient(120% 120% at 20% 0%, color-mix(in srgb, var(--c) 26%, transparent), transparent 68%), rgba(255, 255, 255, .02);
+}
+.ar-glyph svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ar-glyph .shadow { fill: rgba(0, 0, 0, .45); }
+
+/* facet : gemme dont chaque facette scintille en décalé */
+.ar-glyph .gem { transform-box: fill-box; transform-origin: center; animation: ar-bob 5s ease-in-out infinite alternate; }
+.ar-glyph .f {
+    fill: var(--c); fill-opacity: .18; stroke: var(--c); stroke-opacity: .85; stroke-width: 1; stroke-linejoin: round;
+    animation: ar-facet 3.6s ease-in-out infinite; animation-delay: calc(var(--i) * -.6s);
+}
+
+/* voxel : cubes isométriques qui se posent un à un (faces claire / moyenne / sombre) */
+.ar-glyph .vx { animation: ar-pop 5.4s ease-in-out infinite backwards; animation-delay: calc(var(--i) * .32s); }
+.ar-glyph .vx polygon { stroke: rgba(0, 0, 0, .28); stroke-width: .6; stroke-linejoin: round; }
+.ar-glyph .vx .t { fill: color-mix(in srgb, var(--c) 78%, #fff); }
+.ar-glyph .vx .l { fill: color-mix(in srgb, var(--c) 72%, #000); }
+.ar-glyph .vx .r { fill: color-mix(in srgb, var(--c) 46%, #000); }
+
+/* terrain : trois plans de relief qui dérivent, un soleil qui monte, des étoiles qui clignent */
+.ar-glyph .sun { fill: color-mix(in srgb, var(--c) 85%, #fff); animation: ar-sun 9s ease-in-out infinite alternate; }
+.ar-glyph .stars circle { fill: #fff; opacity: .7; animation: ar-twinkle 3s ease-in-out infinite; }
+.ar-glyph .stars circle:nth-child(2) { animation-delay: -.8s; }
+.ar-glyph .stars circle:nth-child(3) { animation-delay: -1.6s; }
+.ar-glyph .stars circle:nth-child(4) { animation-delay: -2.2s; }
+.ar-glyph .r1 { fill: color-mix(in srgb, var(--c) 38%, #101018); animation: ar-ridge 12s ease-in-out infinite alternate; }
+.ar-glyph .r2 { fill: color-mix(in srgb, var(--c) 24%, #0b0b10); animation: ar-ridge 9s ease-in-out infinite alternate-reverse; }
+.ar-glyph .r3 { fill: color-mix(in srgb, var(--c) 12%, #07070a); animation: ar-ridge 7s ease-in-out infinite alternate; }
+.ar-glyph .tree { fill: color-mix(in srgb, var(--c) 18%, #050507); }
+
+/* rig : os et articulations qui balancent autour de leur pivot (coordonnées du viewBox) */
+.ar-glyph .bone { stroke: var(--c); stroke-width: 4.5; stroke-linecap: round; fill: none; }
+.ar-glyph .head { fill: none; stroke: var(--c); stroke-width: 3; }
+.ar-glyph .joint { fill: #fff4cf; }
+.ar-glyph .arm.l { transform-origin: 60px 40px; animation: ar-swing-a 2.6s ease-in-out infinite alternate; }
+.ar-glyph .arm.r { transform-origin: 60px 40px; animation: ar-swing-b 2.6s ease-in-out infinite alternate; }
+.ar-glyph .fore.l { transform-origin: 36px 58px; animation: ar-bend-a 2.6s ease-in-out infinite alternate; }
+.ar-glyph .fore.r { transform-origin: 84px 58px; animation: ar-bend-b 2.6s ease-in-out infinite alternate; }
+.ar-glyph .leg.l { transform-origin: 60px 78px; animation: ar-leg-a 2.6s ease-in-out infinite alternate; }
+.ar-glyph .leg.r { transform-origin: 60px 78px; animation: ar-leg-b 2.6s ease-in-out infinite alternate; }
+.ar-glyph .shin.l { transform-origin: 48px 104px; animation: ar-knee-a 2.6s ease-in-out infinite alternate; }
+.ar-glyph .shin.r { transform-origin: 72px 104px; animation: ar-knee-b 2.6s ease-in-out infinite alternate; }
+
+/* =================================================================== modèles (live) */
+
+.ar-feat { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-8); }
+.ar-more { display: flex; justify-content: center; margin-top: calc(var(--space-8) * 1.8); }
+
+/* ======================================================================== méthode */
+
+.ar-drift .drift-sticky { min-height: 600px; background: var(--bg); border-top: 1px solid var(--ar-line); }
+.ar-drift .drift-head { max-width: 1240px; margin: 0 auto; width: 100%; padding: 0 var(--space-8) calc(var(--space-8) * 2); }
+.ar-drift .drift-head .ar-kicker { margin-bottom: 0; }
+.ar-drift .drift-track { padding: 0 var(--space-8); }
+.ar-drift .drift-item { width: min(78vw, 470px); }
+
+.ar-pstep {
+    position: relative; height: 100%; min-height: 340px; padding: calc(var(--space-8) * 1.5);
+    display: flex; flex-direction: column; justify-content: space-between;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(160deg, rgba(232, 194, 106, .08), rgba(14, 13, 16, .84) 62%);
+    box-shadow: 0 0 0 1px var(--ar-line);
+    transition: box-shadow .4s ease;
+}
+.ar-pstep::before, .ar-pstep::after { content: ""; position: absolute; width: 20px; height: 20px; border: 0 solid var(--ar-gold); opacity: .5; pointer-events: none; }
+.ar-pstep::before { top: 12px; left: 12px; border-top-width: 1px; border-left-width: 1px; }
+.ar-pstep::after { bottom: 12px; right: 12px; border-bottom-width: 1px; border-right-width: 1px; }
+.drift-item.is-near .ar-pstep { box-shadow: 0 0 0 1px var(--ar-gold), 0 24px 60px rgba(232, 194, 106, .14); }
+.ar-pstep .n {
+    font-family: var(--font-heading); font-size: clamp(68px, 7vw, 100px); line-height: 1; letter-spacing: -.02em;
+    color: transparent; -webkit-text-stroke: 1px var(--ar-gold);
+}
+.ar-pstep h3 { margin: 0 0 var(--space-4); font-size: 26px; font-weight: 500; letter-spacing: -.02em; color: var(--text-hi); }
+.ar-pstep p { margin: 0; font-size: 15px; line-height: 1.7; color: var(--text-3); text-wrap: pretty; }
+/* avancement dans le pipeline : sommets reliés par une arête, ceux déjà franchis sont pleins */
+.ar-pips {
+    display: flex; align-items: center; justify-content: space-between; width: 150px; margin-top: var(--space-6);
+    background: linear-gradient(rgba(232, 194, 106, .3), rgba(232, 194, 106, .3)) center / 100% 1px no-repeat;
+}
+.ar-pips i { flex: none; width: 9px; height: 9px; transform: rotate(45deg); border: 1px solid var(--ar-bronze); background: var(--bg); }
+.ar-pips i.on { border-color: var(--ar-gold); background: var(--ar-gold); box-shadow: 0 0 10px rgba(232, 194, 106, .5); }
+
+/* ===================================================================== technologies */
+
+.ar-tech { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: calc(var(--space-8) * 3); }
+.ar-tech h3 {
+    margin: 0 0 var(--space-8); padding-bottom: var(--space-6);
+    font-family: var(--font-heading); font-size: 15px; font-weight: 400; letter-spacing: .16em; text-transform: uppercase; color: var(--text-2);
+    border-bottom: 1px solid var(--ar-line);
+}
+.ar-techtags { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.ar-techtag {
+    --t: var(--ar-gold);
+    display: inline-flex; align-items: center; padding: 6px 14px; border: 1px solid var(--t); border-radius: 999px;
+    font-size: 11px; letter-spacing: .06em; color: var(--t); background: color-mix(in srgb, var(--t) 9%, transparent);
+    transition: transform .25s var(--ease-out), background .25s ease;
+}
+.ar-techtag:hover { transform: translateY(-2px); background: color-mix(in srgb, var(--t) 22%, transparent); }
+
+/* ========================================================================== contact */
+
+.ar-contact-sec { border-top: 1px solid var(--ar-line); }
+.ar-contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: calc(var(--space-8) * 3); align-items: end; }
+.ar-contact-cta { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+.ar-mail { font-family: var(--font-heading); font-size: clamp(18px, 2vw, 24px); color: var(--ar-gold); text-decoration: none; border-bottom: 1px solid rgba(232, 194, 106, .4); padding-bottom: 3px; transition: border-color .2s, color .2s; }
+.ar-mail:hover { color: var(--accent-200); border-bottom-color: var(--ar-gold); }
+
+/* ======================================================================== animations */
+
+@keyframes ar-shine { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0% 0; } }
+@keyframes ar-sway { from { transform: translateX(-50%) rotate(-4deg); } to { transform: translateX(-50%) rotate(4deg); } }
+@keyframes ar-breathe { from { transform: scale(.92); opacity: .75; } to { transform: scale(1.08); opacity: 1; } }
+@keyframes ar-drift-a { to { transform: translate3d(12vmin, -8vmin, 0) scale(1.12); } }
+@keyframes ar-drift-b { to { transform: translate3d(-10vmin, 12vmin, 0) scale(.9); } }
+@keyframes ar-mote {
+    0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+    12%  { opacity: .85; }
+    80%  { opacity: .5; }
+    100% { transform: translate3d(var(--dx, 20px), -78vh, 0); opacity: 0; }
+}
+
+@keyframes ar-bob { from { transform: translateY(2px) rotate(-2deg); } to { transform: translateY(-6px) rotate(2deg); } }
+@keyframes ar-facet { 0%, 100% { fill-opacity: .1; } 50% { fill-opacity: .62; } }
+@keyframes ar-pop {
+    0%        { transform: translateY(-30px); opacity: 0; }
+    12%, 74%  { transform: none; opacity: 1; }
+    88%, 100% { transform: translateY(-30px); opacity: 0; }
+}
+@keyframes ar-sun { from { transform: translateY(12px); } to { transform: translateY(-8px); } }
+@keyframes ar-twinkle { 0%, 100% { opacity: .25; } 50% { opacity: .95; } }
+@keyframes ar-ridge { from { transform: translateX(-9px); } to { transform: translateX(9px); } }
+@keyframes ar-swing-a { from { transform: rotate(-26deg); } to { transform: rotate(22deg); } }
+@keyframes ar-swing-b { from { transform: rotate(22deg); } to { transform: rotate(-26deg); } }
+@keyframes ar-bend-a { from { transform: rotate(-8deg); } to { transform: rotate(30deg); } }
+@keyframes ar-bend-b { from { transform: rotate(30deg); } to { transform: rotate(-8deg); } }
+@keyframes ar-leg-a { from { transform: rotate(-14deg); } to { transform: rotate(14deg); } }
+@keyframes ar-leg-b { from { transform: rotate(14deg); } to { transform: rotate(-14deg); } }
+@keyframes ar-knee-a { from { transform: rotate(0deg); } to { transform: rotate(-22deg); } }
+@keyframes ar-knee-b { from { transform: rotate(-22deg); } to { transform: rotate(0deg); } }
+
+/* ======================================================================= responsive */
+
+@media (max-width: 1100px) {
+    .ar-discs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 980px) {
+    .ar-about-hero { min-height: 0; padding-top: max(11vh, 104px); padding-bottom: 72px; }
+    /* empilé : le modèle occupe exactement la zone du titre (--hero-head), l'accroche passe dessous */
+    .ar-about-head { margin: 0 0 var(--space-8); height: var(--hero-head); display: flex; flex-direction: column; justify-content: center; }
+    .ar-about-hero { --hero-head: min(62vw, 360px); }
+    .ar-showcase { inset: max(11vh, 104px) 0 auto; height: var(--hero-head); }
+}
+@media (max-width: 640px) {
+    .ar-discs { grid-template-columns: 1fr; }
+    .ar-sec, .ar-about-hero { padding-left: var(--space-6); padding-right: var(--space-6); }
+    .ar-drift .drift-head { padding-left: var(--space-6); padding-right: var(--space-6); }
+}

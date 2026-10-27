@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Cache-Control" content="no-store" />
     <title>Lakeust Works</title>
-    <meta name="description" content="Lakeust Works — studio indépendant de développement. Deux pôles : Lakeust Studio (jeux Unity, shaders, VFX) et Lakeust Web (WebGL, animation, interfaces).">
+    <meta name="description" content="Lakeust Works — studio indépendant de développement. Trois pôles : Lakeust Studio (jeux Unity, shaders, VFX), Lakeust Web (WebGL, animation, interfaces) et Lakeust Arts (modèles 3D).">
     <link rel="canonical" href="{{ url()->current() }}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Lakeust Works">
@@ -45,6 +45,14 @@
                 'fr'    => 'Jeux, moteurs maison et outils internes.',
                 'en'    => 'Games, in-house engines and internal tools.',
                 'href'  => route('studio.about'),
+                'open'  => false,
+            ],
+            [
+                'label' => 'Lakeust Arts',
+                'tag'   => 'Blender · Blockbench · 3D',
+                'fr'    => 'Modèles 3D, props, personnages et décors.',
+                'en'    => '3D models, props, characters and environments.',
+                'href'  => route('arts.about'),
                 'open'  => false,
             ],
         ];
@@ -96,6 +104,7 @@
                     <div class="flex flex-col" style="padding:var(--s-3) var(--gutter);gap:2px;">
                         <a href="{{ route('web.about') }}" class="rounded-md" style="padding:10px 4px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-2);">Lakeust Web</a>
                         <a href="{{ route('studio.about') }}" class="rounded-md" style="padding:10px 4px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-2);">Lakeust Studio</a>
+                        <a href="{{ route('arts.about') }}" class="rounded-md" style="padding:10px 4px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-2);">Lakeust Arts</a>
                     </div>
                 </el-disclosure>
             </div>
@@ -112,6 +121,7 @@
 
                 <a href="{{ route('web.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Lakeust Web</a>
                 <a href="{{ route('studio.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Lakeust Studio</a>
+                <a href="{{ route('arts.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Lakeust Arts</a>
 
                 <div class="wl-lang" data-lang-switch></div>
             </div>
@@ -133,13 +143,13 @@
                  quasi plate jusqu'au tablette puis remonter, ce que vw seul ne
                  fait pas). Une media query classique reste plus prévisible ici. --}}
             <div data-hero="1" class="hero-eyebrow" style="font-size:11px;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-8)">
-                <span class="i18n-fr">Studio de développement · Unity &amp; Web</span><span class="i18n-en">Development studio · Unity &amp; Web</span>
+                <span class="i18n-fr">Studio de développement · Unity, Web &amp; 3D</span><span class="i18n-en">Development studio · Unity, Web &amp; 3D</span>
             </div>
             <h1 class="textured" data-hero="1" style="margin:0;font-size:clamp(44px,8.4vw,132px);line-height:.94;letter-spacing:-.03em;font-weight:500;text-shadow:0 0 90px rgba(232,222,198,.28)">LAKEUST WORKS</h1>
             <div data-hero="1" style="width:min(560px,80vw);height:1px;margin:var(--space-8) 0;background:linear-gradient(90deg,transparent,var(--accent-700) 48px,var(--accent-700) calc(100% - 48px),transparent)"></div>
             <p data-hero="1" style="margin:0;max-width:720px;font-size:clamp(15px,1.5vw,19px);line-height:1.6;color:var(--text-2);text-wrap:pretty">
-                <span class="i18n-fr">Deux pôles, un même atelier. Jeu vidéo Unity — effets, shaders. Web — CSS, JS.</span>
-                <span class="i18n-en">Two divisions, one workshop. Unity games — effects, shaders. Web — CSS, JS.</span>
+                <span class="i18n-fr">Trois pôles, un même atelier. Jeu vidéo Unity — effets, shaders. Web — CSS, JS. Arts — modèles 3D.</span>
+                <span class="i18n-en">Three divisions, one workshop. Unity games — effects, shaders. Web — CSS, JS. Arts — 3D models.</span>
             </p>
         </div>
         <div style="position:absolute;left:50%;right:50%;bottom:var(--space-8);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:var(--space-2);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--text-3);animation:lw-cue 2.4s ease-in-out infinite">
@@ -194,10 +204,13 @@
             <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#cfd3e5;">Unity · C# · shaders</span>
         </a>
 
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:22px var(--gutter);background:linear-gradient(90deg, #423a6a 0%, #2b2741 100%);">
-            <span style="font-weight:300;font-size:19px;letter-spacing:.02em;color:#e4e7f5;">Troisième versant</span>
-            <span class="tag tag-outline" style="flex:none;font-size:10px;letter-spacing:.2em;text-transform:uppercase">à venir</span>
-        </div>
+        <a href="{{ route('arts.about') }}" style="display:flex;flex-direction:column;gap:6px;padding:26px var(--gutter);background:linear-gradient(90deg, #4a3822 0%, #8a6a3a 62%, #c49a52 100%);color:inherit;text-decoration:none;">
+            <span style="display:flex;align-items:center;gap:14px;">
+                <span style="font-weight:300;font-size:24px;letter-spacing:.02em;color:#fbf6ea;">Lakeust Arts</span>
+                <svg width="34" height="10" viewBox="0 0 44 12" fill="none" style="flex:none"><path d="M1 6 H41" stroke="#fbf6ea" stroke-width="1.4" stroke-linecap="round" opacity="0.55"></path><path d="M35.5 1.5 L42.5 6 L35.5 10.5" stroke="#fbf6ea" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
+            <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#f1e6cf;">Blender · Blockbench · 3D</span>
+        </a>
 
         <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:22px var(--gutter);background:linear-gradient(90deg, #3f424d 0%, #292b31 100%);">
             <span class="tag tag-outline" style="flex:none;font-size:10px;letter-spacing:.2em;text-transform:uppercase">à venir</span>
@@ -244,14 +257,16 @@
                 </div>
             </a>
 
-            {{-- Bande 2 — troisième versant, à venir --}}
-            <a data-band data-tone="#2b2741" href="#" data-soon style="position:absolute;inset:0;display:block;color:inherit;transition:opacity .4s ease">
-                <div data-inner style="position:absolute;transform-origin:0 0;transition:transform .72s cubic-bezier(.22,1,.36,1);will-change:transform;background:linear-gradient(90deg, #423a6a 0%, #2b2741 100%)">
+            {{-- Bande 2 — Lakeust Arts (modèles 3D) --}}
+            <a data-band data-tone="#8a6a3a" href="{{ route('arts.about') }}" style="position:absolute;inset:0;display:block;color:inherit;transition:opacity .4s ease">
+                <div data-inner style="position:absolute;transform-origin:0 0;transition:transform .72s cubic-bezier(.22,1,.36,1);will-change:transform;background:linear-gradient(90deg, #4a3822 0%, #8a6a3a 62%, #c49a52 100%)">
+                    <div class="media-fill" style="position:absolute;inset:0"></div>
                     <div data-tiles style="position:absolute;inset:0;display:flex"></div>
                 </div>
-                <div data-label style="position:absolute;display:flex;align-items:center;gap:11px;white-space:nowrap;pointer-events:none">
-                    <span style="font-weight:300;font-size:clamp(19px,1.8vw,26px);letter-spacing:.02em;color:#e4e7f5">Troisième versant</span>
-                    <span class="tag tag-outline" style="flex:none;font-size:10px;letter-spacing:.2em;text-transform:uppercase">à venir</span>
+                <div data-label style="position:absolute;display:flex;align-items:center;gap:17px;white-space:nowrap;pointer-events:none">
+                    <span style="font-weight:300;font-size:clamp(26px,2.7vw,40px);letter-spacing:.02em;color:#fbf6ea">Lakeust Arts</span>
+                    <span style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#f1e6cf">Blender · Blockbench · 3D</span>
+                    <svg width="44" height="12" viewBox="0 0 44 12" fill="none" style="flex:none"><path d="M1 6 H41" stroke="#fbf6ea" stroke-width="1.4" stroke-linecap="round" opacity="0.55"></path><path d="M35.5 1.5 L42.5 6 L35.5 10.5" stroke="#fbf6ea" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                 </div>
             </a>
 
@@ -274,16 +289,16 @@
         <div data-reveal="rise" style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-300);margin-bottom:var(--space-8)">
             01 — <span class="i18n-fr">Qui sommes-nous</span><span class="i18n-en">Who we are</span>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:calc(var(--space-8)*3);align-items:start">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:calc(var(--space-8)*3);align-items:start">
             <div>
                 <h2 data-reveal="rise" style="margin:0 0 var(--space-8);font-size:clamp(24px,3.6vw,54px);line-height:1.06;letter-spacing:-.025em">
-                    <span class="i18n-fr">Un atelier technique, deux terrains.</span><span class="i18n-en">One technical workshop, two grounds.</span>
+                    <span class="i18n-fr">Un atelier technique, trois terrains.</span><span class="i18n-en">One technical workshop, three grounds.</span>
                 </h2>
             </div>
             <div class="xs:w-[30ch] sm:w-[52ch]" style="display:flex;flex-direction:column;gap:var(--space-6);max-width:52ch">
                 <p data-reveal="rise" style="margin:0;font-size:clamp(14px,3.6vw,17px); line-height:1.65;color:var(--text-2);text-wrap:pretty">
-                    <span class="i18n-fr">Lakeust Works développe des jeux vidéo sous Unity et des interfaces web. Le travail est le même dans les deux cas : comprendre le besoin, écrire le code, livrer quelque chose qui tient.</span>
-                    <span class="i18n-en">Lakeust Works builds Unity games and web interfaces. The work is the same in both cases: understand the need, write the code, ship something that holds.</span>
+                    <span class="i18n-fr">Lakeust Works développe des jeux vidéo sous Unity, des interfaces web et des modèles 3D. Le travail est le même partout : comprendre le besoin, écrire le code, livrer quelque chose qui tient.</span>
+                    <span class="i18n-en">Lakeust Works builds Unity games, web interfaces and 3D models. The work is the same everywhere: understand the need, write the code, ship something that holds.</span>
                 </p>
                 <p data-reveal="rise" style="margin:0;font-size:clamp(14px,3.6vw,17px);;line-height:1.7;color:var(--text-3);text-wrap:pretty">
                     <span class="i18n-fr">Pas de sous-traitance en cascade, pas d'intermédiaire. Le code est écrit ici, du shader à l'intégration.</span>
@@ -294,16 +309,16 @@
 
         <div style="margin-top:calc(var(--space-8)*3);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--divider);border-top:1px solid var(--divider);border-bottom:1px solid var(--divider)">
             <div style="background:var(--bg);padding:calc(var(--space-8)*1.5) var(--space-8)">
-                <div data-count="2020" data-plain="1" style="font-family:var(--font-heading);font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--text-hi)">2020</div>
+                <div data-count="2021" data-plain="1" style="font-family:var(--font-heading);font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--text-hi)">2021</div>
                 <div style="margin-top:var(--space-4);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-3)"><span class="i18n-fr">Depuis</span><span class="i18n-en">Since</span></div>
             </div>
             <div style="background:var(--bg);padding:calc(var(--space-8)*1.5) var(--space-8)">
-                <div data-count="6" style="font-family:var(--font-heading);font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--text-hi)">6</div>
+                <div data-count="5" style="font-family:var(--font-heading);font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--text-hi)">5</div>
                 <div style="margin-top:var(--space-4);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-3)"><span class="i18n-fr">Ans de pratique</span><span class="i18n-en">Years of practice</span></div>
             </div>
             <div style="background:var(--bg);padding:calc(var(--space-8)*1.5) var(--space-8)">
-                <div data-count="2" style="font-family:var(--font-heading);font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--text-hi)">2</div>
-                <div style="margin-top:var(--space-4);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-3)"><span class="i18n-fr">Pôles — Games &amp; Web</span><span class="i18n-en">Divisions — Games &amp; Web</span></div>
+                <div data-count="3" style="font-family:var(--font-heading);font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--text-hi)">3</div>
+                <div style="margin-top:var(--space-4);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-3)"><span class="i18n-fr">Pôles — Games, Web &amp; Arts</span><span class="i18n-en">Divisions — Games, Web &amp; Arts</span></div>
             </div>
         </div>
     </section>
@@ -328,8 +343,8 @@
                         <span class="i18n-en">Engineers' technical assistant. <br> Developer since 2020.</span>
                     </p>
                     <p data-reveal="rise" style="margin:0;font-size:15px;line-height:1.7;color:var(--text-3);text-wrap:pretty">
-                        <span class="i18n-fr">Il dirige les deux pôles du studio et reste sur le code : gameplay et shaders sous Unity, intégration et animation sur le web.</span>
-                        <span class="i18n-en">He runs both divisions of the studio and stays on the code: gameplay and shaders in Unity, integration and animation on the web.</span>
+                        <span class="i18n-fr">Il dirige les trois pôles du studio et reste sur le code : gameplay et shaders sous Unity, intégration et animation sur le web, modèles 3D.</span>
+                        <span class="i18n-en">He runs all three divisions of the studio and stays on the code: gameplay and shaders in Unity, integration and animation on the web, 3D models.</span>
                     </p>
                 </div>
                 <div data-reveal="rise" style="display:flex;flex-wrap:wrap;gap:calc(var(--space-6)*1.4);margin-top:calc(var(--space-8)*1.4)">

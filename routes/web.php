@@ -79,6 +79,25 @@ Route::get('/studio-projet02', function () {
 })->name('studio.project02');
 
 
+//======================
+// ARTS — troisième branche (modèles 3D Blender / Blockbench…)
+//======================
+Route::get('/arts-a-propos', function () {
+    return view('pages.arts.about');
+})->name('arts.about');
+
+Route::get('/arts-modeles', function () {
+    return view('pages.arts.models');
+})->name('arts.models');
+
+// Une fiche par modèle (App\Support\ModelCatalog). Paramétrée : l'export statique
+// l'énumère à part (voir routes/console.php).
+Route::get('/arts-modele/{slug}', function (string $slug) {
+    $model = \App\Support\ModelCatalog::find($slug) ?? abort(404);
+    return view('pages.arts.model', ['model' => $model]);
+})->name('arts.model');
+
+
 
 //======================
 // LABS

@@ -1,99 +1,89 @@
-@extends('layouts.site')
+@extends('pages.web.subsite')
 @section('title', 'Laboratoire — Lakeust Web')
 @section('description', "Laboratoire Lakeust Web : Barba, scroll, Three.js, animation et carousel — des mécaniques d'interaction isolées et rejouables.")
-@section('content')
-<head>
+@section('sub-content')
     @vite(['resources/css/lab.css', 'resources/js/labs/catalogue/lab-catalogue.js'])
 
     @php
-        /* Ordre de navigation (clavier / sommaire) : Catalogue d'abord, puis
-            les quinze mécaniques. Doit rester synchronisé avec ORDER dans lab.js. */
-        $sections = [
-            [
-                'url' => '/barba-lab',
-                'tag' => "Ω · 01",
-                'name' => "Barba js",
-                'built' => 1,
-                'status' => "Prototypé",
-                'i18n' => 'lab.cat.barba',
-                'desc' => "Rien ne défile. Le document entier tient dans l'écran et le scroll ne déplace que le point de lecture : la bande visée s'ouvre, les autres se compriment en filets."
-            ],
-            [
-                'url' => '/scroll-lab',
-                'tag' => "Ω · 02",
-                'name' => "Scroll js",
-                'built' => 2,
-                'status' => "Prototypé",
-                'i18n' => 'lab.cat.scroll',
-                'desc' => "Rien ne défile. Le document entier tient dans l'écran et le scroll ne déplace que le point de lecture : la bande visée s'ouvre, les autres se compriment en filets."
-            ],
-            [
-                'url' => '/three-lab',
-                'tag' => "Ω · 03",
-                'name' => "Three js",
-                'built' => 3,
-                'status' => "Prototypé",
-                'i18n' => 'lab.cat.three',
-                'desc' => "Rien ne défile. Le document entier tient dans l'écran et le scroll ne déplace que le point de lecture : la bande visée s'ouvre, les autres se compriment en filets."
-            ],
-            [
-                'url' => '/animation-lab',
-                'tag' => "Ω · 04",
-                'name' => "Animation JS",
-                'built' => 4,
-                'status' => "Prototypé",
-                'i18n' => 'lab.cat.animation',
-                'desc' => "Rien ne défile. Le document entier tient dans l'écran et le scroll ne déplace que le point de lecture : la bande visée s'ouvre, les autres se compriment en filets."
-            ],
-            [
-                'url' => '/carousel-lab',
-                'tag' => "Ω · 05",
-                'name' => "Carousel Lab",
-                'built' => 5,
-                'status' => "Prototypé",
-                'i18n' => 'lab.cat.carousel',
-                'desc' => "Une seule valeur — la position fractionnaire dans la liste — pilote six dispositions spatiales et deux transitions par post-traitement sur les mêmes huit plans."
-            ],
+        /* Catalogue des labs Web, du plus simple au plus avancé (même ordre que
+           la section Démonstrations de web/about). Une forme animée et une
+           couleur par lab : partials/web-glyph + css/pages/web-theme.css.
+           Textes FR/EN ici même (spans .i18n-fr/.i18n-en) plutôt que dans
+           dictionary.json, dont les entrées lab.cat.* de ces labs étaient des
+           copies du même paragraphe. */
+        $labs = [
+            ['route' => 'scroll.lab',    'kind' => 'scroll',    'color' => 'var(--web-1)', 'name' => 'Scroll Lab',
+                'level' => ['Débutant', 'Beginner'],
+                'stack' => 'IntersectionObserver · Scroll-driven',
+                'fr' => "Quinze mécaniques de scroll indépendantes — panneaux, parallaxe, progression, révélations, corridor — chacune isolée pour être comparée aux autres.",
+                'en' => "Fifteen independent scroll mechanics — panels, parallax, progress, reveals, corridor — each isolated so they can be compared side by side."],
+            ['route' => 'animation-lab', 'kind' => 'animation', 'color' => 'var(--web-3)', 'name' => 'Animation Lab',
+                'level' => ['Intermédiaire', 'Intermediate'],
+                'stack' => 'GSAP · Catalogue de déclenchement',
+                'fr' => "Neuf concepts d'entrée à l'écran rejoués au passage dans le viewport plutôt qu'au scroll continu.",
+                'en' => "Nine screen-entry concepts replayed as they enter the viewport rather than on continuous scroll."],
+            ['route' => 'barba.lab',     'kind' => 'barba',     'color' => 'var(--web-2)', 'name' => 'Barba Lab',
+                'level' => ['Avancé', 'Advanced'],
+                'stack' => 'Barba.js · Transitions de page',
+                'fr' => "Le système de transitions réellement branché sur le site — corridor, rideau, épingle — documenté en dix scènes autonomes.",
+                'en' => "The transition system actually wired into the site — corridor, curtain, pin — documented across ten standalone scenes."],
+            ['route' => 'three.lab',     'kind' => 'three',     'color' => 'var(--web-4)', 'name' => 'Three Lab',
+                'level' => ['Expert', 'Expert'],
+                'stack' => 'Three.js · Scènes WebGL au survol',
+                'fr' => "Les scènes WebGL du site — trou noir, forêt, orbite — montées à la demande, en pilotage interne ou externe.",
+                'en' => "The site's WebGL scenes — black hole, forest, orbit — mounted on demand, internally or externally driven."],
+            ['route' => 'carousel.lab',  'kind' => 'carousel',  'color' => 'var(--web-5)', 'name' => 'Carousel Lab',
+                'level' => ['Expert', 'Expert'],
+                'stack' => 'Three.js · Post-traitement',
+                'fr' => "Une seule valeur — la position fractionnaire dans la liste — pilote six dispositions spatiales et deux transitions par post-traitement.",
+                'en' => "A single value — the fractional position in the list — drives six spatial layouts and two post-processing transitions."],
         ];
+    @endphp
 
+    {{-- .lab-sec + data-lab="catalogue" : accroche de lab-catalogue.js, qui pose
+         .is-active. data-lab-root est conservé pour le même motif. --}}
+    <div data-lab-root>
+        <section class="lab-sec web-lab" data-lab="catalogue" data-screen-label="Lab Catalogue">
 
-    $nav = [
-        ['route' => 'web.about',   'i18n' => 'nav.about', 'keep' => true],
-        ['route' => 'web.works',   'i18n' => 'nav.works',  'keep' => true],
-        ['route' => 'web.lab',     'i18n' => 'nav.lab', 'keep' => false, 'external' => true],
-    ];
-@endphp
-</head>
+            <div class="web-hero web-hero--lab">
+                @include('partials.web-shapes')
 
-    <div data-lab-root style="position:relative;min-height:100vh;background:#05050a">
-        <main style="position:relative;z-index:1">
-            {{-- ================================================ Catalogue --- --}}
-            <section class="lab-sec" data-lab="catalogue" data-screen-label="Lab IX Catalogue">
-                <div style="min-height:52vh;display:flex;flex-direction:column;justify-content:flex-end;gap:20px;padding:0 clamp(56px,9vw,180px) clamp(40px,6vw,80px)">
-                    <span data-reveal="line" style="display:block;width:clamp(80px,12vw,180px);height:1px;background:linear-gradient(90deg,#9184d9,transparent)"></span>
-                    <h1 data-chars style="margin:0;font-size:clamp(34px,6.2vw,86px);font-weight:200;letter-spacing:-.03em;line-height:.98" data-i18n="lab.title">Laboratoire</h1>
-                    <p data-reveal="up" style="margin:0;max-width:56ch;font-size:clamp(14px,1.1vw,16px);line-height:1.7;color:rgba(226,221,209,.62)" data-i18n="lab.subtitle">Six mécaniques.</p>
+                <div class="web-eyebrow">
+                    <span class="i18n-fr">{{ str_pad(count($labs), 2, '0', STR_PAD_LEFT) }} mécaniques · rejouables en direct</span>
+                    <span class="i18n-en">{{ str_pad(count($labs), 2, '0', STR_PAD_LEFT) }} mechanics · replayable live</span>
+                </div>
+                <h1 class="web-title" data-i18n="lab.title">Laboratoire</h1>
+                <p class="web-lead">
+                    <span class="i18n-fr">Chaque lab isole une technique d'interaction pour la comparer, la rejouer et la lire de près.</span>
+                    <span class="i18n-en">Each lab isolates one interaction technique so you can compare it, replay it and read it up close.</span>
+                </p>
+            </div>
+
+            <div class="web-lab-wrap">
+                <div class="web-lab-head" data-reveal="rise">
+                    <span class="k"><span class="i18n-fr">Catalogue</span><span class="i18n-en">Catalogue</span></span>
+                    <span class="s"><span class="i18n-fr">Du plus simple au plus avancé</span><span class="i18n-en">From simplest to most advanced</span></span>
                 </div>
 
-                <div style="display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));padding:0 clamp(56px,9vw,180px) clamp(60px,8vw,120px)">
-                    @foreach ($sections as $c)
-                        <article style="display:flex;flex-direction:column;gap:14px;padding:24px 24px 26px;border:1px solid rgba(233,233,237,.10);background:rgba(11,12,20,.55)">
-                            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
-                                <span style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#9184d9">{{ $c['tag'] }}</span>
-                                <span style="font-size:10px;letter-spacing:.20em;text-transform:uppercase;color:rgba(226,221,209,.34)" data-i18n="lab.status">{{ $c['status'] }}</span>
+                <div class="web-lab-grid">
+                    @foreach ($labs as $i => $l)
+                        {{-- data-barba-prevent : ces pages logent leur @vite dans leur contenu
+                             — jamais exécuté si Barba se contente d'injecter le HTML fetché. --}}
+                        <a class="web-card web-lab-card" data-reveal="rise" data-barba-prevent
+                           href="{{ route($l['route']) }}" style="--c:{{ $l['color'] }}">
+                            @include('partials.web-glyph', ['kind' => $l['kind'], 'color' => $l['color']])
+                            <div class="web-lab-meta">
+                                <span class="web-lab-n">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</span>
+                                <span class="tag"><span class="i18n-fr">{{ $l['level'][0] }}</span><span class="i18n-en">{{ $l['level'][1] }}</span></span>
                             </div>
-                            <h3 style="margin:0;font-size:clamp(20px,2.2vw,28px);font-weight:200;letter-spacing:-.02em;line-height:1.1">{{ $c['name'] }}</h3>
-                            <p style="margin:0;font-size:13.5px;line-height:1.7;color:rgba(226,221,209,.62)" data-i18n="{{ $c['i18n'] }}">{{ $c['desc'] }}</p>
-                            @if ($c['url'] !== null)
-                                {{-- data-barba-prevent : ces pages (barba-lab, scroll-lab, three-lab,
-                                     animation-lab) logent leur @vite dans @section('content') — jamais
-                                     exécuté si Barba se contente d'injecter le HTML fetché en SPA. --}}
-                                <a href="{{ $c['url'] }}" class="lab-cta" data-barba-prevent style="appearance:none;margin-top:6px;align-self:flex-start;background:none;border:1px solid rgba(145,132,217,.5);color:#b3a9e6;cursor:pointer;font-family:inherit;font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:9px 16px;border-radius:8px;transition:background .3s,color .3s"><span data-i18n="lab.open">Ouvrir</span> {{ str_pad($c['built'], STR_PAD_LEFT) }}</a>
-                            @endif
-                        </article>
+                            <h3 class="web-lab-title">{{ $l['name'] }}</h3>
+                            <div class="web-lab-stack">{{ $l['stack'] }}</div>
+                            <p class="web-lab-desc"><span class="i18n-fr">{{ $l['fr'] }}</span><span class="i18n-en">{{ $l['en'] }}</span></p>
+                            <span class="web-lab-open"><span data-i18n="lab.open">Ouvrir</span> <i aria-hidden="true">→</i></span>
+                        </a>
                     @endforeach
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
     </div>
 @endsection

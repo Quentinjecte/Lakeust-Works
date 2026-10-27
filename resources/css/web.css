@@ -4,3 +4,4 @@
    .wl-*) dans son propre en-tête. */
 
 @import './pages/web.css';
+@import './pages/web-theme.css';

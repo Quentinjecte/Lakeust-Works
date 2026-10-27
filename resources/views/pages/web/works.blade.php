@@ -1,10 +1,9 @@
-@extends('layouts.site')
+@extends('pages.web.subsite')
 @section('title', 'Travaux — Lakeust Works')
 @section('description', "Travaux de Lakeust Web : sélection de projets et archive — sites, animations et expériences WebGL.")
-@section('content')
-<head>
+@section('sub-content')
 
-    @vite(['resources/css/app.css', 'resources/css/web.css'])
+    
 
     @php
         /* Placeholder : à remplacer par une source de données réelle. Le mot
@@ -24,14 +23,8 @@
             ['num' => '09', 'annee' => '2020'],
         ];
 
-        $nav = [
-            ['route' => 'web.about',   'i18n' => 'nav.about', 'keep' => true],
-            ['route' => 'web.works',   'i18n' => 'nav.works',  'keep' => true],
-            ['route' => 'web.lab',     'i18n' => 'nav.lab', 'keep' => false, 'external' => true],
-        ];
     @endphp
 
-</head>
 
     <section class="section" style="padding:clamp(120px,18vh,200px) 0 var(--s-6);">
         <div class="wrap">

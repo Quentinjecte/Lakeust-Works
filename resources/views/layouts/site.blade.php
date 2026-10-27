@@ -81,6 +81,13 @@
         ['route' => 'web.works',   'i18n' => 'nav.works',  'keep' => true],
         ['route' => 'web.lab',     'i18n' => 'nav.lab', 'keep' => false, 'external' => true],
     ];
+
+    /* Route dont la section #contact est visée par le lien « Contact » du menu :
+       la page À propos du Web par défaut, celle de la branche pour les autres
+       (une page qui a sa propre section #contact définit $contactRoute, comme
+       $nav). Hors Web, le lien porte data-barba-prevent : ces pages chargent
+       leur JS une seule fois, un échange de conteneur Barba ne le rebrancherait pas. */
+    $contactRoute = $contactRoute ?? 'web.about';
 @endphp
 
 <header class="" data-nav>
@@ -131,7 +138,7 @@
                                @if ($item['keep']) data-keep @endif
                                @if (!empty($item['external'])) data-barba-prevent @endif></a>
                         @endforeach 
-                        <a class="nav-link" style="padding:0 10px;" href="{{ route('web.about') }}#contact" data-i18n="nav.contact"></a>
+                        <a class="nav-link" style="padding:0 10px;" href="{{ route($contactRoute) }}#contact" data-i18n="nav.contact" @if ($contactRoute !== 'web.about') data-barba-prevent @endif></a>
                     </div>
                 </el-disclosure>
             </div>
@@ -150,7 +157,7 @@
                            @if ($item['keep']) data-keep @endif
                            @if (!empty($item['external'])) data-barba-prevent @endif></a>
                     @endforeach
-                    <a class="nav-link" href="{{ route('web.about') }}#contact" data-i18n="nav.contact"></a>
+                    <a class="nav-link" href="{{ route($contactRoute) }}#contact" data-i18n="nav.contact" @if ($contactRoute !== 'web.about') data-barba-prevent @endif></a>
                     <div class="nav-lang" data-lang-switch></div>
                 </div>
             </div>
@@ -176,7 +183,8 @@
             <span class="label" style="display:block;margin-bottom:var(--s-2);" data-i18n="footer.brand"></span>
             <span class="t-body" style="font-size:13px;" data-i18n="footer.tagline"></span>
         </div>
-        <div style="display:flex;gap:var(--s-5);">
+        {{-- flex-wrap : avec 4+ liens (menu Studio + Modèles 3D) la rangée dépassait 375px --}}
+        <div style="display:flex;flex-wrap:wrap;gap:var(--s-3) var(--s-5);">
             @foreach ($nav as $item)
                 @unless (request()->routeIs($item['route']))
                     <a class="link-inline" href="{{ route($item['route']) }}" data-i18n="{{ $item['i18n'] }}" @if (!empty($item['external'])) data-barba-prevent @endif></a>

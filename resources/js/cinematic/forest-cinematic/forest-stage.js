@@ -9,7 +9,7 @@
    Deux choses ont changé par rapport à la passe précédente.
 
    1. LA CAMÉRA SUIT LA ROUTE. Le chemin de terre du décor est échantillonné ci-dessous
-      (ROAD, relevé sur les maillages Dirt_Road du GLB, avant → fond de vallée), monté
+      (ROAD, relevé sur les Maillages Dirt_Road du GLB, avant → fond de vallée), monté
       en courbe Catmull-Rom et reparamétré en longueur d'arc. La timeline ne pousse plus
       six coordonnées libres mais un point kilométrique : `s` (0…1 le long de la route),
       `lift` (hauteur au-dessus du sol), `side` (déport latéral), `ahead` (distance du
@@ -39,7 +39,7 @@ const DEG = Math.PI / 180;
 const NOON = new THREE.Color(1.0, 0.97, 0.92);   /* lumière zénithale, à peine chaude */
 const WARM = new THREE.Color(1.0, 0.87, 0.68);   /* fin d'après-midi, si sunWarmth → 1 */
 
-/* Axe de la route : axe médian des maillages Dirt_Road du GLB, relevé hors ligne
+/* Axe de la route : axe médian des Maillages Dirt_Road du GLB, relevé hors ligne
    (rastérisation du ruban en grille de 2 unités, transformée de distance, plus court
    chemin par la crête), puis altitude reprise sur les sommets de la chaussée.
    [x, y(sol), z], du premier plan (Z ≈ +76, sol ≈ 173) vers le fond de la vallée

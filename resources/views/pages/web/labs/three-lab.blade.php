@@ -1,8 +1,7 @@
-@extends('layouts.site')
+@extends('pages.web.subsite')
 @section('title', 'Three Lab — Lakeust Works')
 @section('description', "Three Lab : les scènes WebGL du site — trou noir, forêt, orbite — montées à la demande en pilotage interne ou externe.")
-@section('content')
-<head>
+@section('sub-content')
     @vite(['resources/css/lab.css', 'resources/js/labs/three/three-lab.js'])
 
     @php
@@ -102,7 +101,6 @@
                 'portfolio' => "La règle qui permet à ce lab d'exister sans planter — un seul contexte WebGL vivant à la fois."],
         ];
     @endphp
-</head>
 
 <div data-tl-root style="position:relative;min-height:100vh;background:#05050a">
 

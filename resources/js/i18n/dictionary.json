@@ -55,6 +55,10 @@
     "fr": "Nos Jeux",
     "en": "Our Games"
   },
+  "nav.models": {
+    "fr": "Modèles 3D",
+    "en": "3D Models"
+  },
   "works.games.index": {
     "fr": "Jeux — 2020 / 2026",
     "en": "Games — 2020 / 2026"
@@ -956,7 +960,7 @@
     "en": "A wireframe volume (12 edges, CSS perspective) progressively flattens until it merges with the frame's plane."
   },
   "animation.cat.5.seen": {
-    "fr": "Une boîte 3D en fil de fer qui perd sa profondeur et devient un rectangle plat.",
+    "fr": "Une boîte 3D en Maillage qui perd sa profondeur et devient un rectangle plat.",
     "en": "A 3D wireframe box losing its depth and becoming a flat rectangle."
   },
   "animation.cat.5.cost": {
