@@ -119,9 +119,9 @@
 
                 <div style="flex:1"></div>
 
-                <a href="{{ route('web.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Lakeust Web</a>
-                <a href="{{ route('studio.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Lakeust Studio</a>
-                <a href="{{ route('arts.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Lakeust Arts</a>
+                <a href="{{ route('web.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Web</a>
+                <a href="{{ route('studio.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Studio</a>
+                <a href="{{ route('arts.about') }}" style="font-size:12px;letter-spacing:.20em;color:var(--text-2);">Arts</a>
 
                 <div class="wl-lang" data-lang-switch></div>
             </div>
