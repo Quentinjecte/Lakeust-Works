@@ -45,7 +45,7 @@ final class ModelCatalog
             ['boss-roi-morts-vivants', 'Boss roi des morts-vivants', ['fr' => 'Boss', 'en' => 'Boss'], '7 668', '512 × 512', $no, '#9b7bff', ['Boss', 'Voxel', 'Morts-vivants'],
                 ['fr' => "Roi des morts-vivants, boss final d'un donjon : le modèle le plus lourd de la collection, construit cube par cube dans Blockbench.",
                  'en' => "King of the undead, a dungeon's final boss: the heaviest model of the collection, built cube by cube in Blockbench."]],
-            ['scythe-weapon-boss-king-of-dead', 'Faux du roi des morts', ['fr' => 'Arme', 'en' => 'Weapon'], '984', '512 × 512', $no, '#9b7bff', ['Arme', 'Faux', 'Boss'],
+            ['scythe-weapon-boss-king-of-dead', 'Faux du boss roi des morts', ['fr' => 'Arme', 'en' => 'Weapon'], '984', '512 × 512', $no, '#9b7bff', ['Arme', 'Faux', 'Boss'],
                 ['fr' => "Faux du roi des morts-vivants, l'arme de son boss : lame spectrale et manche en cubes.",
                  'en' => "Scythe of the king of the undead, his boss weapon: spectral blade and cube-built handle."]],
             ['scythe-weapon-boss-squelette-crystal', 'Faux du boss squelette de cristal', ['fr' => 'Arme', 'en' => 'Weapon'], '864', '512 × 256', $no, '#7be3ff', ['Arme', 'Faux', 'Cristal'],
