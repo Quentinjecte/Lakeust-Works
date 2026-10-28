@@ -43,7 +43,8 @@ Artisan::command('models:protect {--rotate}', function () {
         $iv = random_bytes(12);
         $enc = openssl_encrypt(File::get($f), 'aes-256-gcm', $key, OPENSSL_RAW_DATA, $iv, $tag, '', 16);
         if ($enc === false) { $this->error('Chiffrement impossible : ' . basename($f)); return 1; }
-        $out = $dst . '/' . pathinfo($f, PATHINFO_FILENAME) . '.lwm';
+        // nom normalisé (minuscules, tirets) : Boss_Roi.gltf -> boss-roi.lwm — les URL sont sensibles à la casse
+        $out = $dst . '/' . trim(preg_replace('/[^a-z0-9]+/', '-', strtolower(pathinfo($f, PATHINFO_FILENAME))), '-') . '.lwm';
         File::put($out, 'LWM1' . $iv . $enc . $tag);   // WebCrypto attend le tag à la suite du chiffré
         $this->info(sprintf('OK  %-34s %7.1f Ko', basename($out), filesize($out) / 1024));
     }
