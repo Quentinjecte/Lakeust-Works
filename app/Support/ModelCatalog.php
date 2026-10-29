@@ -100,16 +100,17 @@ final class ModelCatalog
             'tris' => $r[3], 'textures' => $r[4], 'rig' => $r[5], 'accent' => $r[6], 'tags' => $r[7], 'desc' => $r[8],
         ], $rows);
 
-        // Scène réelle du dépôt (public/GLB/dirt_road_forest.glb, 16 Mo, compressée Meshopt) :
-        // 'load' => 'click' la garde hors du chargement initial.
+        // Nœud runique : fiche d'EXEMPLE (chiffres inventés), sans fichier — le visualiseur
+        // affiche la forme procédurale 'knot'. Pour brancher le vrai modèle : déposer le .gltf
+        // dans resources/models/, lancer models:protect et remplacer 'src' par 'models/noeud.lwm'.
         $models[] = [
-            'slug' => 'foret', 'name' => 'Route forestière', 'demo' => 'knot', 'src' => 'GLB/dirt_road_forest.glb', 'load' => 'click',
-            'tools' => ['blender'], 'category' => ['fr' => 'Environnement', 'en' => 'Environment'],
-            'tris' => '292 929', 'textures' => '—', 'rig' => $no, 'year' => '2025',   // tris mesuré dans le visualiseur
-            'accent' => '#9fd37a', 'tags' => ['Environnement', 'Végétation', 'Glb 16 Mo'],
+            'slug' => 'noeud', 'name' => 'Nœud runique', 'demo' => 'knot', 'src' => null, 'load' => 'auto',
+            'tools' => ['blender', 'substance'], 'category' => ['fr' => 'Ornement', 'en' => 'Ornament'],
+            'tris' => '15 360', 'textures' => '3 × 2K (PBR)', 'rig' => $no, 'year' => '2025',
+            'accent' => '#b3a9e6', 'tags' => ['PBR', 'Métal', 'Sculpt'],
             'desc' => [
-                'fr' => "Scène de route forestière réellement chargée dans le visualiseur (16 Mo) — celle de la cinématique d'accueil du site.",
-                'en' => "Forest-road scene actually loaded in the viewer (16 MB) — the one from the site's cinematic.",
+                'fr' => "Ornement métallique modélisé et sculpté dans Blender, texturé en PBR (usure, rayures) avec Substance 3D.",
+                'en' => "Metallic ornament modelled and sculpted in Blender, PBR-textured (wear, scratches) with Substance 3D.",
             ],
         ];
 
