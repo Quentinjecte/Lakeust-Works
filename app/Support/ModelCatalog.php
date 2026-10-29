@@ -109,8 +109,8 @@ final class ModelCatalog
             'tris' => '15 360', 'textures' => '3 × 2K (PBR)', 'rig' => $no, 'year' => '2025',
             'accent' => '#b3a9e6', 'tags' => ['PBR', 'Métal', 'Sculpt'],
             'desc' => [
-                'fr' => "Ornement métallique modélisé et sculpté dans Blender, texturé en PBR (usure, rayures) avec Substance 3D.",
-                'en' => "Metallic ornament modelled and sculpted in Blender, PBR-textured (wear, scratches) with Substance 3D.",
+                'fr' => "Ornement métallique modélisé et sculpté dans Blender, texturé en PBR",
+                'en' => "Metallic ornament modelled and sculpted in Blender, PBR-textured",
             ],
         ];
 
