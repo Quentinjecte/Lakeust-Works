@@ -1,59 +1,103 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Lakeust Works
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Portfolio de **Quentin Renaud** : [lakeust.works](https://lakeust.works).
 
-## About Laravel
+Le site réunit trois branches, chacune avec sa propre identité visuelle :
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+| Branche | Contenu | Pages |
+|---|---|---|
+| **Studio** | Jeux vidéo et expériences (direction artistique « présentation de jeu ») | `/studio-a-propos`, `/studio-travaux`, `/studio-lab` |
+| **Web** | Sites, animations et expériences WebGL | `/web-a-propos`, `/web-travaux`, `/web-projet`, `/web-lab` |
+| **Arts** | Modèles 3D (Blender, Blockbench), visualisables en direct | `/arts-a-propos`, `/arts-modeles`, `/arts-modele/{slug}` |
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+L'accueil (`/`) est une cinématique d'entrée qui mène à chaque branche. Les mentions légales sont sur `/mentions-legales`.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Technologies
 
-## Learning Laravel
+- **Laravel 13** (PHP 8.4+) pour les routes et les vues Blade
+- **Vite 8** et **Tailwind CSS 4**
+- **Three.js** (WebGL, visualiseur de modèles), **GSAP**, **Lenis**, **Barba.js** (transitions de pages), **Theatre.js** (outil de mise en scène, uniquement en développement)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Le site publié est **entièrement statique** : Laravel sert à le fabriquer, pas à l'héberger.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Installation
 
-## Laravel Sponsors
+Prérequis : PHP 8.4+, Composer, Node.js 20+.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+touch database/database.sqlite
+php artisan migrate
+```
 
-### Premium Partners
+## Développement
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Dans deux terminaux, à la racine du projet :
 
-## Contributing
+```bash
+php artisan serve
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+npm run dev
+```
 
-## Code of Conduct
+Le site est alors sur <http://127.0.0.1:8000>.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Publication
 
-## Security Vulnerabilities
+Le déploiement est automatique : chaque push sur `master` lance le workflow [`deploy-pages.yml`](.github/workflows/deploy-pages.yml), qui construit le site et le publie sur GitHub Pages.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Pour que ça fonctionne, la source de Pages doit être **GitHub Actions** (Settings > Pages > Build and deployment > Source). Avec « Deploy from a branch », GitHub affiche à la place ce README.
 
-## License
+Pour fabriquer le site statique en local (dans `dist/`) :
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+npm run build
+```
+
+```bash
+php artisan export:static
+```
+
+Lancer la seconde commande avec `public/hot` absent (c'est-à-dire Vite arrêté), sinon les pages pointent vers le serveur de développement.
+
+## Modèles 3D
+
+Les modèles de la branche Arts sont affichés dans le navigateur, mais ne sont **pas téléchargeables** : ils sont servis chiffrés (`.lwm`, AES-256-GCM) et déchiffrés en mémoire par le visualiseur. Les fichiers en clair ne sont jamais publiés.
+
+Pour ajouter un modèle :
+
+1. Exporter le modèle en glTF (Blockbench : *File > Export > Export as glTF* ; Blender : *File > Export > glTF 2.0*).
+2. Le déposer dans `resources/models/` (dossier ignoré par git).
+3. Lancer, **depuis la racine du projet** :
+   ```bash
+   php artisan models:protect
+   ```
+   La commande écrit `public/models/<nom>.lwm`, avec un nom en minuscules et tirets.
+4. Ajouter une ligne pour ce modèle dans [`app/Support/ModelCatalog.php`](app/Support/ModelCatalog.php).
+5. Commiter les `.lwm` : le déploiement n'a pas accès aux sources.
+
+La clé de chiffrement est dans `resources/js/ui/model-key.js`. Elle sert aussi au déchiffrement côté navigateur : un site statique n'a pas de serveur pour la garder. C'est un frein contre le téléchargement, pas un coffre-fort.
+
+## Structure
+
+```
+app/Support/ModelCatalog.php   catalogue des modèles 3D
+resources/views/pages/         pages Studio, Web et Arts (Blade)
+resources/views/layouts/       gabarit commun (navigation, pied de page)
+resources/css/                 styles par branche (web.css, arts.css, pages/*-theme.css)
+resources/js/ui/               visualiseur 3D (model-viewer.js) et déchiffrement
+resources/js/pages/            scripts propres à chaque page
+resources/models/              sources 3D en clair (non versionnées)
+public/models/                 modèles chiffrés (.lwm)
+routes/web.php                 routes du site
+routes/console.php             commandes models:protect et export:static
+```
+
+## Droits
+
+© Quentin Renaud. Tous droits réservés : textes, graphismes, vidéos, code des pages et modèles 3D ne peuvent être copiés, extraits ni réutilisés sans accord écrit. Certains modèles sont proposés à l'achat sur des plateformes tierces. Voir les [mentions légales](https://lakeust.works/mentions-legales).
